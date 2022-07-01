@@ -29,7 +29,7 @@ public class _01_variable1_promotion_casting {
 			
 		}
 		
-		// 이력변경추가 2022.07.01. 12:55
+		// 이력변경추가 2022.07.01. 12:55 (perspective에서 git으로 변경 후 히스토리)
 		System.out.println("이력변경추가");
 	}
 
