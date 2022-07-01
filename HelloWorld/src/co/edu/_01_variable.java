@@ -10,6 +10,9 @@ package co.edu;
 	 * String : 문자열
 	 * 
 	 * 정수 : byte(1byte) < short(2byte) < int(4byte) < long(8byte)
+	 * 실수 : float(4byte) < double
+	 * 
+	 * 정수는 정확한 값을 가지고 오지만 실수는 근사치를 가져온다.
 	 */
 
 public class _01_variable {
@@ -34,5 +37,14 @@ public class _01_variable {
 		System.out.println(result);
 		System.out.println(result1);
 		System.out.println("안녕하세요 " + name + "입니다.");
+		
+		float f1 = 23.4f; // float형 변수는 뒤에 지정값에 f를 붙여야한다.
+		System.out.println(Float.MIN_VALUE);
+		System.out.println(Float.MAX_VALUE);
+		double d1 = 23.4; // double형 변수 뒤에 지정값에는 f 필요 없다.
+		double result2 = 1.1 + 2.2;
+		System.out.println(result2); // 정수는 정확한 값을 가지고 오지만 실수는 근사치를 가져온다. 따라서 3.300003으로 나옴
+		
+		float sum = 2345L + 22.3F; // long sum = error / long형의 용량이 훨씬 크지만 float는 long형으로 읽지 못하기에 float로 해야한다.
 	}
 }
