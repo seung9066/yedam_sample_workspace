@@ -26,7 +26,11 @@ public class _01_variable1_promotion_casting {
 		// i = 27 보다 작으며 1씩 증가한다.
 		for (int i = 0; i < 27; i++) {
 			System.out.println(c1++);
+			
 		}
+		
+		// 이력변경추가 2022.07.01. 12:55
+		System.out.println("이력변경추가");
 	}
 
 }
