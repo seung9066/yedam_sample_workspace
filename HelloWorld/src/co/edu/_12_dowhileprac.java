@@ -10,6 +10,7 @@ public class _12_dowhileprac {
 		int sum = 0;
 		
 		do {
+			System.out.print("임의의 값을 입력 >>> \n");
 			int num = scan.nextInt();
 			sum += num;
 			if (sum > 100) {
