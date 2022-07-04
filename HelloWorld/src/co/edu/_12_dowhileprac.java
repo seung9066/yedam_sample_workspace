@@ -10,10 +10,11 @@ public class _12_dowhileprac {
 		int sum = 0;
 		
 		do {
-			System.out.print("임의의 값을 입력 >>> \n");
+			System.out.print("임의의 값을 입력 >>> ");
 			int num = scan.nextInt();
 			sum += num;
 			if (sum > 100) {
+				sum -= num;
 				System.out.println("반복문 종료");
 				istrue = false;
 			} else {
