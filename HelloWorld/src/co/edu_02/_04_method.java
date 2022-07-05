@@ -4,6 +4,12 @@ public class _04_method {
 	
 	// method에는 유형을 지정
 	// method 정의구문
+	public static long sum(int num) {
+		int result = num * 2; // parameter(매개변수)
+		System.out.println(result);
+		return result; // 자동형변환이 일어남 int -> long
+	}
+	
 	public static int sumary(int num) {
 		return num * 2;
 	}
@@ -18,6 +24,9 @@ public class _04_method {
 	
 	// method 호출구문
 	public static void main(String[] args) {
+		
+		// 실행구문
+		long sum = sum(10); // arguments(매개값)
 		
 		int result;
 		result = sumary(10);
