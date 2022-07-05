@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _11_while {
 	public static void main(String[] args) {

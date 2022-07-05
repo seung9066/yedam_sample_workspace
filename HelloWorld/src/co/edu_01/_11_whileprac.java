@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 import java.util.Scanner;
 

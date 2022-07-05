@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _09_switch {
 	public static void main(String[] args) {

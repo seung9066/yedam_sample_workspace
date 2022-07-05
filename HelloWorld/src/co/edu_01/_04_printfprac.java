@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _04_printfprac {
 	public static void main(String[] args) {

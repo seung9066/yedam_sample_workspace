@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 	/* 변수
 	 * 선언하면서 값을 할당 = 초기화

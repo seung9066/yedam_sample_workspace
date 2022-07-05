@@ -1,8 +1,8 @@
-package co.edu;
+package co.edu_01;
 
 import java.util.Scanner;
 
-public class _12_dowhileprac1 {
+public class _11_whileprac1 {
 	public static void main(String[] args) {
 		// while 반복문의 종료조건
 		// 1 ~ 100 임의의 수 생성

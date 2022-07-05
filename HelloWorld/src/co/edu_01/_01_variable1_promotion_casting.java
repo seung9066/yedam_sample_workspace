@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _01_variable1_promotion_casting {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _10_for {
 	public static void main(String[] args) {

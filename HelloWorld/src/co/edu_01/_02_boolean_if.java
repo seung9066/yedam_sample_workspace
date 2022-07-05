@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _02_boolean_if {
 	public static void main(String[] args) {

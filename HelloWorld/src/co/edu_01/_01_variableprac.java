@@ -1,4 +1,4 @@
-package co.edu;
+package co.edu_01;
 
 public class _01_variableprac {
 	public static void main(String[] args) {
