@@ -1,30 +1,45 @@
 package co.edu_02;
 
+import java.util.Scanner;
+
 public class _02_arrayprac {
 	public static void main(String[] args) {
-		// a반 80, 85, 83
-		// b반 79, 84, 90
 		
+		// 배열합계
+		int sum = 0;
+		double avg = 0;
 		
-		int[][] classary = new int[2][3];
-		classary[0][0] = 80;
-		classary[0][1] = 85;
-		classary[0][2] = 83;
-		classary[1][0] = 79;
-		classary[1][1] = 84;
-		classary[1][2] = 90;
-		int sum_a = 0;
-		int sum_b = 0;
-
-		for (int i = 0; i < classary[0].length; i++) {
-			sum_a += classary[0][i];
+		// intary배열의 합과 평균
+		int[] intary = { 34, 23, 56, 22, 99, 28 };
+		for (int i=0; i<intary.length; i++) {
+			sum += intary[i];
+			avg = (double)sum / intary.length;
 		}
-		System.out.println("A반 평균 점수 : " + (double)sum_a / classary[0].length);
-		for (int i = 0; i < classary[1].length; i++) {
-			sum_b += classary[1][i];
+		System.out.printf("intary 합 : %d / 평균 : %f\n", sum, avg);
+		
+		// intarry 합과 평균
+		int sum1 =0;
+		double avg1=0;
+		int[] intarry = new int[6];
+		for (int i = 0; i < intarry.length; i++) {
+			intarry[i] = (int) (Math.random() * 100) + 1;
+			sum1 += intarry[i];
+			avg1 = (double)sum1 / intarry.length;
 		}
-		System.out.println("B반 평균 점수 : " + (double)sum_b / classary[1].length);
-
+		System.out.printf("intarry 합 : %d / 평균 : %f\n", sum1, avg1);
+		
+		// scanary 합과 평균
+		int sum2=0;
+		double avg2=0;
+		int[] scanary = new int[5];
+		Scanner scan = new Scanner(System.in);
+		for (int i=0; i<scanary.length; i++) {
+			System.out.print("임의의 수를 입력 >> ");
+			scanary[i]=scan.nextInt();
+			sum2 += scanary[i];
+			avg2 = (double)sum2 / scanary.length;
+		}
+		System.out.printf("scanary 합 : %d / 평균 : %f\n", sum2, avg2);
 
 	}
 
