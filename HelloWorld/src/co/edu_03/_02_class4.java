@@ -49,9 +49,14 @@ public class _02_class4 {
 					if (boards[i] != null) {
 						System.out.print("제목 : " + boards[i].getTitle());
 						System.out.println();
+						System.out.print("조회할 제목을 입력하세요 >> ");
+						break;
+					} else {
+						System.out.println("조회할 내용이 없습니다.");
+						break;
 					}
 				}
-				System.out.print("조회할 제목을 입력하세요 >> ");
+				
 				String findtitle = scan.next();
 				for (int i = 0; i < boards.length; i++) {
 					if (boards[i] != null && boards[i].getTitle().equals(findtitle)) {
@@ -62,7 +67,7 @@ public class _02_class4 {
 						// 카운트 증가
 						int cnt = boards[i].getCount();
 						boards[i].setCount(++cnt);
-					}
+					} 
 
 				}
 
@@ -83,15 +88,12 @@ public class _02_class4 {
 						System.out.print("내용 : ");
 						String content = scan.next();
 
-						System.out.print("작성자 : ");
-						String writer = scan.next();
-
 						boards[i].setTitle(title);
 						boards[i].setContent(content);
-						boards[i].setWriter(writer);
-						
+
 					}
 				}
+				System.out.println("수정 완료");
 			} else if (selectno == 4) {
 				for (int i = 0; i < boards.length; i++) {
 					if (boards[i] != null) {
@@ -107,10 +109,13 @@ public class _02_class4 {
 					if (boards[i] != null && boards[i].getTitle().equals(findtitle)) {
 						if (y.equals("y")) {
 							boards[i] = null;
+							System.out.println("삭제되었습니다.");
+						} else {
+							System.out.println("삭제되지 않았습니다.");
 						}
 					}
 				}
-
+				
 			} else if (selectno == 5) {
 				System.out.println("===========글 목록===========");
 				for (int i = 0; i < boards.length; i++) {
