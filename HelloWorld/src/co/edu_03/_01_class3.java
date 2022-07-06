@@ -11,6 +11,8 @@ public class _01_class3 {
 		
 		f1.showinfo();
 		
+		System.out.println(f1.getbirth());
+		
 	}
 
 }

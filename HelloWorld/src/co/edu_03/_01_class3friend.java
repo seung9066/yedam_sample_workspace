@@ -19,13 +19,29 @@ public class _01_class3friend {
 		this.name = name;
 		this.phone = phone;
 	}
-
+	
+	public String getname() { // setname은 설정하기 위한 것으로 가져오려면 다시 private에 걸리기 때문에 return을 작성해줌
+		return name;
+	}
+	
+	public String phone() {
+		return phone;
+	}
+	
 	public void setemail(String email) { // 우클릭 -> source -> generate getters 들어가면 private 규칙 자동 변환해줌
 		this.email = email;
+	}
+	
+	public String getemail() {
+		return email;
 	}
 
 	public void setbirth(int birth) {
 		this.birth = birth;
+	}
+	
+	public int getbirth() {
+		return birth;
 	}
 
 	public void setheight(double height) {
