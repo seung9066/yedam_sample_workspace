@@ -1,6 +1,6 @@
 package co.edu_02;
 
-public class _04_methodprac {
+public class _04_methodpracgugudan {
 	// 구구단
 
 	public static void gugudan(int a) {

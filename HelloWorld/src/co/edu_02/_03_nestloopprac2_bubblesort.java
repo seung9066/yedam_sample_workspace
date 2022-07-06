@@ -32,8 +32,15 @@ public class _03_nestloopprac2_bubblesort {
                 max = tempary[4];
             }
         }
-        System.out.println("가장 큰 값 a : " + max);
-
+        System.out.println("가장 큰 값 : " + max);
+        
+        for (int i = 0; i < tempary.length; i++) {
+			if (max < tempary[i]) {
+				max = tempary[i];
+			}
+		}
+        System.out.println("가장 큰값 : " + max);
+        
         /* 버블정렬
          * 배열 속 두수의 크기를 비교하여 두수의 위치를 바꿈
          * 큰수정렬 : 두수를 비교하여 i가 j보다 작으면 i와 j의 위치를 바꿈
