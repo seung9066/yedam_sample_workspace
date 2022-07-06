@@ -10,8 +10,8 @@ public class _01_class3 {
 		f1.weight = 71.1;
 		
 		f1.showinfo();
-		
-		System.out.println(f1.getbirth());
+		System.out.println();
+		System.out.println(f1.getbirth()); // return 문이 있기 때문에 불러올 수 있음
 		
 	}
 
