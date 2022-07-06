@@ -2,7 +2,7 @@ package test;
 
 import java.util.Scanner;
 
-public class exam05 {
+public class exam06 {
     /*
      * 문제 5: 배열.
      * Scanner 클래스를 사용하여 사용자가 입력한 값을 다음의 배열에서 찾아서 값이 있을 경우에는 해당 값의 저장위치를 값이 없을 경우에는
@@ -14,16 +14,21 @@ public class exam05 {
 
         boolean run = true;
         String a = scn.nextLine();
-        for (int i = 0; i < fruits.length; i++) {
-            if (a.equals(fruits[i])) {
-                System.out.println(i);
-            }
-            while (run) {
-                if (a != fruits[i]) {
-                    System.out.println("찾는 값이 없습니다.");
-                    run = false;
+
+        while (run) {
+            for (int i = 0; i < fruits.length; i++) {
+                if (a.equals(fruits[i])) {
+                    System.out.println(i);
+                }
+
+                while (run) {
+                    if (a != fruits[i]) {
+                        System.out.println("찾는 값이 없습니다.");
+                        run = false;
+                    }
                 }
             }
+
         }
     }
 
