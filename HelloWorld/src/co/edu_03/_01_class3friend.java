@@ -32,7 +32,7 @@ public class _01_class3friend {
 		if (height < 0) {
 			System.out.println("-------------------------");
 			System.out.println("잘못된 키의 값이 입력되었습니다.");
-			System.out.println("-------------------------");
+
 			this.height = 0;
 		} else {
 			this.height = height;
@@ -49,5 +49,4 @@ public class _01_class3friend {
 
 	}
 
-	
 }
