@@ -2,6 +2,7 @@ package co.edu_03;
 
 public class _05_class {
 	public static void main(String[] args) {
+		
 		_05_student kim = new _05_student(); // 기본생성자
 		kim.setSno("22-001");
 		kim.setName("김민수");

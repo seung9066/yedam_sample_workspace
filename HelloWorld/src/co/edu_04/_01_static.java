@@ -3,6 +3,11 @@ package co.edu_04;
 public class _01_static {
 	public static void main(String[] args) {
 		
+		/*
+		 * static : 정적메소드, 정적필드에 필요
+		 */
+		
+		
 		/* error는 아니지만 메모리를 많이 잡아 먹는다.
 		 * Calculator cal = new Calculator();
 		 * System.out.println(cal.pi);

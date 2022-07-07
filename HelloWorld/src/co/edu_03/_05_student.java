@@ -1,7 +1,7 @@
 package co.edu_03;
 
 public class _05_student {
-
+	
 	// 필드
 	private String sno;
 	private String name;

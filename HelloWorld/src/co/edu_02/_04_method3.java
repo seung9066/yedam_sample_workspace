@@ -1,6 +1,11 @@
 package co.edu_02;
 
 public class _04_method3 {
+
+	/*
+	 * 입력값(매개변수), 출력값 = return(반환값)
+	 */
+	
 	public static void main(String[] args) {
 		sum(10 ,20);
 		
