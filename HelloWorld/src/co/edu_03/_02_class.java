@@ -1,10 +1,10 @@
 package co.edu_03;
 
-public class _01_class2 {
+public class _02_class {
 	public static void main(String[] args) {
 		
 		// 힙메모리에 인스턴스 생성
-		_01_class2car c1 = new _01_class2car(); // c1 = 참조변수
+		_02_class_car c1 = new _02_class_car(); // c1 = 참조변수
 		c1.model = "소나타";
 		c1.speed = 60; // class
 		c1.setspeed(50); // method
@@ -16,12 +16,12 @@ public class _01_class2 {
 		
 		System.out.println();
 		
-		_01_class2car c3 = new _01_class2car("아반떼", 180); // _01_class2_car.java의 두번째 생성자를 통해 자동으로 지정됨
+		_02_class_car c3 = new _02_class_car("아반떼", 180); // _01_class2_car.java의 두번째 생성자를 통해 자동으로 지정됨
 		System.out.println(c3.model +"\n최고 속도 : "+ c3.maxspeed);
 		
 		System.out.println();
 		
-		_01_class2car c2 = new _01_class2car();
+		_02_class_car c2 = new _02_class_car();
 		c2.model = "k5";
 		c2.speed = 180;
 		c2.setspeed(170);

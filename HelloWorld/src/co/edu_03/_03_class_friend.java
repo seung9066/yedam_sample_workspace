@@ -3,7 +3,7 @@ package co.edu_03;
 /*
  * 이름, 연락처, email, 생일, 키, 몸무게
  */
-public class _01_class3friend {
+public class _03_class_friend {
 
 	// 필드
 	private String name; // private = 접근제한자 / method나 생성자를 거치지 않고 _01_classprac0.java에서 직접적으로 f1.name =
@@ -15,7 +15,7 @@ public class _01_class3friend {
 	private double height;
 	double weight;
 
-	public _01_class3friend(String name, String phone) { // public을 private로 바꿀 수 있긴 함
+	public _03_class_friend(String name, String phone) { // public을 private로 바꿀 수 있긴 함
 		this.name = name;
 		this.phone = phone;
 	}

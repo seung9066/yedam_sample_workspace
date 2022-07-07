@@ -4,7 +4,7 @@ package co.edu_03;
  * 자동차(object) = class
  */
 
-public class _01_class2car {
+public class _02_class_car {
 
 	// 속성 = 필드
 	String model;
@@ -15,13 +15,13 @@ public class _01_class2car {
 	double width;
 
 	// 생성자(객체 생성시 필드 초기값 지정)
-	public _01_class2car() {
+	public _02_class_car() {
 		System.out.println("생성자 호출");
 		maxspeed = 200;
 	}
 
 	// 생성자(객체 생성시 필드 초기값 지정)
-	public _01_class2car(String model, int maxspeed) {
+	public _02_class_car(String model, int maxspeed) {
 		this.model = model;
 		this.maxspeed = maxspeed;
 	}

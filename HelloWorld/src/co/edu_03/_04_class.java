@@ -3,11 +3,11 @@ package co.edu_03;
 import java.util.Date;
 import java.util.Scanner;
 
-public class _01_classprac0 {
+public class _04_class {
 
 	public static void main(String[] args) {
 
-		_01_classprac0noticeboard[] boards = new _01_classprac0noticeboard[100];
+		_04_class_noticeboard[] boards = new _04_class_noticeboard[100];
 		Scanner scan = new Scanner(System.in);
 
 		boolean run = true;
@@ -28,7 +28,7 @@ public class _01_classprac0 {
 				System.out.print("작성자 : ");
 				String writer = scan.next();
 
-				_01_classprac0noticeboard board = new _01_classprac0noticeboard();
+				_04_class_noticeboard board = new _04_class_noticeboard();
 				board.setTitle(title);
 				board.setContent(content);
 				board.setWriter(writer);
