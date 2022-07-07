@@ -16,10 +16,10 @@ public class exam06 {
 		for (int i = 0; i < fruits.length; i++) {
 			if (a.equals(fruits[i])) {
 				System.out.println(i);
+				break;
 			} else {
 				if (i == fruits.length - 1) {
 					System.out.println("찾는 값이 없습니다.");
-					break;
 				}
 			}
 
