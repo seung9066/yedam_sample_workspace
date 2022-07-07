@@ -7,7 +7,7 @@ public class _04_class {
 
 	public static void main(String[] args) {
 
-		_04_class_noticeboard[] boards = new _04_class_noticeboard[100];
+		_04_noticeboard[] boards = new _04_noticeboard[100];
 		Scanner scan = new Scanner(System.in);
 
 		boolean run = true;
@@ -28,7 +28,7 @@ public class _04_class {
 				System.out.print("작성자 : ");
 				String writer = scan.next();
 
-				_04_class_noticeboard board = new _04_class_noticeboard();
+				_04_noticeboard board = new _04_noticeboard();
 				board.setTitle(title);
 				board.setContent(content);
 				board.setWriter(writer);

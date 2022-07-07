@@ -19,6 +19,7 @@ public class exam06 {
 			} else {
 				if (i == fruits.length - 1) {
 					System.out.println("찾는 값이 없습니다.");
+					break;
 				}
 			}
 

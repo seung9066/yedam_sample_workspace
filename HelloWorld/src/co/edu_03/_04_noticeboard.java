@@ -2,7 +2,7 @@ package co.edu_03;
 
 import java.util.Date;
 
-public class _04_class_noticeboard {
+public class _04_noticeboard {
 
 	private String title;
 	private String content;

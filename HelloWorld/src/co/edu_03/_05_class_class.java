@@ -5,7 +5,7 @@ public class _05_class_class {
 	// 필드
 	private String tname;
 	private String bname;
-	private _05_class_student[] students;
+	private _05_student[] students;
 	
 	// 생성자
 	public _05_class_class() {
@@ -24,7 +24,7 @@ public class _05_class_class {
 	public _05_class_class(String tname, String bname, int studentnum) {
 		this.tname = tname;
 		this.bname = bname;
-		this.students = new _05_class_student[studentnum];
+		this.students = new _05_student[studentnum];
 	}
 	
 	// 메소드
@@ -54,7 +54,7 @@ public class _05_class_class {
 		}
 	}
 
-	public void addStudents(_05_class_student student) {
+	public void addStudents(_05_student student) {
 		for(int i = 0; i < students.length; i ++) {
 			if (students[i] == null) {
 				students[i] = student;
@@ -64,9 +64,9 @@ public class _05_class_class {
 	}
 	
 	// 점수가 가장 높은 학생
-	public _05_class_student topStudent() {
+	public _05_student topStudent() {
 		int max = 0;
-		_05_class_student student = null;
+		_05_student student = null;
 		for (int i = 0; i < students.length; i++) {
 			if (students[i] != null && students[i].getScore() > max) {
 				max = students[i].getScore();

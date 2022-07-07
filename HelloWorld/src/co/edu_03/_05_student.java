@@ -1,6 +1,6 @@
 package co.edu_03;
 
-public class _05_class_student {
+public class _05_student {
 
 	// 필드
 	private String sno;
@@ -8,12 +8,12 @@ public class _05_class_student {
 	private int score;
 
 	// 생성자 : 기본생성자
-	public _05_class_student() {
+	public _05_student() {
 		
 	}
 	
 	// 생성자 오버로딩(같은 이름의 생성자 여러개 만드는 것)
-	public _05_class_student(String sno, String name, int score) {
+	public _05_student(String sno, String name, int score) {
 		this.sno = sno;
 		this.name = name;
 		this.score = score;
