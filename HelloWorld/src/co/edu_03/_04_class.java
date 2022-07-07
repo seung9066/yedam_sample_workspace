@@ -8,10 +8,56 @@ public class _04_class {
 	public static void main(String[] args) {
 
 		_04_noticeboard[] boards = new _04_noticeboard[100];
+		_04_noticeboard[] signup = new _04_noticeboard[100];
 		Scanner scan = new Scanner(System.in);
 
 		boolean run = true;
+		boolean run1 = true;
 
+		while (run1) {
+			System.out.println("로그인 (1) | 회원가입 (2)");
+			int c = scan.nextInt();
+			if (c == 1) {
+				System.out.print("ID : ");
+				String a = scan.next();
+
+				System.out.print("Password : ");
+				String b = scan.next();
+				for (int i = 0; i < signup.length; i++) {
+					if (signup[i] != null && signup[i].getId().equals(a) && signup[i].getPassword().equals(b)) {
+						System.out.println("로그인 완료");
+						run1 = false;
+					} else {
+						if (i == boards.length - 1)
+						System.out.println("아이디 비번을 확인하세요.");
+						
+					}
+				}
+			}
+			if (c == 2) {
+				_04_noticeboard sign = new _04_noticeboard();
+
+				System.out.print("ID : ");
+				String d = scan.next();
+
+				System.out.print("Password : ");
+				String e = scan.next();
+
+				sign.setId(d);
+				sign.setPassword(e);
+
+				for (int i = 0; i < signup.length; i++) {
+					if (signup[i] == null) { // 위치가 비어있으면
+						signup[i] = sign; // 그 위치에 한건 저장한다.
+						break;
+					}
+				}
+				System.out.println("저장 완료");
+
+			} else if (c > 2) {
+				System.out.println("잘못된 접근입니다.");
+			}
+		}
 		while (run) {
 			System.out.println("1. 등록 | 2. 조회 | 3. 수정 | 4. 삭제 | 5. 리스트 | 6. 종료");
 			System.out.print("선택 >> ");
@@ -56,7 +102,7 @@ public class _04_class {
 						break;
 					}
 				}
-				
+
 				String findtitle = scan.next();
 				for (int i = 0; i < boards.length; i++) {
 					if (boards[i] != null && boards[i].getTitle().equals(findtitle)) {
@@ -67,7 +113,7 @@ public class _04_class {
 						// 카운트 증가
 						int cnt = boards[i].getCount();
 						boards[i].setCount(++cnt);
-					} 
+					}
 
 				}
 
@@ -115,7 +161,7 @@ public class _04_class {
 						}
 					}
 				}
-				
+
 			} else if (selectno == 5) {
 				System.out.println("===========글 목록===========");
 				for (int i = 0; i < boards.length; i++) {
@@ -135,7 +181,6 @@ public class _04_class {
 
 		}
 		System.out.println("프로그램 종료");
-
 	}
 
 }

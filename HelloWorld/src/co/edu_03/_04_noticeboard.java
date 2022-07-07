@@ -3,12 +3,30 @@ package co.edu_03;
 import java.util.Date;
 
 public class _04_noticeboard {
-
+	
 	private String title;
 	private String content;
 	private String writer;
 	private Date date;
 	private int count;
+	private String id;
+	private String password;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getTitle() {
 		return title;
