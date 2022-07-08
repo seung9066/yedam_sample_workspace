@@ -25,7 +25,16 @@ public class Employeearraylist implements Employeelist {
 
 	@Override
 	public void input() {
+		System.out.println("사번 >> ");
+		int no = Integer.parseInt(scan.nextLine());
 		
+		System.out.print("이름 >> ");
+		String name = scan.nextLine();
+		
+		System.out.print("급여 >> ");
+		int sal = Integer.parseInt(scan.nextLine());
+		
+		list.add(new Employee(no, name, sal));
 	}
 
 	@Override
@@ -35,7 +44,7 @@ public class Employeearraylist implements Employeelist {
 
 	@Override
 	public void printList() {
-		
+		list.get();
 	}
 
 }
