@@ -57,6 +57,10 @@ public class _02_app {
 	}
 
 	private void search() {
+		for (int i = 0; i < friendNum; i++) {
+			System.out.print(friends[i].getName() + " ");
+		}
+		System.out.println();
 		System.out.print("이름 입력 >> ");
 		String name = scan.nextLine();
 		for (int i = 0; i < friendNum; i++) {
@@ -65,7 +69,7 @@ public class _02_app {
 				break;
 			} else if(i == friendNum - 1) {
 				System.out.println("없는 이름입니다.");
-			}
+			} 
 		}
 	}
 
