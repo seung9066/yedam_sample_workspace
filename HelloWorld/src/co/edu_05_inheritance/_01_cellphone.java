@@ -7,7 +7,7 @@ package co.edu_05_inheritance;
  * 공통 기능의 경우 부모만 바꿔주면 자식까지 다 바꿔줄 수 있음
  */
 
-public class _01_cellphone {
+public class _01_cellphone { //extends Object 모든 클래스는 기본적으로 Object클래스를 상속 받는다.
 	
 	// field
 	private String model;
@@ -15,10 +15,10 @@ public class _01_cellphone {
 	
 	// constructor
 	public _01_cellphone() {
-		
+
 	}
 	
-	public _01_cellphone(String mode, String color) {
+	public _01_cellphone(String model, String color) {
 		
 	}
 	
@@ -57,5 +57,12 @@ public class _01_cellphone {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	// 재정의
+	@Override
+	public String toString() { // Object 메소드에서 상속
+		return "model명은 " + model + ", 색상은 " + color + "입니다.";
+	}
+	
 
 }
