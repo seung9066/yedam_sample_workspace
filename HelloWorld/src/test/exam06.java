@@ -14,7 +14,7 @@ public class exam06 {
 		String a = scn.nextLine();
 
 		for (int i = 0; i < fruits.length; i++) {
-			if (a.equals(fruits[i])) {
+			if (fruits[i].equals(a)) {
 				System.out.println(i);
 				break;
 			} else {

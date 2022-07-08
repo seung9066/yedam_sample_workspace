@@ -60,7 +60,7 @@ public class _02_app {
 		System.out.print("이름 입력 >> ");
 		String name = scan.nextLine();
 		for (int i = 0; i < friendNum; i++) {
-			if (name.equals(friends[i].getName())) {
+			if (friends[i].getName().equals(name)) {
 				friends[i].showInfo();
 				break;
 			} else if(i == friendNum - 1) {
