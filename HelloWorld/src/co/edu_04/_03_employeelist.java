@@ -1,9 +1,11 @@
 package co.edu_04;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class _03_employeelist {
 	
+	Calendar cal = Calendar.getInstance();
 	// 싱클톤
 	private static _03_employeelist instance = new _03_employeelist();
 
@@ -74,67 +76,27 @@ public class _03_employeelist {
 		}
 	}
 	
-	// 말일 정보
-	private int getLastDate(int mon) {
-		switch(mon) {
-		case 1 :
-			return 31;
-		case 2:
-			return 28;
-		case 3 :
-			return 31;
-		case 5 :
-			return 31;
-		case 7 :
-			return 31;
-		case 8 :
-			return 31;
-		case 10 :
-			return 31;
-		case 12 :
-			return 31;
-		default:
-			return 30;
-		}
+	public int getLastDate(int year, int month) {
+		cal.set(year, month -1, 1);
+		return cal.getActualMaximum(Calendar.DATE);
+			
 	}
 	
-	// 1일의 요일정보
-	private int getDayInfo(int mon) {
-		switch(mon) {
-		case 1 :
-			return 6;
-		case 2: 
-			return 2;
-		case 3 :
-			return 2;
-		case 4 :
-			return 5;
-		case 6 :
-			return 3; // 첫째날 요일정보
-		case 7 :
-			return 5;
-		case 8 :
-			return 1;
-		case 9 :
-			return 4;
-		case 10 :
-			return 6;
-		case 11 :
-			return 2;
-		case 12 :
-			return 4;
-		default:
-			return 0;
-		}
+	public int getDayInfo(int year, int month) {
+		cal.set(year, month -1, 1);
+		return cal.get(Calendar.DAY_OF_WEEK);
+
 	}
 	
 	public void calendar() {
-		System.out.print("월을 입력 >> ");
+		System.out.print("연도 입력 >> ");
+		int year = Integer.parseInt(scan.nextLine());		
+		System.out.print("월 입력 >> ");
 		int month = Integer.parseInt(scan.nextLine());
 		// 요일 정보, 1일의 위치, 말일의 날짜
 		String[] days = {"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"};
-		int firstday = getDayInfo(month); // 일=0 월=1 화=2 ... 토=6
-		int lastdate = getLastDate(month);
+		int firstday = getDayInfo(year, month); // 일=0 월=1 화=2 ... 토=6
+		int lastdate = getLastDate(year, month);
 		
 		for (int i = 0; i < days.length; i++) {
 			System.out.printf("%4s", days[i]);
@@ -143,13 +105,13 @@ public class _03_employeelist {
 		
 		
 		// 1일의 요일 정보를 맞추기 위해 빈 공간을 넣겠다.
-		for (int i = 0; i < firstday; i++) {
+		for (int i = 1; i < firstday; i++) {
 			System.out.printf("%4s", " ");
 		}
 		
 		for (int i = 1; i <= lastdate; i++) {
 			System.out.printf("%4d", i);
-			if ((i+firstday) % 7 == 0) { // 토요일까지 출력 후 줄 바꿈
+			if ((i+firstday-1) % 7 == 0) { // 토요일까지 출력 후 줄 바꿈
 				System.out.println();
 			}
 		}
