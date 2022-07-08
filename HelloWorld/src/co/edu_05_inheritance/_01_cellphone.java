@@ -1,8 +1,10 @@
 package co.edu_05_inheritance;
 
 /*
- * 상속 (부모 > 자식)
- * Cellphone < DmbCellphone
+ * 상속
+ * 기능적 : 부모 < 자식
+ * _01_cellphone dphone = new _01_dmbcellphone(); : 자식 클래스를 부모의 변수에 대입 가능. 대신 자식이 가진 기능 사용 불가 ex) .dmbon(); = error
+ * 공통 기능의 경우 부모만 바꿔주면 자식까지 다 바꿔줄 수 있음
  */
 
 public class _01_cellphone {
