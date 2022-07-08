@@ -16,7 +16,12 @@ public class _02_app {
 		while (true) {
 			System.out.println("1. 등록 | 2. 조회 | 3. 목록 | 9. 종료");
 			System.out.print("선택 >> ");
-			int selectno = Integer.parseInt(scan.nextLine());
+			int selectno = 0;
+			try { // int가 아닌 문자열이 들어올 경우 error 종료가 되는 것을 막기 위해 예외처리
+				selectno = Integer.parseInt(scan.nextLine()); // try 안에 int selectno 로 넣으면 밑에서 못 읽음
+			} catch (Exception e) {
+				System.out.println("1, 2, 3, 9번 중 선택하세요.");
+			}
 			if (selectno == 1) {
 				add();
 			} else if (selectno == 2) {
@@ -32,9 +37,18 @@ public class _02_app {
 	} // end of start
 
 	private void add() {
-		System.out.println("1. 친구 | 2. 학교 | 3. 회사");
+		int choice = 0;
+		
+		while(true) {
+		System.out.println("1. 친구 | 2. 학교 | 3. 회사 | 9. 뒤로");
 		System.out.print("선택 >> ");
-		int choice = Integer.parseInt(scan.nextLine());
+		try { // int가 아닌 문자열이 들어올 경우 error 종료가 되는 것을 막기 위해 예외처리
+			choice = Integer.parseInt(scan.nextLine()); // try 안에 int choice 로 넣으면 밑에서 못 읽음
+			break;
+		} catch (Exception e) {
+			System.out.println("1, 2, 3, 9번 중 선택하세요.");
+		}
+		
 		System.out.print("이름 >> ");
 		String name = scan.nextLine();
 		System.out.print("연락처 >> ");
@@ -53,6 +67,9 @@ public class _02_app {
 			System.out.print("부서 >> ");
 			String department = scan.nextLine();
 			friends[friendNum++] = new _02_company(name, phone, company, department);
+		} else if (choice == 9) {
+			break;
+		}
 		}
 	}
 
@@ -67,7 +84,7 @@ public class _02_app {
 			if (friends[i].getName().equals(name)) {
 				friends[i].showInfo();
 				break;
-			} else if(i == friendNum - 1) {
+			} else if (i == friendNum - 1) {
 				System.out.println("없는 이름입니다.");
 			} 
 		}

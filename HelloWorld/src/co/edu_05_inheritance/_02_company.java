@@ -15,7 +15,7 @@ public class _02_company extends _02_friends {
 
 	@Override
 	public String toString() {
-		return "회사친구 [이름 : " + getName() + " | 번호 : " + getPhone() + " | 회사 : " + company
+		return "회사 [이름 : " + getName() + " | 번호 : " + getPhone() + " | 회사 : " + company
 				+ " | 부서 : " + department + "]";
 	}
 	

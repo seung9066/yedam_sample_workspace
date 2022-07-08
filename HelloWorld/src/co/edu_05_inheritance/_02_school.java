@@ -15,7 +15,7 @@ public class _02_school extends _02_friends {
 
 	@Override
 	public String toString() {
-		return "학교친구 [이름 : " + getName() + " | 연락처 : " + getPhone() + " | 학교 : " + school + " | 전공 : "
+		return "학교 [이름 : " + getName() + " | 연락처 : " + getPhone() + " | 학교 : " + school + " | 전공 : "
 				+ major + "]";
 	}
 
