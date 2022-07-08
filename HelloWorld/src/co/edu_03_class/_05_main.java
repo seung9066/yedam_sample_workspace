@@ -1,6 +1,6 @@
-package co.edu_03;
+package co.edu_03_class;
 
-public class _05_class {
+public class _05_main {
 	public static void main(String[] args) {
 		
 		_05_student kim = new _05_student(); // 기본생성자
@@ -17,7 +17,7 @@ public class _05_class {
 		
 		_05_student choi = new _05_student("22-003", "최승현", 85);
 		
-		_05_class_class class_ = new _05_class_class("김덕배", "1-1", 27);
+		_05_class class_ = new _05_class("김덕배", "1-1", 27);
 		System.out.println("선생님 : " + class_.getTname());
 		
 		class_.addStudents(kim);

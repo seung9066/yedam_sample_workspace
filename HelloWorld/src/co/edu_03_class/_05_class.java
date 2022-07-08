@@ -1,6 +1,6 @@
-package co.edu_03;
+package co.edu_03_class;
 
-public class _05_class_class {
+public class _05_class {
 	
 	// 필드
 	private String tname;
@@ -8,20 +8,20 @@ public class _05_class_class {
 	private _05_student[] students;
 	
 	// 생성자
-	public _05_class_class() {
+	public _05_class() {
 		
 	}
 	
-	public _05_class_class(String tname) {
+	public _05_class(String tname) {
 		this.tname = tname;
 	}
 	
-	public _05_class_class(String tname, String bname) {
+	public _05_class(String tname, String bname) {
 		this.tname = tname;
 		this.bname = bname;
 	}
 	
-	public _05_class_class(String tname, String bname, int studentnum) {
+	public _05_class(String tname, String bname, int studentnum) {
 		this.tname = tname;
 		this.bname = bname;
 		this.students = new _05_student[studentnum];

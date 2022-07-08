@@ -1,9 +1,9 @@
-package co.edu_03;
+package co.edu_03_class;
 
 import java.util.Date;
 import java.util.Scanner;
 
-public class _04_class {
+public class _04_main {
 
 	public static void main(String[] args) {
 

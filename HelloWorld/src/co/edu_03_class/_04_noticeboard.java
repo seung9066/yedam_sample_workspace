@@ -1,4 +1,4 @@
-package co.edu_03;
+package co.edu_03_class;
 
 import java.util.Date;
 

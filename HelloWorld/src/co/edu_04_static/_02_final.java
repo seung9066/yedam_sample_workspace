@@ -1,4 +1,4 @@
-package co.edu_04;
+package co.edu_04_static;
 
 
 /*

@@ -1,9 +1,9 @@
-package co.edu_04;
+package co.edu_04_static;
 
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class _03_employeeapp {
+public class _03_main {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);

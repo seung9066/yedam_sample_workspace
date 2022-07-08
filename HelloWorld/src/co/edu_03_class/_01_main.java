@@ -1,6 +1,6 @@
-package co.edu_03;
+package co.edu_03_class;
 
-public class _01_class {
+public class _01_main {
 	public static void main(String[] args) {
 		
 		_01_student s1 = new _01_student(); // new를 통해 초기화를 시켜줘야한다.

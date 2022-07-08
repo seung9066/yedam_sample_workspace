@@ -1,4 +1,4 @@
-package co.edu_03;
+package co.edu_03_class;
 
 /*
  * 이름, 연락처, email, 생일, 키, 몸무게

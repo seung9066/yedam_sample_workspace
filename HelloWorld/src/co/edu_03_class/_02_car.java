@@ -1,4 +1,4 @@
-package co.edu_03;
+package co.edu_03_class;
 
 /*
  * 자동차(object) = class
@@ -6,7 +6,7 @@ package co.edu_03;
 
 public class _02_car {
 
-	// 속성 = 필드
+	// 속성 = 필드(field)
 	String model;
 	int price;
 	int maxspeed;
@@ -14,7 +14,7 @@ public class _02_car {
 	double weight;
 	double width;
 
-	// 생성자(객체 생성시 필드 초기값 지정)
+	// 생성자(constructor)(객체 생성시 필드 초기값 지정)
 	public _02_car() {
 		System.out.println("생성자 호출");
 		maxspeed = 200;

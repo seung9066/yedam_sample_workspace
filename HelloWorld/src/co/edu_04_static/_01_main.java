@@ -1,6 +1,6 @@
-package co.edu_04;
+package co.edu_04_static;
 
-public class _01_static {
+public class _01_main {
 	public static void main(String[] args) {
 		
 		/*

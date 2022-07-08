@@ -1,6 +1,6 @@
-package co.edu_03;
+package co.edu_03_class;
 
-public class _02_class {
+public class _02_main {
 	public static void main(String[] args) {
 		
 		// 힙메모리에 인스턴스 생성

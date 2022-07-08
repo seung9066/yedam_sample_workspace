@@ -1,6 +1,6 @@
-package co.edu_03;
+package co.edu_03_class;
 
-public class _03_class {
+public class _03_main {
 	public static void main(String[] args) {
 		
 		_03_friend f1 = new _03_friend("최승현", "010-3083-8066");
