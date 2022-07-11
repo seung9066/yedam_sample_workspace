@@ -14,7 +14,7 @@ public class IndexOf {
 		}
 		
 		String name = "java.util.abcd";
-		int a = name.lastIndexOf(".");
-		System.out.println(name.substring(a+1));
+		int a = name.lastIndexOf("."); // 마지막 "."의 위치값
+		System.out.println(name.substring(a+1)); // 마지막 "."의 위치값 + 1의 위치부터
 	}
 }
