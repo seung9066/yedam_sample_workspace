@@ -11,7 +11,7 @@ public class _04_InputMismatch {
 		try {
 			int num = scan.nextInt(); // int 타입인데 문자열을 쳐보자
 			System.out.println("입력값 : " + num);
-		} catch (InputMismatchException e) { // 잘못된 타입의 변수가 들어올 때
+		} catch (InputMismatchException e) { // 잘못된 타입의 변수값이 들어올 때
 			System.out.println("정수를 입력하시오");
 		}
 		
