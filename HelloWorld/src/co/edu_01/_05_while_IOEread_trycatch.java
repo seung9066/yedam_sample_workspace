@@ -3,7 +3,7 @@ package co.edu_01;
 import java.io.IOException;
 
 // 키보드 입력값 코드 or 값을 메소드 (enter값 때문에 한번에 3개(숫자 입력시) 나오는거)
-public class _05_while_IOEread {
+public class _05_while_IOEread_trycatch {
 	public static void main(String[] args) {
 		
 		System.out.println("값을 입력하세요.");

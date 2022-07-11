@@ -2,7 +2,7 @@ package co.edu_01;
 
 import java.util.Scanner;
 
-public class _07_operator1_bit_substitute_compare {
+public class _07_operator1_ternary {
 	public static void main(String[] args) {
 		
 		// ~ : bit 반전 연산자 
