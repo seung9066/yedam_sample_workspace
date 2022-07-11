@@ -50,6 +50,10 @@ public class Math_ {
 		long temp2 = Math.round(temp1);
 		double v14 = temp2 / 100.0;
 		System.out.println("v14 = " + v14);
+
+		// 주사위
+		int num = (int) (Math.random() * 6) + 1;
+		System.out.println("주사위 눈 : " + num);
 	}
 
 }
