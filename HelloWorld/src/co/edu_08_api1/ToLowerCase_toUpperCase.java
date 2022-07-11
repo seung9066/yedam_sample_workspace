@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 // 대소문자 변환
 public class ToLowerCase_toUpperCase {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 // 문자열 내용 변환
 public class Replace {
 	public static void main(String[] args) {

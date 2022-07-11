@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 // 공백 제거
 public class Trim {
 	public static void main(String[] args) {

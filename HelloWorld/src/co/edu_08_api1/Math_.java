@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 
 public class Math_ {
 	public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class Math_ {
 
 		// 랜덤값
 		double v11 = Math.random();
-		System.out.println("v11 = " + v11);
+		System.out.printf("v11 = %.2f\n", v11);
 
 		// 가까운 정수의 실수값
 		double v12 = Math.rint(5.3);

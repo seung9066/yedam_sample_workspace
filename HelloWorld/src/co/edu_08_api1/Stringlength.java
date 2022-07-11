@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 
 public class Stringlength {
 	public static void main(String[] args) {

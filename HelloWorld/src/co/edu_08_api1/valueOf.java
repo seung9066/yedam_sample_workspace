@@ -1,4 +1,4 @@
-package co.edu_08_api.prac;
+package co.edu_08_api1;
 // 문자열 변환
 public class valueOf {
 	public static void main(String[] args) {

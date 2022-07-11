@@ -1,8 +1,8 @@
-package co.edu_09_api1;
+package co.edu_08_api1;
 
 import java.util.ArrayList;
 
-public class _01_Wrapper {
+public class Wrapper {
 	public static void main(String[] args) {
 		Integer i = new Integer("100");
 		System.out.println(i);
