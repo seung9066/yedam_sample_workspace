@@ -2,7 +2,7 @@ package co.edu_02;
 
 import java.util.Scanner;
 
-public class _04_method2 {
+public class _04_method2_Mathrandom {
 
 	// method에는 유형을 지정
 	// method 정의구문
