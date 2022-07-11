@@ -1,6 +1,6 @@
 package co.edu_08_api.prac;
 
-public class Array_Stringlength {
+public class Stringlength {
 	public static void main(String[] args) {
 		String ssn = "7306241230123";
 		int length = ssn.length();

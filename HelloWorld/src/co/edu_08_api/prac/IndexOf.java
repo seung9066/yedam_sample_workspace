@@ -1,6 +1,6 @@
 package co.edu_08_api.prac;
 
-public class Array_indexOf {
+public class IndexOf {
 	public static void main(String[] args) {
 		String subject = "자바 프로그래밍";
 		
@@ -12,5 +12,9 @@ public class Array_indexOf {
 		} else {
 			System.out.println("자바와 관련 없는 책");
 		}
+		
+		String name = "java.util.abcd";
+		int a = name.lastIndexOf(".");
+		System.out.println(name.substring(a+1));
 	}
 }

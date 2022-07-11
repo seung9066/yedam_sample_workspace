@@ -19,7 +19,7 @@ public class _00_prac {
 
 		// 파일의 확장자, 파일명
 		String path = "c:/images/hello.png";
-		int fromInd = path.lastIndexOf("/");
+		int fromInd = path.lastIndexOf("/"); // 가장 마지막에 있는 "/"
 		int toInd = path.indexOf(".");
 		System.out.println("파일명 : " + path.substring((fromInd + 1), toInd));
 		System.out.println("확장자 : " + path.substring(toInd + 1));
