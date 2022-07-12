@@ -1,4 +1,4 @@
-package co.edu_10_collect_list;
+package co.edu_10_collect;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
