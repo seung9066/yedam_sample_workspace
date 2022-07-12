@@ -33,7 +33,7 @@ public class BoardDAO {
 	// 3. 조회(작성자)
 	public List<Board> search(String writer) {
 		List<Board> list = new ArrayList<>(); // list = 변수 / 찾고자 하는 이름
-		boolean run = false;
+		boolean run = false; // 없는 작성자 입력시 오류 방지
 		for (Board board : this.list) { // list = 필드 / 필드에 저장된 애들을 하나씩 읽어보는 과정
 			if (board.getWriter().equals(writer)) {
 				list.add(board); // 같은 작성자를 담아준다.
