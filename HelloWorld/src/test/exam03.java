@@ -24,7 +24,7 @@ public class exam03 {
         for (int i = 0; i < a.length; i++) {
             sum_a += a[i];
             if (low > a[i]) {
-                low = a[i];
+                a[i] = low; // a[i]에 low값을 넣는다.
             }
 
         }

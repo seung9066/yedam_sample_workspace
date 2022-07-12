@@ -1,5 +1,6 @@
 package co.edu_10_collect;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -35,6 +36,24 @@ public class _03_Mapprac {
 		if (!run) {
 			System.out.println("없는 학생입니다.");
 		}
+		
+		int avg = 0;
+		int sum = 0;
+		String tops = null;
+		int top = 0;
+		
+		entrySet = map.entrySet();
+		for (Entry<String, Integer> ent : entrySet) {
+			Integer val = ent.getValue();
+			sum += val;
+			if (val > top) {
+				top = val; // top에 val을 넣는다.
+				tops = ent.getKey();
+			}
+		}
+		avg = sum / map.size();
+		System.out.println("평균점수 : " + avg);
+		System.out.println("최고점수 : " + top + " | 학생 : " + tops);
 
 	}
 }
