@@ -36,7 +36,7 @@ public class BoardApp {
 				System.out.print("작성자 입력 >> ");
 				String writer = scan.nextLine();
 				List<Board> list = app.search(writer);
-				for (Board board : list) { // Board 클래스에 board에 list를 담는다
+				for (Board board : list) { // Board 클래스 board 변수명 list 배열 또는 컬렉션(반복대상) -> 배열(컬렉션)에 저장된 값이 매 반복마다 하나씩 순서대로 읽혀져 변수에 저장
 					System.out.println("제목 : " + board.getTitle() + " | 작성자 : " + board.getWriter() + " | 내용 : " + board.getContent());
 				}
 //				System.out.println("제목 : " + app.search(writer).get(0).getTitle() + " | 작성자 : "
