@@ -35,8 +35,12 @@ public class BoardApp {
 			} else if (selectno == 3) {
 				System.out.print("작성자 입력 >> ");
 				String writer = scan.nextLine();
-				System.out.println("제목 : " + app.search(writer).get(0).getTitle() + " | 작성자 : "
-						+ app.search(writer).get(0).getWriter() + " | 내용 : " + app.search(writer).get(0).getContent());
+				List<Board> list = app.search(writer);
+				for (Board board : list) { // Board 클래스에 board에 list를 담는다
+					System.out.println("제목 : " + board.getTitle() + " | 작성자 : " + board.getWriter() + " | 내용 : " + board.getContent());
+				}
+//				System.out.println("제목 : " + app.search(writer).get(0).getTitle() + " | 작성자 : "
+//						+ app.search(writer).get(0).getWriter() + " | 내용 : " + app.search(writer).get(0).getContent());
 			} else if (selectno == 4) {
 				System.out.print("삭제할 제목 입력 >> ");
 				String title = scan.nextLine();
@@ -45,6 +49,8 @@ public class BoardApp {
 			} else if (selectno == 5) {
 				System.out.println("프로그램 종료...");
 				break;
+			} else if (selectno > 5) {
+				System.out.println("잘못된 입력");
 			}
 		}
 	}
