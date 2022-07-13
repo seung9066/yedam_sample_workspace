@@ -10,7 +10,7 @@ public class _01_Byte {
 		try {
 			FileInputStream fis = new FileInputStream("c:/Dev/image.jpg"); // 이미지를 가져와서
 			FileOutputStream fos = new FileOutputStream("c:/Dev/image1.jpg"); // 이미지를 만든다
-			byte[] buff = new byte[100];
+			byte[] buff = new byte[100]; // 이미지 파일은 커서 한번에 100씩 가져오기 위해
 			
 			while(true) {
 				int buf = fis.read(buff);
