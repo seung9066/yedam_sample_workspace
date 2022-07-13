@@ -19,7 +19,7 @@ public class BookMember extends Member{
 	
 	@Override
 	public String toString() {
-		return "BookMember [id = "+ getMemberId() +" 회원이름 = "+getMemberName()+" 번호 = "+getPhone()+" 반장이름 = " + bookname + ", 강의실 =" + bookclass + "]";
+		return super.toString() + " 반장이름 = " + bookname + ", 강의실 =" + bookclass + "]";
 	}
 
 	public String getBookname() {

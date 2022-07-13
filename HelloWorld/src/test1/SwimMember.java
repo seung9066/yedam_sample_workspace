@@ -22,7 +22,7 @@ public class SwimMember extends Member{
 
 	@Override
 	public String toString() {
-		return "SwimMember [id = "+ getMemberId() +" 회원이름 = "+getMemberName()+" 번호 = "+getPhone()+" 강사이름 = " + swimname + ", 등급 =" + swimclass + "]";
+		return super.toString() + " 강사이름 = " + swimname + ", 등급 =" + swimclass + "]";
 	}
 
 	public String getSwimname() {

@@ -22,7 +22,7 @@ public class SoccerMember extends Member {
 
 	@Override
 	public String toString() {
-		return "SoccerMember [id = "+ getMemberId() +" 회원이름 = "+getMemberName()+" 번호 = "+getPhone()+" 코치이름 = " + soccername + ", 락커룸 =" + soccerclass + "]";
+		return super.toString() + " 코치이름 = " + soccername + ", 락커룸 =" + soccerclass + "]";
 	}
 
 	public String getSoccername() {
