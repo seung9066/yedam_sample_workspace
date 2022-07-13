@@ -1,9 +1,11 @@
 package co.edu_11_IO.prac;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -23,15 +25,30 @@ public class MemoManager {
 	private static MemoManager instance = new MemoManager();
 
 	private MemoManager() {
+		// 파일 정보를 읽어 ArrayList에 담기
+		readFromFile();
 	}
 
 	public static MemoManager getInstance() { // 인스턴스 할당시 MemoManager.getInstance를 통해 해야함
 		return instance;
 	}
-	// 실행
+	
+	// 파일 -> 컬렉션
+	public void readFromFile() {
+		try {
+			FileInputStream fis = new FileInputStream(file); // 가져와서
+			ObjectInputStream ois = new ObjectInputStream(fis); // 변환해서
+
+			memoStorage = (List<Memo>) ois.readObject(); // 담는다
+	        ois.close();
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	// 등록
 	public void inputData() {
+		
 		System.out.print("메모 번호 >> ");
 		int no = Integer.parseInt(scan.nextLine());
 		System.out.print("작정날짜 >> ");
@@ -83,6 +100,13 @@ public class MemoManager {
 		if (!isExist) {
 			System.out.println("없는 번호");
 		}
+	}
+	// 목록
+	public void list() {
+		for(int i = 0; i < memoStorage.size(); i++) {
+			System.out.print(memoStorage.get(i).getNo() + " / ");
+		}
+		System.out.println();
 	}
 	
 	// 종료 및 파일저장
