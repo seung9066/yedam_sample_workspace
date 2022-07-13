@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 /* 보조스트림 생성
  * 바이트 기반 -> 문자 기빈 (InputStreamReader, InputStreamWriter)
- * 버퍼스트림(성능향상) : 큰파일 읽는 시간 단축
+ * 버퍼스트림(성능향상) : 큰파일 처리 시간 단축
 */
 public class _03_buffer {
 	public static void main(String[] args) {
