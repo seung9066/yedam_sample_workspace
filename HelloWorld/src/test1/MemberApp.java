@@ -114,7 +114,11 @@ public class MemberApp implements MemberService {
 		System.out.print("수정할 전화번호 : ");
 		String phone = scan.nextLine();
 		member.setPhone(phone);
-
+		/*
+		 * for (int i = 0; i < members.size(); i++) {
+		 * 	if (member.getMemberId() == members.get(i).getMemberId()) {
+		 * 		members.get(i).setPhone(member.getPhone());
+		 */
 	}
 
 	// 전체리스트
