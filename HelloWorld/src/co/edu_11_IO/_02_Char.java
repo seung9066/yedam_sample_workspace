@@ -8,15 +8,28 @@ import java.util.Scanner;
 
 public class _02_Char {
 	public static void main(String[] args) {
-		
+		try {
+			FileReader fr = new FileReader("c:/Dev/test.txt");
+			char[] cbuf = new char[10]; // 10개씩 읽기
+			int buf1 = 0;
+			while ((buf1 = fr.read(cbuf)) != -1) { // cbuf가 읽어오는 값이 없을 때 까지
+				for (int i = 0; i <buf1; i++) {
+					System.out.print(cbuf[i]); // 읽어들인 buf1의 크기만큼 반복하여 출력
+				}
+				System.out.println();
+			}
+			fr.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("실행");
 	}
 
 	public static void reader1() {
 		try {
 			FileReader fr = new FileReader("c:/Dev/test.txt");
-			char[] ary = new char[10]; // 10개씩 읽겠음
 			while (true) {
-				int buf = fr.read(); // 2byte 씩 읽어서 -> 정수타입으로 return
+				int buf = fr.read(); // 2byte씩(한문자씩) 읽어서 -> 정수타입으로 return
 				if (buf == -1) {
 					break;
 				}
