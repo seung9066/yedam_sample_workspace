@@ -41,7 +41,7 @@ public class _0715 {
         int intValue4 = 10;
         char charValue = 'A';
         String strValue = "번지";
-        System.out.printf("문제5) %c%d%d%.1f%s\n", charValue, (intValue1+intValue2), intValue3, (double)intValue4, strValue);
+        System.out.printf("문제5) %c%d%d%s%.1f\n", charValue, (intValue1+intValue2), intValue3, strValue, (double)intValue4);
 
         int a2 = 485;
         System.out.println("추가문제) " + (a2/100 + a2/10%10 + a2%10));
