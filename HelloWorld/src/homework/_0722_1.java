@@ -8,7 +8,12 @@ public class _0722_1 {
 
         int[] arr1 = {10, 20, 30, 50, 3, 60, -3};
 
-        System.out.println("문제1) " + arr1[5]);
+        System.out.print("문제1) ");
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] == 60) {
+                System.out.println("60의 인덱스 : " + i);
+            }
+        }
 
         System.out.print("문제2) ");
         for (int i = 0; i < arr1.length; i++) {
@@ -18,7 +23,7 @@ public class _0722_1 {
         }
         System.out.println();
 
-        System.out.print("문제3) 배열 위치 입력 >> ");
+        System.out.print("문제3) 배열 인덱스 >> ");
         int a = scan.nextInt();
         for (int i = 0; i < arr1.length; i++) {
             if (i == a) {
