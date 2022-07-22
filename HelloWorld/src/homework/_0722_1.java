@@ -17,13 +17,13 @@ public class _0722_1 {
 
         System.out.print("문제2) ");
         for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] != 3) {
+            if (i != 3) {
                 System.out.print(arr1[i] + " ");
             }
         }
         System.out.println();
 
-        System.out.print("문제3) 출력하지 않을 배열 인덱스 >> ");
+        System.out.print("문제3) 변경할 배열 인덱스 >> ");
         int a = scan.nextInt();
         for (int i = 0; i < arr1.length; i++) {
             if (i == a) {
