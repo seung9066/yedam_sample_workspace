@@ -23,7 +23,7 @@ public class _0722_1 {
         }
         System.out.println();
 
-        System.out.print("문제3) 배열 인덱스 >> ");
+        System.out.print("문제3) 출력하지 않을 배열 인덱스 >> ");
         int a = scan.nextInt();
         for (int i = 0; i < arr1.length; i++) {
             if (i == a) {
