@@ -17,5 +17,4 @@ public class _0701_1 {
 		int result =num1 + num2;
 		System.out.println("덧셈 결과:"+result);
 	}
-
 }

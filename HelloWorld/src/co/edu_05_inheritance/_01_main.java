@@ -1,4 +1,4 @@
-package co.edu_05_inheritance;
+ package co.edu_05_inheritance;
 
 public class _01_main {
 
