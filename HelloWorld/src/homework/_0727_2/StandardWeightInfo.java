@@ -2,6 +2,11 @@ package homework._0727_2;
 
 public class StandardWeightInfo extends Human{
 	
+	public StandardWeightInfo(String name, double height, double weight) {
+		super.name = name;
+		super.height = height;
+		super.weight = weight;
+	}
 
 	public double getStandardWeight() {
 		double S = 0;

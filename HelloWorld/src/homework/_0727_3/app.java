@@ -1,26 +1,18 @@
 package homework._0727_3;
 
-import java.util.Scanner;
-
 public class app {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("영화");
+		Culture M = new Movie("추격자", 7, 5, "스릴러");
+		M.setTotalScore(5);
+		M.setTotalScore(3);
+		M.setTotalScore(4);
 		
-		Culture M = new Movie(scan.next(), scan.nextInt(), scan.nextInt(), scan.next());
-		M.countw = scan.nextInt();
-		for (int i = 0; i < M.countw; i++) {
-			M.setTotalScore(scan.nextInt());
-		}
-		
-		System.out.println("공연");
-		
-		Culture P = new Performance(scan.next(), scan.nextInt(), scan.nextInt(), scan.next());
-		P.countw = scan.nextInt();
-		for (int i = 0; i < P.countw; i++) {
-			P.setTotalScore(scan.nextInt());
-		}
+		Culture P = new Performance("지킬앤하이드", 9, 10, "뮤지컬");
+		P.setTotalScore(5);
+		P.setTotalScore(5);
+		P.setTotalScore(5);
+		P.setTotalScore(5);
 		
 		M.getInformation();
 		System.out.println("======================");

@@ -2,6 +2,11 @@ package homework._0727_2;
 
 public class ObesityInfo extends StandardWeightInfo{
 	
+	public ObesityInfo(String name, double height, double weight) {
+		super(name, height, weight);
+	}
+	
+	
 	public double getObesity() {
 		double O = 0;
 		O = (getWeight() - getStandardWeight())/getStandardWeight()*100;

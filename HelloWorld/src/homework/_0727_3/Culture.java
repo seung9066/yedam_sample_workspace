@@ -18,7 +18,7 @@ public abstract class Culture {
 	}
 
 	public void setTotalScore(int score) {
-		countw += 0;
+		countw ++;
 		TotalScore += score;
 
 	}
