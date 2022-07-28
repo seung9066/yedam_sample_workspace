@@ -1,13 +1,13 @@
 package homework._0727_3;
 
-public class Movie extends Culture {
+public class Performance extends Culture {
 	private String ge;
 
-	public Movie() {
-
+	public Performance() {
+		
 	}
 
-	public Movie(String title, int countd, int counta, String ge) {
+	public Performance(String title, int countd, int counta, String ge) {
 		super.title = title;
 		super.countd = countd;
 		super.counta = counta;
@@ -17,11 +17,10 @@ public class Movie extends Culture {
 	@Override
 	public void getInformation() {
 		// TODO Auto-generated method stub
-		System.out.println("영화제목 : " + getTitle());
+		System.out.println("공연제목 : " + getTitle());
 		System.out.println("감독 : " + getCountd());
 		System.out.println("배우 : " + getCounta());
-		System.out.println("영화총점 : " + getTotalScore());
-		System.out.println("영화평점 : " + getGrade());
+		System.out.println("공연총점 : " + getTotalScore());
+		System.out.println("공연평점 : " + getGrade());
 	}
-
 }

@@ -7,6 +7,10 @@ public abstract class Culture {
 	int countw;
 	int TotalScore;
 
+	public Culture() {
+
+	}
+
 	public Culture(String title, int countd, int counta) {
 		this.title = title;
 		this.countd = countd;
@@ -14,6 +18,7 @@ public abstract class Culture {
 	}
 
 	public void setTotalScore(int score) {
+		countw += 0;
 		TotalScore += score;
 
 	}
@@ -25,6 +30,25 @@ public abstract class Culture {
 		return star;
 	}
 
-	public abstract void getInformation();
+	public String getTitle() {
+		return title;
+	}
 
+	public int getCountd() {
+		return countd;
+	}
+
+	public int getCounta() {
+		return counta;
+	}
+
+	public int getCountw() {
+		return countw;
+	}
+
+	public int getTotalScore() {
+		return TotalScore;
+	}
+	
+	public abstract void getInformation();
 }
