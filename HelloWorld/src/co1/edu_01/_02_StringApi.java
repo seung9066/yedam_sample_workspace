@@ -1,6 +1,6 @@
 package co1.edu_01;
 
-public class StringApi {
+public class _02_StringApi {
 	public static void main(String[] args) {
 		
 		// 100번지
@@ -17,8 +17,9 @@ public class StringApi {
 		// 100번지
 		sb.append("bb");
 		
-		
 		// == 주소값 비교
 		// .equals 데이터 비교
+		
+		
 	}
 }
