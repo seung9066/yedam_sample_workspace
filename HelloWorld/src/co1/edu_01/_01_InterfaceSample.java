@@ -1,4 +1,4 @@
-package co1.ecu_01;
+package co1.edu_01;
 
 public interface _01_InterfaceSample {
 
