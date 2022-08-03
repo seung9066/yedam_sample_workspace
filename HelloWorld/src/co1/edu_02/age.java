@@ -11,7 +11,7 @@ public class age {
 		System.out.println(b);
 		int age1 = Integer.parseInt(b);
 		int age = 0;
-		if (age1 > a.charAt(0)) {
+		if (age1 > 22) {
 			age = 2022 - Integer.parseInt(b) - 1900;
 		} else {
 			age = 2022 - Integer.parseInt(b) - 2000;
