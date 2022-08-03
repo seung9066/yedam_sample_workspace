@@ -88,7 +88,4 @@ public class StringApp {
 
 	}
 
-	public void word() {
-
-	}
 }
