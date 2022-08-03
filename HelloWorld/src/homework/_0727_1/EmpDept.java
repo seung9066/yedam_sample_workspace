@@ -18,12 +18,13 @@ public class EmpDept extends Employee{
 
 	@Override
 	public void getInformation() {
-		System.out.println("이름 : " + getName() + "\n연봉 : " + getSal() + "\n부서 : " + depn);
+		System.out.println("이름 : " + name + "\n연봉 : " + sal + "\n부서 : " + depn);
 	}
 
 	@Override
 	public void pirnt() {
-		System.out.println("수퍼클래스\n서브클래스");
+		super.pirnt();
+		System.out.println("서브클래스");
 	}
 
 	

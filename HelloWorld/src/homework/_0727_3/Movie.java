@@ -3,14 +3,8 @@ package homework._0727_3;
 public class Movie extends Culture {
 	private String ge;
 
-	public Movie() {
-
-	}
-
 	public Movie(String title, int countd, int counta, String ge) {
-		super.title = title;
-		super.countd = countd;
-		super.counta = counta;
+		super(title, countd, counta);
 		this.ge = ge;
 	}
 

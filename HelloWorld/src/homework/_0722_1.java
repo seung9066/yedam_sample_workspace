@@ -33,7 +33,7 @@ public class _0722_1 {
         }
         System.out.println();
 
-        int max = 0;
+        int max = arr1[0];
         int min = arr1[0];
         for (int i = 0; i < arr1.length; i++) {
             if (max < arr1[i]) {

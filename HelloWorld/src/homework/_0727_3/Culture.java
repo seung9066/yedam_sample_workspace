@@ -1,15 +1,11 @@
 package homework._0727_3;
 
 public abstract class Culture {
-	public String title;
-	public int countd;
-	public int counta;
+	protected String title;
+	protected int countd;
+	protected int counta;
 	int countw;
 	int TotalScore;
-
-	public Culture() {
-
-	}
 
 	public Culture(String title, int countd, int counta) {
 		this.title = title;

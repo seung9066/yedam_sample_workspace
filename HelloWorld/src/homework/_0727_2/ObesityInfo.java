@@ -16,7 +16,7 @@ public class ObesityInfo extends StandardWeightInfo{
 	@Override
 	public void getInformation() {
 		
-			if (getObesity() > 0) {
+			if (getObesity() >= 25) {
 				System.out.printf("%s님의 신장 %.0f, 몸무게 %.0f 비만입니다.", getName(), getHeight(), getWeight());
 			} else if (getObesity() < 0) {
 				System.out.printf("%s님의 신장 %.0f, 몸무게 %.0f 저체중입니다.", getName(), getHeight(),getWeight());
