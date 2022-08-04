@@ -1,4 +1,4 @@
-package co1.edu_02;
+package co1.prac_01;
 
 import java.util.Scanner;
 

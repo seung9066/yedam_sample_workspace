@@ -1,4 +1,4 @@
-package co1.edu_02;
+package co1.prac_01;
 
 import java.util.Scanner;
 
@@ -8,7 +8,8 @@ public class lotto {
 		int[][] lotto = null;
 		boolean run = true;
 		int money = 0;
-
+		
+		// CRUD C : create, R : read, U : update, D : delete
 		while (run) {
 			System.out.println("1. 로또 생성 | 2. 로또 조회 | 3. 종료");
 			int selectn = Integer.parseInt(scan.nextLine());
@@ -20,6 +21,14 @@ public class lotto {
 				for (int i = 0; i < money / 1000; i++) {
 					for (int j = 0; j < 6; j++) {
 						lotto[i][j] = (int) (Math.random() * 45) + 1;
+
+						//						for (int k = 0; k < i; k++) {
+//							if (lotto[i][k] == lotto[i][j]) {
+//								j -= 1;
+//								break;
+//							}
+//						}
+						
 						for (int k = 1; k < 6; k++) {
 							if (lotto[i][j] == lotto[i][k]) {
 								lotto[i][j] = (int) (Math.random() * 45) + 1;
