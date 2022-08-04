@@ -14,6 +14,7 @@ public class ManageMent extends DAO {
 	
 	// 한건 입력
 	private void insertInfo() {
+		int result = 0;
 		try {
 			// 1. db 연결
 			conn();
@@ -25,13 +26,18 @@ public class ManageMent extends DAO {
 			pstmt.setString(1, "F");
 			pstmt.setString(2, "1234");
 			pstmt.setString(3, "김씨");
-			rs = pstmt.executeQuery();
+			// DML (insert, update, delete) -> executeUpdate() / select -> executeQuery()
+			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			disconn();
 		}
-
+		if(result == 1) {
+			System.out.println("정상 입력되었습니다.");
+		} else {
+			System.out.println("입력 실패");
+		}
 	}
 	
 	// 한건 조회
