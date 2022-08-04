@@ -5,7 +5,7 @@ import java.util.List;
 
 import co1.com.common.DAO;
 
-public class ManageMent extends DAO{
+public class ManageMent extends DAO {
 	public ManageMent() {
 		showInfo();
 	}
@@ -17,13 +17,13 @@ public class ManageMent extends DAO{
 
 		try {
 			// 1. conn() 메소드로 db 연결
-			conn(); 
+			conn();
 			// 2. query문 작성
-			String sql = "select * from member"; 
+			String sql = "select * from member";
 			// 3. 연결된 db에 query문 보낼 수 있는 창구 생성
-			stmt = conn.createStatement(); 
+			stmt = conn.createStatement();
 			// 4. 3번에서 만든 창구로 query문 보냄
-			rs = stmt.executeQuery(sql); 
+			rs = stmt.executeQuery(sql);
 			while (rs.next()) { // rs(query문 저장)가 다음 데이터도 있는지, row 한개한개 읽어오기 위해
 				mem = new Member();
 				mem.setId(rs.getString("id")); // 컬럼명과 일치하는 걸 넣겠다.
