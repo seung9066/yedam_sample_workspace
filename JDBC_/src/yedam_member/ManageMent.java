@@ -7,9 +7,59 @@ import common.DAO;
 
 public class ManageMent extends DAO {
 	public ManageMent() {
+		// 전체 조회
 		showInfo();
+		// 한건 조회
 		getMember();
+		// 한건 입력
 		insertInfo();
+		// 수정
+		updateInfo();
+		// 삭제
+		deleteInfo();
+	}
+	
+	// 삭제
+	private void deleteInfo() {
+		int result = 0;
+		try {
+			conn();
+			String sql = "delete from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "F");
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+	
+		} finally {
+			disconn();
+		}
+		if (result == 1) {
+			System.out.println(result + "건 삭제 완료");
+		} else {
+			System.out.println("삭제 실패");
+		}
+	}
+	
+	// 수정
+	private void updateInfo() {
+		int result = 0;
+		try {
+			conn();
+			String sql = "update member set pw = ? where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "1111");
+			pstmt.setString(2, "D");
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		if(result == 1) {
+			System.out.println(result + "건이 변경되었습니다.");
+		} else {
+			System.out.println("변경 실패");
+		}
 	}
 	
 	// 한건 입력
@@ -49,7 +99,7 @@ public class ManageMent extends DAO {
 			// 2. query문 작성
 			String sql = "select * from member where id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "A"); // 1번째 물음표에 A를 넣어라
+			pstmt.setString(1, "D"); // 1번째 물음표에 A를 넣어라
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				member = new Member();

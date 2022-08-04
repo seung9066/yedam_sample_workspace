@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DAO {
+	// 싱글톤
+	
+	
 	// DAO = Data Access Object(데이터 접근 객체)
 
 	// java <-> DB 연결할 때 쓰는 객체
