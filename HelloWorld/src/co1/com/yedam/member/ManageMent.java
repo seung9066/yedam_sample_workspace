@@ -36,6 +36,8 @@ public class ManageMent extends DAO {
 		} finally { // try catch 상관 없이 할거
 			disconn(); // 혹시나 인터넷이 끊긴다는 등의 사태 방지
 		}
-
+		for (Member member : list) {
+			System.out.println(member.toString());
+		}
 	}
 }
