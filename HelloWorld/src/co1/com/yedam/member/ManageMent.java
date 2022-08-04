@@ -8,8 +8,33 @@ import co1.com.common.DAO;
 public class ManageMent extends DAO {
 	public ManageMent() {
 		showInfo();
+		getMember();
 	}
-
+	
+	// 한건 조회
+	private void getMember() {
+		Member member = null;
+		try {
+			// 1. db 연결
+			conn();
+			// 2. query문 작성
+			String sql = "select * from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "A"); // 1번째 물음표에 A를 넣어라
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				member = new Member();
+				member.setId(rs.getString("id"));
+				member.setPw(rs.getString("pw"));
+				member.setName(rs.getString("name"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+	}
+	
 	// 전체 조회
 	private void showInfo() {
 		List<Member> list = new ArrayList<>();
