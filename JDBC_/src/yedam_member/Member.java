@@ -1,4 +1,4 @@
-package co1.com.yedam.member;
+package yedam_member;
 
 // DTO(구BEANS) = Data Transfer Object (데이터 주고받고 객체)
 public class Member {

@@ -1,4 +1,4 @@
-package co1.com.yedam.member;
+package yedam_member;
 
 public class app {
 	public static void main(String[] args) {

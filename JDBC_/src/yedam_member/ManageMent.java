@@ -1,9 +1,9 @@
-package co1.com.yedam.member;
+package yedam_member;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import co1.com.common.DAO;
+import common.DAO;
 
 public class ManageMent extends DAO {
 	public ManageMent() {

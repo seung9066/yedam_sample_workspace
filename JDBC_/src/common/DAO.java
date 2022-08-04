@@ -1,4 +1,4 @@
-package co1.com.common;
+package common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
