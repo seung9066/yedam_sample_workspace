@@ -30,5 +30,32 @@ public class MemberService {
 		if (memberInfo != null)
 			memberInfo = null;
 	}
-
+	
+	// 고객 등록
+	public void registerCustomer() {
+		Member member = new Member();
+		System.out.print("고객 ID >> ");
+		String id = sc.nextLine();
+		
+		System.out.print("고객 PW >> ");
+		String pw = sc.nextLine();
+		
+		System.out.print("고객 이름 >> ");
+		String name = sc.nextLine();
+		
+		member.setMemberId(id);
+		member.setMemberPw(pw);
+		member.setMemberName(name);
+		member.setRole("0");
+		
+		int result = MemberManage.getInstance().registCustomer(member);
+		if(result ==1 ) {
+			System.out.println("등록 완료");
+		} else {
+			System.out.println("등록 실패");
+		}
+	}
+	
+	
+	
 }

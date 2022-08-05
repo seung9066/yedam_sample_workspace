@@ -5,14 +5,13 @@ import java.util.Scanner;
 import com.yedam03_bank.member.MemberService;
 
 public class Application {
-	
+
 	Scanner sc = new Scanner(System.in);
-	
+
 	MemberService ms = new MemberService();
-	
+
 	int menuNo = 0;
-	
-	
+
 	public Application() {
 		run();
 	}
@@ -23,13 +22,14 @@ public class Application {
 		switch (menuNo) {
 		case 1: // 로그인
 			ms.doLogin();
-			System.out.println(MemberService.memberInfo.getMemberName());
+			if (MemberService.memberInfo != null) {
+				new ManageMent();
+			}
 			break;
 		case 9:
-			
+
 			break;
 		}
 	}
-	
-	
+
 }
