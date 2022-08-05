@@ -107,7 +107,7 @@ public class StudentManage extends DAO {
 		return result;
 	}
 	
-	public StudentDTO getStudeng(int id) {
+	public StudentDTO getStudent(int id) {
 		StudentDTO std = null;
 		try {
 			conn();

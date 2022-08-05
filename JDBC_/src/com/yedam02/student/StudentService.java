@@ -61,6 +61,14 @@ public class StudentService {
 		
 	}
 	
+	public StudentDTO getStudent() {
+		System.out.print("ID >> ");
+		int id = Integer.parseInt(sc.nextLine());
+		
+		return StudentManage.getInstance().getStudent(id);
+		
+	}
+	
 	public void checkResult(int value) {
 		if (value == 1) {
 			System.out.println("성공");

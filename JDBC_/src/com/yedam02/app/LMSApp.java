@@ -20,7 +20,7 @@ public class LMSApp {
 	private void run() {
 		while (true) {
 			menuNo();
-			if (MD == null) { // 로그인 X 일 떄
+			if (MD == null) { // 로그인 정보 X 일 떄
 				if (menu == 1) {
 					MemberDTO member = new MemberDTO();
 
