@@ -4,16 +4,13 @@ import com.yedam02.common.DAO;
 
 public class StudentManage extends DAO {
 
-	private static StudentManage sm = null;
+	private static StudentManage sm = new StudentManage();
 
 	private StudentManage() {
 
 	}
 
 	public static StudentManage getInstance() {
-		if (sm == null) {
-			sm = new StudentManage();
-		}
 		return sm;
 	}
 
@@ -91,5 +88,48 @@ public class StudentManage extends DAO {
 		}
 		return result;
 	}
-
+	
+	public int insertTel(StudentDTO std) { // 전화번호변경
+		int result = 0;
+		try {
+			conn();
+			String sql = "update student set student_tel = ? where student_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, std.getStudentTel());
+			pstmt.setInt(2, std.getStudentId());
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return result;
+	}
+	
+	public StudentDTO getStudeng(int id) {
+		StudentDTO std = null;
+		try {
+			conn();
+			String sql = "select * from student where student_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				std = new StudentDTO();
+				std.setStudentId(rs.getInt("student_id"));
+				std.setStudentName(rs.getString("student_name"));
+				std.setStudentTel(rs.getString("student_tel"));
+				std.setStudentAddr(rs.getString("student_addr"));
+				std.setStudentClass(rs.getString("student_class"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return std;
+	}
+	
 }
