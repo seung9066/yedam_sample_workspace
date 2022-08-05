@@ -65,9 +65,5 @@ public class StudentDTO {
 				+ ", studentAddr=" + studentAddr + ", studentTel=" + studentTel+ "]";
 	}
 	
-	
-	
-	
-	
-	
+			
 }
