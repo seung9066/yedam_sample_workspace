@@ -18,7 +18,7 @@ public class StudentManage extends DAO {
 		int result = 0;
 		try {
 			conn();
-			String spl = "insert into student(student_id, student_name, student_class, student_addr, student_tell) values(?,?,?,?,?)";
+			String spl = "insert into student(student_id, student_name, student_class, student_addr, student_tel) values(?,?,?,?,?)";
 			pstmt = conn.prepareStatement(spl);
 			pstmt.setInt(1, std.getStudentId());
 			pstmt.setString(2, std.getStudentName());

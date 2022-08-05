@@ -59,6 +59,13 @@ public class StudentDTO {
 	public void setStudentMath(int studentMath) {
 		this.studentMath = studentMath;
 	}
+	@Override
+	public String toString() {
+		return "StudentDTO [studentId=" + studentId + ", studentName=" + studentName + ", studentClass=" + studentClass
+				+ ", studentAddr=" + studentAddr + ", studentTel=" + studentTel+ "]";
+	}
+	
+	
 	
 	
 	

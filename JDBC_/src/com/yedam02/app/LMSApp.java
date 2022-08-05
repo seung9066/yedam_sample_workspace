@@ -21,7 +21,8 @@ public class LMSApp {
 	}
 
 	private void run() {
-		while (true) {
+		boolean run = true;
+		while (run) {
 			menuNo();
 			if (MD == null) { // 로그인 정보 X 일 떄
 				if (menu == 1) {
@@ -39,7 +40,7 @@ public class LMSApp {
 
 				} else if (menu == 9) {
 					System.out.println("프로그램 종료");
-					break;
+					run = false;
 				}
 			} else { // 로그인 O 일 때 -> 프로그램 진입
 				switch (menu) {
@@ -88,12 +89,15 @@ public class LMSApp {
 					System.out.print("ID >> ");
 					int id2 = Integer.parseInt(sc.nextLine());
 					std.setStudentId(id2);
-					ss.getStudent(std);
+					if (ss.getStudent(std) != null) {
+						System.out.println(ss.getStudent(std).toString());
+					} else {
+						System.out.println("정보가 없습니다.");
+					}
 					break;
 				case 9:
-					
+					run = false;
 					break;
-
 				}
 			}
 		}
