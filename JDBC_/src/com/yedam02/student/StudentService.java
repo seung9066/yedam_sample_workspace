@@ -17,14 +17,15 @@ public class StudentService {
 
 	public void insertSubject(StudentDTO std) {
 		int menu = 0;
+
+		System.out.println("=======================================");
+		System.out.println("               성적 입력");
+		System.out.println("=======================================");
 		while (menu != 9) {
-			System.out.println("=======================================");
-			System.out.println("               성적 입력");
-			System.out.println("=======================================");
 			System.out.println("1. 국어 | 2. 영어 | 3. 수학 | 9. 종료");
 			System.out.print("입력 >> ");
 			menu = Integer.parseInt(sc.nextLine());
-			
+
 			switch (menu) {
 			case 1:
 				System.out.print("입력 >> ");
