@@ -1,4 +1,4 @@
-package yedam_member_singletone;
+package com.yedam01.member_singletone;
 
 import java.util.List;
 import java.util.Scanner;

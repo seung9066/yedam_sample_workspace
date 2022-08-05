@@ -1,4 +1,4 @@
-package yedam_member_singletone;
+package com.yedam01.member;
 
 // DTO(구BEANS) = Data Transfer Object (데이터 주고받고 객체)
 public class Member {

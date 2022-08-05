@@ -1,4 +1,4 @@
-package common;
+package com.yedam01.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class DAO {
+public class DAO1 {
 	
 	// DAO = Data Access Object(데이터 접근 객체)
 

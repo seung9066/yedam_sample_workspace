@@ -1,9 +1,9 @@
-package yedam_member_singletone;
+package com.yedam01.member_singletone;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import common.DAO;
+import com.yedam01.common.DAO;
 
 public class MemberManagement extends DAO {
 	
