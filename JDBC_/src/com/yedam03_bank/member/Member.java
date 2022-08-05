@@ -5,7 +5,7 @@ public class Member {
 	private String memberPw; // 회원비밀번호
 	private String memberName; // 회원이름
 	private String accountId; // 계좌번호
-	private char role; // 권한 : 은행원 1, 사용자 0
+	private String role; // 권한 : 은행원 1, 사용자 0
 	
 	
 	public String getMemberId() {
@@ -32,10 +32,10 @@ public class Member {
 	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
-	public char getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(char role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	
