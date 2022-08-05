@@ -89,7 +89,7 @@ public class StudentManage extends DAO {
 		return result;
 	}
 	
-	public int insertTel(StudentDTO std) { // 전화번호변경
+	public int updateTel(StudentDTO std) { // 전화번호변경
 		int result = 0;
 		try {
 			conn();
