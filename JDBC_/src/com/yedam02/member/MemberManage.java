@@ -23,7 +23,7 @@ public class MemberManage extends DAO{
 		MemberDTO mem = null;
 		try {
 			conn();
-			String sql = "select * from member where id = ? and pw = ?";
+			String sql = "select * from member1 where member_id = ? and member_pw = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMemberId());
 			pstmt.setString(2, member.getMemberPw());
@@ -31,9 +31,9 @@ public class MemberManage extends DAO{
 			if (rs.next()) {
 				mem = new MemberDTO();
 				mem.setMemberId(rs.getNString("member_id"));
-				mem.setMemberId(rs.getNString("member_pw"));
-				mem.setMemberId(rs.getNString("member_name"));
-				mem.setMemberId(rs.getNString("member_belong"));
+				mem.setMemberPw(rs.getNString("member_pw"));
+				mem.setMemberName(rs.getNString("member_name"));
+				mem.setMemberBelong(rs.getNString("member_belong"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
