@@ -61,11 +61,9 @@ public class StudentService {
 		
 	}
 	
-	public StudentDTO getStudent() {
-		System.out.print("ID >> ");
-		int id = Integer.parseInt(sc.nextLine());
+	public StudentDTO getStudent(StudentDTO std) {
 		
-		return StudentManage.getInstance().getStudent(id);
+		return StudentManage.getInstance().getStudent(std.getStudentId());
 		
 	}
 	
