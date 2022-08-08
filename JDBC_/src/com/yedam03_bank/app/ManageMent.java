@@ -45,13 +45,19 @@ public class ManageMent {
 				}
 			} else if (MemberService.memberInfo.getRole().equals("0")) {
 				if (menu == 1) {
-
+					as.getAccount();
 				} else if (menu == 2) {
 					as.money();
 				} else if (menu == 3) {
 					as.transfer();
 				} else if (menu == 4) {
-
+					System.out.println("1. 대출 상환 | 2. 대출 조회");
+					int menu = Integer.parseInt(sc.nextLine());
+					if (menu == 1) {
+						ls.updateMoney();
+					} else if (menu ==2) {
+						ls.loanInfo();
+					}
 				} else if (menu == 9) {
 					System.out.println("종료");
 					break;
