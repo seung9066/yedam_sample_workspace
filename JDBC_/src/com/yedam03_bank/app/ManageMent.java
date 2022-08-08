@@ -3,6 +3,7 @@ package com.yedam03_bank.app;
 import java.util.Scanner;
 
 import com.yedam03_bank.account.AccountService;
+import com.yedam03_bank.loan.LoanService;
 import com.yedam03_bank.member.MemberService;
 
 public class ManageMent {
@@ -11,7 +12,8 @@ public class ManageMent {
 	int menu = 0;
 	MemberService ms = new MemberService();
 	AccountService as = new AccountService();
-
+	LoanService ls = new LoanService();
+	
 	public ManageMent() {
 		bankjob();
 	}
@@ -31,7 +33,12 @@ public class ManageMent {
 				} else if (menu == 5) {
 					as.deleteAccount();
 				} else if (menu == 6) {
-					
+					int menu = Integer.parseInt(sc.nextLine());
+					if(menu == 1) {
+						ls.insertLoan();
+					} else if (menu == 2) {
+						ls.updateLoan();
+					}
 				} else if (menu == 9) {
 					System.out.println("종료");
 					break;
