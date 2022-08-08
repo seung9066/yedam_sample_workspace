@@ -31,7 +31,7 @@ public class ManageMent {
 				} else if (menu == 5) {
 					as.deleteAccount();
 				} else if (menu == 6) {
-
+					
 				} else if (menu == 9) {
 					System.out.println("종료");
 					break;
