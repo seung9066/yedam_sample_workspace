@@ -33,6 +33,7 @@ public class ManageMent {
 				} else if (menu == 5) {
 					as.deleteAccount();
 				} else if (menu == 6) {
+					System.out.println("1. 대출 승인 | 2. 대출 정보 변경");
 					int menu = Integer.parseInt(sc.nextLine());
 					if(menu == 1) {
 						ls.insertLoan();

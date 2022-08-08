@@ -1,8 +1,6 @@
 package com.yedam03_bank.loan;
 
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,13 +21,13 @@ public class LoanService {
 		String state = sc.nextLine();
 		System.out.print("대출 날짜 >> ");
 		String startDay = sc.nextLine();
-		Date date = null;
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-		try {
-			date = (Date)dateFormat.parse(startDay);
-		} catch (Exception e) {
-			e.printStackTrace();// TODO: handle exception
-		}
+		Date date = Date.valueOf(startDay);
+//		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+//		try {
+//			date = (Date)dateFormat.parse(startDay);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		System.out.print("대출 금액 >> ");
 		int money = Integer.parseInt(sc.nextLine());
 
@@ -78,7 +76,7 @@ public class LoanService {
 		loan.setLoanId(id);
 		loan.setLoanMoney(money);
 		
-		int result = LoanManage.getInstance().insertLoan(loan);
+		int result = LoanManage.getInstance().updateMoney(loan);
 		if (result == 1) {
 			System.out.println("상환 완료");
 		} else {

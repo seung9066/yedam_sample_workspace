@@ -43,7 +43,7 @@ public class MemberManage extends DAO {
 		int result = 0;
 		try {
 			conn();
-			String sql = "insert into bankmember (member_id, member_pw, member_name, member_role) values(?,?,?,?)";
+			String sql = "insert into bankmember (member_id, member_pw, member_name, role) values(?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMemberId());
 			pstmt.setString(2, member.getMemberPw());

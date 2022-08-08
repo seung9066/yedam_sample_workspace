@@ -93,7 +93,7 @@ public class AccountService {
 	
 	public void getAccount() {
 		List<Account> list = 
-				AccountManage.getInstance().getAccountList(MemberService.memberInfo.getMemberId());
+				AccountManage.getInstance().getAccountList(MemberService.memberInfo.getAccountId());
 		System.out.println(MemberService.memberInfo.getMemberName() + "님의 계좌 정보");
 		for (Account account : list) {
 			System.out.println("계좌 ID : " + account.getAccountId() + " | 잔고 : " + account.getBalance() + " | 생성일 : " + account.getCredate());

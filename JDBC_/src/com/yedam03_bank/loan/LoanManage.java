@@ -27,8 +27,8 @@ public class LoanManage extends DAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, loan.getLoanId());
 			pstmt.setString(2, loan.getMemberId());
-			pstmt.setDate(3, loan.getLoanDate());
-			pstmt.setString(4, loan.getState());
+			pstmt.setDate(4, loan.getLoanDate());
+			pstmt.setString(3, loan.getState());
 			pstmt.setInt(5, loan.getLoanMoney());
 			
 			result = pstmt.executeUpdate();
