@@ -1,9 +1,10 @@
 package com.yedam03_bank.loan;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
-
-import com.yedam02.member.MemberService;
 
 public class LoanService {
 	Scanner sc = new Scanner(System.in);
@@ -20,13 +21,22 @@ public class LoanService {
 		String mid = sc.nextLine();
 		System.out.print("대출 상태 >> ");
 		String state = sc.nextLine();
-//		System.out.print("대출 날짜 >> ");
+		System.out.print("대출 날짜 >> ");
+		String startDay = sc.nextLine();
+		Date date = null;
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+		try {
+			date = (Date)dateFormat.parse(startDay);
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		}
 		System.out.print("대출 금액 >> ");
 		int money = Integer.parseInt(sc.nextLine());
 
 		loan.setLoanId(id);
 		loan.setMemberId(mid);
 		loan.setState(state);
+		loan.setLoanDate(date);
 		loan.setLoanMoney(money);
 
 		int result = LoanManage.getInstance().insertLoan(loan);
