@@ -17,8 +17,8 @@ public class ManageMent {
 	}
 
 	private void bankjob() {
-		menuInfo();
 		while (true) {
+			menuInfo();
 			if (MemberService.memberInfo.getRole().equals("1")) {
 				if (menu == 1) {
 					ms.registerCustomer();
