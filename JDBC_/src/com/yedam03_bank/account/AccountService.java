@@ -16,6 +16,13 @@ public class AccountService {
 		System.out.print("고객 ID >> ");
 		String customId = sc.nextLine();
 		account.setMemberId(customId);
+		
+		int result = AccountManage.getInstance().insertAccount(account);
+		if(result == 1) {
+			System.out.println("계좌 등록 완료");
+		} else {
+			System.out.println("등록 실패");
+		}
 	}
 
 	public void money() {

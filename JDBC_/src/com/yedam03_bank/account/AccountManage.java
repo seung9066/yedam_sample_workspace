@@ -103,6 +103,16 @@ public class AccountManage extends DAO {
 	public void transferMoney(String toAccount, String fromAccount, int balance) {
 		int result = 0;
 		try {
+//			conn();
+//
+//			// 현재 잔고 가져오기
+//			String sql2 = "select balance from account where account_id = ?";
+//			pstmt = conn.prepareStatement(sql2);
+//			pstmt.setString(1, fromAccount);
+//			rs = pstmt.executeQuery();
+//			
+//			if (rs.next() && )
+			
 			conn();
 			String sql1 = "update account set balance = balance - ? where account_id = ?";
 			pstmt = conn.prepareStatement(sql1);
