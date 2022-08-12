@@ -28,8 +28,9 @@ public class Application {
 			case 1:
 				as.login();
 				if (AccountService.accountinfo != null) {
+					selectno1 = 0;
 					while (selectno1 != 9) {
-						System.out.println("1. 글작성 | 2. 수정 | 3. 조회 | 4. 삭제 | 9. 종료");
+						System.out.println("1. 글작성 | 2. 수정 | 3. 조회 | 4. 삭제 | 9. 로그아웃");
 						selectno1 = Integer.parseInt(sc.nextLine());
 						switch (selectno1) {
 						case 1:
@@ -45,6 +46,7 @@ public class Application {
 							ws.delete();
 							break;
 						case 9:
+							as.logout();
 							break;
 						}
 					}

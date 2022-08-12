@@ -1,6 +1,7 @@
 package account;
 
 import common.DAO;
+import workout.Workout;
 
 public class AccountDAO extends DAO {
 	public static AccountDAO accountDao = null;
@@ -113,5 +114,21 @@ public class AccountDAO extends DAO {
 		}
 		return result;
 	}
-
+	
+	// 탈퇴시 게시글 삭제
+	public int deleteAcCt(String id) {
+		int result = 0;
+		try {
+			conn();
+			String sql = "delete from workout where name = (select name from account where id = ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		} finally {
+			disconn();
+		}
+		return result;
+	}
 }

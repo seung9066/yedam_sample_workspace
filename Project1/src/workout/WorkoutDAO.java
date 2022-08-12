@@ -75,7 +75,7 @@ public class WorkoutDAO extends DAO {
 		try {
 			conn();
 			if (sports.equals("")) {
-				String sql = "update workout set memo = ? where name = ?";
+				String sql = "update workout set memo = ? where name = ? and date_ = to_char(sysdate, 'YYYY-MM-DD')";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, memo);
 				pstmt.setString(2, AccountService.accountinfo.getName());
@@ -87,7 +87,7 @@ public class WorkoutDAO extends DAO {
 					System.out.println("수정 실패");
 				}
 			} else if (memo.equals("")) {
-				String sql = "update workout set sports = ? where name = ?";
+				String sql = "update workout set sports = ? where name = ? and date_ = to_char(sysdate, 'YYYY-MM-DD')";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, sports);
 				pstmt.setString(2, AccountService.accountinfo.getName());
@@ -99,7 +99,7 @@ public class WorkoutDAO extends DAO {
 					System.out.println("수정 실패");
 				}
 			} else {
-				String sql = "update workout set sports = ?, memo = ? where name = ?";
+				String sql = "update workout set sports = ?, memo = ? where name = ? and date_ = to_char(sysdate, 'YYYY-MM-DD')";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, sports);
 				pstmt.setString(2, memo);

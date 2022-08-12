@@ -60,7 +60,7 @@ public class AccountService {
 				System.out.println("로그인 실패");
 			}
 		} else {
-			
+
 		}
 	}
 
@@ -90,11 +90,25 @@ public class AccountService {
 			System.out.println("비밀번호가 일치하지 않습니다");
 		} else {
 			if (result1 == 1) {
-				int result = AccountDAO.getInstance().deleteAccount(account);
-				if (result == 1) {
-					System.out.println("삭제 완료");
+				System.out.println("회원님이 작성하신 게시글들도 삭제하시겠습니까?");
+				System.out.println("1. 삭제 | 2. 아니오");
+				int select = Integer.parseInt(sc.nextLine());
+				if (select == 1) {
+					int result2 = AccountDAO.getInstance().deleteAcCt(id);
+					int result = AccountDAO.getInstance().deleteAccount(account);
+					if (result2 == 1 && result == 1) {
+						System.out.println("삭제 완료");
+					} else {
+						System.out.println("삭제 실패");
+					}
 				} else {
-					System.out.println("잘못된 정보입니다");
+					int result = AccountDAO.getInstance().deleteAccount(account);
+					if (result == 1) {
+						System.out.println("삭제 완료");
+
+					} else {
+						System.out.println("잘못된 정보입니다");
+					}
 				}
 			} else {
 				System.out.println("존재하지 않는 회원입니다");
