@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <hr style="margin-top: 2%;">
+    <hr style="margin-top: 2%;" id="top">
     <button onclick="location.href='../index.html'" style="margin-left: 1%;">메인</button>
     <button onclick="location.href='first.html'" style="margin-left: 1%;">첫번째</button>
     <button onclick="location.href='second.html'" style="margin-left: 1%;">두번째</button>
@@ -44,9 +44,17 @@
     <button onclick="location.href='text_result.html'" style="margin-left: 1%;">텍스트1</button>
     <button onclick="location.href='table.html'" style="margin-left: 1%;">테이블1</button>
     <button onclick="location.href='table1.html'" style="margin-left: 1%;">테이블2</button>
+    <button onclick="location.href='../profile/myprofile.html'" style="margin-left: 1%;">자소서</button>
     <hr>
 
     <div>
+        <br>
+        <a href="https://developer.mozilla.org/ko/docs/Web/HTML#key_resources" target="_blank">mdn의 중요한 자료</a>
+        <br>
+        <a href="https://developer.mozilla.org/ko/docs/Web/HTML#beginners_tutorials" target="_blank">mdn의 초보자 자습서</a>
+        <br>
+        <a href="#lorem">lorem</a>
+        <hr>
         <br>
         <table>
             <tr>
@@ -184,17 +192,28 @@
                 <th style="width: 30%">바로가기</th>
                 <td><a target="_blank" href="http://www.naver.com">네이버</a></td>
                 <td style="width: 20%"><a href="http://www.naver.com"><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL8AAAC/CAMAAACYNP00AAAAYFBMVEU6s13///8/tWEwsljS69jJ59EssFR7yI8hrk6f1ayj1q82slru9/FqwIAcrUuw27qp27bD5cxjwHz1+/fY7d1RuW6HzJhzxopIt2fn9OqR0KFZvXW74cTe8eMAqkKBy5XxP+0fAAAEl0lEQVR4nO2Y2xqqKhRGVZQoPGRqHip7/7fcYHJSXDttffvbF/+4yhnCACcHDQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA/x+u+GPIG/YVcwrxFcEq/Ks+0fBViG8U/MTXdy5ixINbk4QyRg/3gr8TRcE+ITqoSHynuiBtS10yuXG7WFJmc/u8eergld2sOxRPMfgPN1Q+L22Uk2P+5BxqhnwK5YWOXJguyEpTMCxEv+i70tdXVVtrylzGUxquSANOs1W0Sssm/9m/z+imP8l6u8FIDHj+0pd1Nyf20yhx5vPvvf7TGByaCrZ/mEwaXn96dhobmHwA5npOoMgYFznd5x+WR2aB4x8OW/68S1wN+bRzk0AD+TwkU6Ihe/3Dy4EUcv3TB/f7k1PltnUTwvlVX8bLzItZsNs/7fY/ANc/rPON/CkWbT1zudqY66nl3AifiN/fP39nBrYt+p1/eB59/rxbqohxFDebNektHgDp9OVLDKXlX7enmVbEjf+ZRM3ZPNlk/Nk/zKjHnw56/HTTzFkuY9E0M3XJ+WD5lyOdkXHLnwZ8HHQH4t/HXyyF49pfL5WpHq1YLHe8i3VRsXiwWl30meufkOhDF7j+slirV+a/4R9e1/5EJ3ocqcbSE3XuflPy0AP5lNll+aelonPzh3Kem/FP9i9Aa/80M8vK7J/rbek56nW0kBPgpseuzE36pNO5wzt/G7Lwb+5mYyz+hn+YmE3048+Zyfr8rn7WjXz4umwfma59tuMv/NPXqzfTtzrRf7H9o3+1+jH7Mz17xQmD6D/vMkda5Zi2jR7I83Sb39/JH5f4t/2riFc1fvypnpdxx0eTMZHsm77pelf97j/70F7/6sgByPK/ZNWyysnfjLHYtbiZC5XcrKnOp7g0pYJtf7LlH9/2Z4/jf82Xm+zsr8PVQCNuTm1i9RanefU8Kt37+Rhgrz+xotsY/2Tojug7/mP3WtQq/flDp0/Y13VtylRyu2SXpUo976L2+h81M1Hg9y/YsRcY25/RdpFB0t/svSvkEyfRMtrSlf/W/mtx4Oyz8g/Gq1up8OfRM9xCHhqC0T1Zh7UaSMs/ftwUne1fmnur9tADcP3tdyrlf/PMQoXcAshiOAePv0VLbf/ObF6v5kgHFv704WSQ9N9OH7W+Outu/1CroNe/cvwTbr0wxz++f12nxcbZj6W/8967oJbvwcTpYaGr/sa/s9e84sAUWPrzyE7nC7Ozo3jfJW/rJX069t+sLk6RHf72EVZ9APnFX8wuy+bCRuuzScOm7032d4WntCXWGCbmHfA7f2J2R3EG2b0H8KW/ddqRb9TW6piql7HG2hCmg76lYA3hd/5Oe322dwrwez3vjPXw6TwPnjp0z0/qd1xf1ODQiw7GbyLvKFSgbKxPiVkSr0huhDx0/VfhzyN9d/w67x3/IIg0qksmJCpf/e0U+ERNIOD+qt3yi7u9jXyN50uwFfF/KF4F/V+T15+fF5+l1+X2+wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+a/4BjsBIi+WKivEAAAAASUVORK5CYII="
-                        width="50px"></a></td>
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL8AAAC/CAMAAACYNP00AAAAYFBMVEU6s13///8/tWEwsljS69jJ59EssFR7yI8hrk6f1ayj1q82slru9/FqwIAcrUuw27qp27bD5cxjwHz1+/fY7d1RuW6HzJhzxopIt2fn9OqR0KFZvXW74cTe8eMAqkKBy5XxP+0fAAAEl0lEQVR4nO2Y2xqqKhRGVZQoPGRqHip7/7fcYHJSXDttffvbF/+4yhnCACcHDQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA/x+u+GPIG/YVcwrxFcEq/Ks+0fBViG8U/MTXdy5ixINbk4QyRg/3gr8TRcE+ITqoSHynuiBtS10yuXG7WFJmc/u8eergld2sOxRPMfgPN1Q+L22Uk2P+5BxqhnwK5YWOXJguyEpTMCxEv+i70tdXVVtrylzGUxquSANOs1W0Sssm/9m/z+imP8l6u8FIDHj+0pd1Nyf20yhx5vPvvf7TGByaCrZ/mEwaXn96dhobmHwA5npOoMgYFznd5x+WR2aB4x8OW/68S1wN+bRzk0AD+TwkU6Ihe/3Dy4EUcv3TB/f7k1PltnUTwvlVX8bLzItZsNs/7fY/ANc/rPON/CkWbT1zudqY66nl3AifiN/fP39nBrYt+p1/eB59/rxbqohxFDebNektHgDp9OVLDKXlX7enmVbEjf+ZRM3ZPNlk/Nk/zKjHnw56/HTTzFkuY9E0M3XJ+WD5lyOdkXHLnwZ8HHQH4t/HXyyF49pfL5WpHq1YLHe8i3VRsXiwWl30meufkOhDF7j+slirV+a/4R9e1/5EJ3ocqcbSE3XuflPy0AP5lNll+aelonPzh3Kem/FP9i9Aa/80M8vK7J/rbek56nW0kBPgpseuzE36pNO5wzt/G7Lwb+5mYyz+hn+YmE3048+Zyfr8rn7WjXz4umwfma59tuMv/NPXqzfTtzrRf7H9o3+1+jH7Mz17xQmD6D/vMkda5Zi2jR7I83Sb39/JH5f4t/2riFc1fvypnpdxx0eTMZHsm77pelf97j/70F7/6sgByPK/ZNWyysnfjLHYtbiZC5XcrKnOp7g0pYJtf7LlH9/2Z4/jf82Xm+zsr8PVQCNuTm1i9RanefU8Kt37+Rhgrz+xotsY/2Tojug7/mP3WtQq/flDp0/Y13VtylRyu2SXpUo976L2+h81M1Hg9y/YsRcY25/RdpFB0t/svSvkEyfRMtrSlf/W/mtx4Oyz8g/Gq1up8OfRM9xCHhqC0T1Zh7UaSMs/ftwUne1fmnur9tADcP3tdyrlf/PMQoXcAshiOAePv0VLbf/ObF6v5kgHFv704WSQ9N9OH7W+Outu/1CroNe/cvwTbr0wxz++f12nxcbZj6W/8967oJbvwcTpYaGr/sa/s9e84sAUWPrzyE7nC7Ozo3jfJW/rJX069t+sLk6RHf72EVZ9APnFX8wuy+bCRuuzScOm7032d4WntCXWGCbmHfA7f2J2R3EG2b0H8KW/ddqRb9TW6piql7HG2hCmg76lYA3hd/5Oe322dwrwez3vjPXw6TwPnjp0z0/qd1xf1ODQiw7GbyLvKFSgbKxPiVkSr0huhDx0/VfhzyN9d/w67x3/IIg0qksmJCpf/e0U+ERNIOD+qt3yi7u9jXyN50uwFfF/KF4F/V+T15+fF5+l1+X2+wMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+a/4BjsBIi+WKivEAAAAASUVORK5CYII="
+                            width="50px"></a></td>
             </tr>
             <tr>
                 <th style="width: 30%">바로가기</th>
                 <td><a target="_blank" href="http://www.daum.net">다음</a></td>
                 <td style="width: 20%"><a href="http://www.daum.net"><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANkAAAB6CAMAAAAF6AYEAAAA/FBMVEX////xaF6syAFgj/v8uwH///38uACBpftbjPz8tgDxZVvxY1n79PPzdWz++PfxVEn72tn0iH/9+On/3JP1kYz2qKT925qnvvtSh/zF2G/8zWdolfz4vbny9fz0mDrxW1Hb4/zxYWL/8+CatPq60U+hwgD647H9zGC3zPzQ3Pzl6/z64N776ej2n5nygXjzb2X8sx72kXf5qSnybln1d1TD0v3r8tDL3Hyuyze91V/X0Fp0nPjo8L3NwwX97c760nj6y8edvJi2xQDmvwP9wjT5ozGWtnSXtYnwvAT7x054ocWhv0/R4ZXO34ny9t/cwQL1o2pmleHa5qfC1p6L0QKpAAADgklEQVR4nO2ZfVfaMBSH+xZoKUoF0SogKiAMBrhNUUanzrnNbb5s7Pt/lyVNUgoUZf9Yy/k95+jxUop5zk1uboqiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFYdEjAfJZuj5i6jmSdRYZLZslIMK6/4LgURHiqJV9tKGQxq5lNI+XFqFc2MRJgRJVQKokvDYjMi7pr8Vl5RYWlth2i9adOhzQxusVm24zidrHjbOg2cty869ichaTeMWartz6Ytyoz+5J1ur2/b/V6xQ1/NFjf6GVvtdcv+p764RwRpU5/CNGvK82aGcfzOtm1VVTO2XS1myzTI8GitE4dGBLNmuu6O2s+bvf+QYSacqlqdBLZ9FYNGBPNmulmaWmxRZsfqgbqITNWJyWWaCDNdT4fn47xZKnWy0Iupqa9iQkaamae+GslTonK295QYnZ3FuQIbA9LMpLWDIoJ0RVEGZ/VzyvCjIc1Ed2UYJwdyTflVRKQqCDL97HP/9gUQZqV9Rmsk1NxTr97QJJ9uaZ6sC8Uv55eWcSzFih2nK2uHvXnVKfd5lLt6NTljRYOVjbZQcz9rYa6/ULVdwswObwzj64GYdMy1yxOVWVunkZObXImbwIyHFdfP4DdtBqZ2mSeEiRl7ImfMRcnmZJrYPtizef5iNJJMmxHCYvP7rJim0QmZMn7c+I0+N/OzRIg046V+k5ttxKkkmMkZ2XZ18+e8mHZt8KbKCJuxmxJjVjPN0a8IM+3RCEigGa0iZihldc/z7qaSllQzKrZNQ7nK7v29+UFEjdtEmumlSqVdqezXWGkUG1ldnEMHPG48ilVm3fxOkpk+YuisMJZEjjzxDlIX+7VlGVbKsgqH5WqSzHTZW5l/hJnsIohYasOjy2azcEGnaMLMgm5YmokOWCH3/IWd4J6kmonZqI1F7ydnY+LNdFdsZ+d5xX8iMm6shJlpuqO/ImnDAb1OxnJDS5yZa05RalUG0qWxc3df1yLMcuxgVu0LMxbY0qzqX+rFZBOC1NJhaqfsqHIW1V2FzJwih/f6Xf/vLn/UWOZXyvGfz0glDF9YQduxyGyZz43dbGoIsitWvCXN4h/+fzNeziyBkIE2eQxCK0l9ZcxYTxVUxaFH+5Dz1TFTHrzx2XDnzhv430Q9DAZJXFYREHFgI5Pv2FZDDAAAAAAAAAAAAAAAAAAAAAAAAAAAALAU/wCWNls2enyHlQAAAABJRU5ErkJggg=="
-                        alt="" width="100px"></a></td>
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANkAAAB6CAMAAAAF6AYEAAAA/FBMVEX////xaF6syAFgj/v8uwH///38uACBpftbjPz8tgDxZVvxY1n79PPzdWz++PfxVEn72tn0iH/9+On/3JP1kYz2qKT925qnvvtSh/zF2G/8zWdolfz4vbny9fz0mDrxW1Hb4/zxYWL/8+CatPq60U+hwgD647H9zGC3zPzQ3Pzl6/z64N776ej2n5nygXjzb2X8sx72kXf5qSnybln1d1TD0v3r8tDL3Hyuyze91V/X0Fp0nPjo8L3NwwX97c760nj6y8edvJi2xQDmvwP9wjT5ozGWtnSXtYnwvAT7x054ocWhv0/R4ZXO34ny9t/cwQL1o2pmleHa5qfC1p6L0QKpAAADgklEQVR4nO2ZfVfaMBSH+xZoKUoF0SogKiAMBrhNUUanzrnNbb5s7Pt/lyVNUgoUZf9Yy/k95+jxUop5zk1uboqiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFYdEjAfJZuj5i6jmSdRYZLZslIMK6/4LgURHiqJV9tKGQxq5lNI+XFqFc2MRJgRJVQKokvDYjMi7pr8Vl5RYWlth2i9adOhzQxusVm24zidrHjbOg2cty869ichaTeMWartz6Ytyoz+5J1ur2/b/V6xQ1/NFjf6GVvtdcv+p764RwRpU5/CNGvK82aGcfzOtm1VVTO2XS1myzTI8GitE4dGBLNmuu6O2s+bvf+QYSacqlqdBLZ9FYNGBPNmulmaWmxRZsfqgbqITNWJyWWaCDNdT4fn47xZKnWy0Iupqa9iQkaamae+GslTonK295QYnZ3FuQIbA9LMpLWDIoJ0RVEGZ/VzyvCjIc1Ed2UYJwdyTflVRKQqCDL97HP/9gUQZqV9Rmsk1NxTr97QJJ9uaZ6sC8Uv55eWcSzFih2nK2uHvXnVKfd5lLt6NTljRYOVjbZQcz9rYa6/ULVdwswObwzj64GYdMy1yxOVWVunkZObXImbwIyHFdfP4DdtBqZ2mSeEiRl7ImfMRcnmZJrYPtizef5iNJJMmxHCYvP7rJim0QmZMn7c+I0+N/OzRIg046V+k5ttxKkkmMkZ2XZ18+e8mHZt8KbKCJuxmxJjVjPN0a8IM+3RCEigGa0iZihldc/z7qaSllQzKrZNQ7nK7v29+UFEjdtEmumlSqVdqezXWGkUG1ldnEMHPG48ilVm3fxOkpk+YuisMJZEjjzxDlIX+7VlGVbKsgqH5WqSzHTZW5l/hJnsIohYasOjy2azcEGnaMLMgm5YmokOWCH3/IWd4J6kmonZqI1F7ydnY+LNdFdsZ+d5xX8iMm6shJlpuqO/ImnDAb1OxnJDS5yZa05RalUG0qWxc3df1yLMcuxgVu0LMxbY0qzqX+rFZBOC1NJhaqfsqHIW1V2FzJwih/f6Xf/vLn/UWOZXyvGfz0glDF9YQduxyGyZz43dbGoIsitWvCXN4h/+fzNeziyBkIE2eQxCK0l9ZcxYTxVUxaFH+5Dz1TFTHrzx2XDnzhv430Q9DAZJXFYREHFgI5Pv2FZDDAAAAAAAAAAAAAAAAAAAAAAAAAAAALAU/wCWNls2enyHlQAAAABJRU5ErkJggg=="
+                            alt="" width="100px"></a></td>
             </tr>
         </table>
+        <br>
+        <hr>
+        <br>
+        <p id="lorem">Lorem</p>
+        Lorem ipsum dolor <br> sit amet, consectetur adipisicing elit. <br>
+        Unde labore velit doloribus <br> in suscipit explicabo <br>
+        totam cumque repellat <br> qui excepturi, quisquam amet, <br> architecto quasi sit, doloremque magni <br> recusandae. Quae,
+        deserunt!
+        <br>
+        <p></p>
+        <button onclick="location.href='#top'">위로</button>
         <br>
     </div>
 </body>
