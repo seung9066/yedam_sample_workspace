@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>second</title>
+
+    <style>
+        p {
+            display: inline;
+            /*원래 블럭레벨인 p를 inline 레벨로*/
+        }
+
+        span {
+            display: block;
+            /*inline레벨인 span을 블럭레벨로*/
+            padding: 5px;
+        }
+    </style>
+
 </head>
+
 <body>
     <hr>
     <button onclick="location.href='../index.html'" style="margin-left: 1%;">메인</button>
     <button onclick="location.href='first.html'" style="margin-left: 1%;">첫번째</button>
+    <button onclick="location.href='second.html'" style="margin-left: 1%;">두번째</button>
+    <hr>
+    <button onclick="location.href='text_1.html'" style="margin-left: 1%;">태그1</button>
+    <button onclick="location.href='text_2.html'" style="margin-left: 1%;">태그2</button>
     <hr>
 
+    <!--블럭 레벨 태그-->
     <h1>헤딩태그</h1>
-    <p>안녕하세요</p> <!--블럭 레벨 태그-->
+    <p>안녕하세요</p>
+    <br>
     <p>반갑습니다</p>
-    <span>안녕하세요</span> <!--inline 레벨 태그-->
+
+    <!--inline 레벨 태그-->
+    <span>안녕하세요</span>
     <span>반갑습니다</span>
 </body>
+
 </html>
