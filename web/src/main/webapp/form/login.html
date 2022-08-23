@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: gray;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .6);
+        }
+
+        .login-form {
+            position: relative;
+            z-index: 2;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        form {
+            border: 2px solid lightgray;
+            padding-bottom: 35px;
+            padding-left: 15px;
+            padding-right: 10px;
+            width: 500px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        fieldset {
+            width: 450px;
+            padding-left: 4%;
+            border: solid wheat;
+            border-radius: 15px;
+        }
+
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+        }
+
+        input {
+            height: 20px;
+        }
+
+        .text-field {
+            width: 300px;
+            padding: 20px 10px 10px;
+            margin-right: 40px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid lightgray;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+        }
+
+        .text-field1 {
+            width: 300px;
+            padding: 20px 10px 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid lightgray;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+        }
+
+        option {
+            background: rgba(0, 0, 0, .9);
+            color: white;
+            text-align: center;
+        }
+
+        legend {
+            color: white;
+            font-size: 20px;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        #phone1,
+        #phone2,
+        #phone3 {
+            width: 100px;
+        }
+
+        
+    </style>
+    <script>
+        function check() {
+            if (pw != pw1) {
+                alert("비밀번호가 일치하지 않습니다!")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login-form">
+        <h1 style="margin-bottom: 30px;"></h1>
+        <form action="">
+            <h2 class="center" style="color: white">회원가입</h2>
+            <fieldset>
+                <legend>로그인 정보</legend>
+                <ul>
+                    <li>
+                        <input id="id" type="text" name="id" class="text-field" placeholder="아이디" required
+                            style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
+                        <button
+                            style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px;">중복확인</button>
+                    </li>
+                    <li>
+                        <input id="pw" type="password" name="pw" class="text-field" placeholder="비밀번호" required> </li>
+                    <li style="margin-bottom: 30px">
+                        <input id="pw1" type="password" name="pw1" class="text-field" placeholder="비밀번호 확인" required>
+                    </li>
+                </ul>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>개인 정보</legend>
+                <ul>
+                    <li>
+                        <input id="name" type="text" name="name" class="text-field" placeholder="이름" required>
+                    </li>
+                    <li>
+                        <input id="mail" type="mail" name="mail" class="text-field" placeholder="메일주소" required
+                            style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
+                        <button
+                            style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px;">중복확인</button>
+                    </li>
+                    <li>
+                        <select id="phone1" class="custom-select"
+                            style="border: none; margin-left: -50px; margin-right: 5px; padding-right: -10px; height: 40px; background-color: transparent; color: white; font-size: 20px; text-align: right;">
+                            <option selected value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                        </select>
+                        <span style="color: white; font-size: 30px;"><b>-</b></span>
+                        <input id="phone2" type="text" name="phone" class="text-field1" required>
+                        <span style="color: white; font-size: 30px;"><b>-</b></span>
+                        <input id="phone3" type="text" name="phone" class="text-field1" required>
+                    </li>
+                    <li>
+                        <input id="site" type="text" name="site" class="text-field" placeholder="블로그 / 홈페이지">
+                    </li>
+                    <li style="margin-bottom: 30px">
+                        <label for="bd"
+                            style="color: white; text-align: center; border-bottom: 2px solid lightgray; padding: 20px 10px 10px; width: 70px;">생년월일</label>
+                        <input id="bd" type="date" name="bd" class="text-field" style="color: white; width: 200px; text-align: left; margin-left: 10px;"
+                            required>
+                    </li>
+                    <li>
+                        <span style="color: white; margin-left: 12px;">홍보메일</span>
+                        <input type="radio" name="news" id="" checked style="margin-left: 30px;"><label
+                            style="color: white; margin-left: 15px;">수신</label>
+                        <input type="radio" name="news" id="" style="margin-left: -80px;"><label
+                            style="color: white; margin-left: 15px;">거부</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <br>
+            <div class="center">
+                <input type="submit" value="가입하기" onclick="check()"
+                    style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; color:dimgray; font-size: 15px;">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

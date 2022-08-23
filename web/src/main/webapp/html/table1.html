@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>표</title>
+
+<style>
+div {
+	width: 95%;
+	margin: auto;
+}
+
+table {
+	width: 100%;
+	border: 1px solid #444444;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th, td {
+	border: 1px solid #444444;
+	text-align: center;
+}
+
+th {
+	background-color: bisque;
+}
+</style>
+
+<script>
+	function account() {
+		let id = $('#account-id').val();
+		let pw = $('#account-pw').val();
+		let name = $('#account-name').val();
+
+        location.href="../AddBankMemberServlet?id="+id+"&pw="+pw+"&name="+name+"&role=0";
+	}
+</script>
+</head>
+
+<body>
+	<hr style="margin-top: 2%;">
+	<button onclick="location.href='../index.html'"
+		style="margin-left: 1%;">메인</button>
+	<button onclick="location.href='first.html'" style="margin-left: 1%;">첫번째</button>
+	<button onclick="location.href='second.html'" style="margin-left: 1%;">두번째</button>
+	<button onclick="location.href='table1.html'" style="margin-left: 1%;">회원가입</button>
+	<hr>
+	<button onclick="location.href='text_1.html'" style="margin-left: 1%;">태그1</button>
+	<button onclick="location.href='text_2.html'" style="margin-left: 1%;">태그2</button>
+	<button onclick="location.href='list_1.html'" style="margin-left: 1%;">목록1</button>
+	<button onclick="location.href='text_result.html'"
+		style="margin-left: 1%;">텍스트1</button>
+	<button onclick="location.href='table.html'" style="margin-left: 1%;">테이블1</button>
+    <button onclick="location.href='../profile/myprofile.html'" style="margin-left: 1%;">자소서</button>
+	<hr>
+
+	<div>
+		<br>
+		<!--a태그는 단순히 링크를 여는것만이 아닌 값을 넘기는 기능도 가능-->
+		<!--<a href="../AddBankMemberServlet?id=user1&pw=1234&name=김사용&role=0">bank멤버 추가하기</a>-->
+
+		<input id="account-id" type="text" name="id" class="text-field"
+			placeholder="아이디"
+			style="width: 400px; padding: 20px 10px 10px; background-color: transparent; border: none; border-bottom: 1px solid #999; font-size: 18px;">
+		<p></p>
+		<input id="account-pw" type="password" name="password"
+			class="text-field" placeholder="비밀번호"
+			style="width: 400px; padding: 20px 10px 10px; background-color: transparent; border: none; border-bottom: 1px solid #999; font-size: 18px;">
+		<p></p>
+		<input id="account-name" type="text" name="id" class="text-field"
+			placeholder="이름"
+			style="width: 400px; padding: 20px 10px 10px; background-color: transparent; border: none; border-bottom: 1px solid #999; font-size: 18px;">
+		<script>
+			const input = document.getElementById("account-name");
+
+			input.addEventListener("keypress", function(event) {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					document.getElementById("account_to").click();
+				}
+			});
+		</script>
+		<p></p>
+		<br><button
+				id="account_to" type="button" class="submit-btn" onclick="account()"
+				style="background: #166cea; border: none; color: #fff; font-size: 20px; width: 400px; height: 40px; border-radius: 25px">회원가입
+			</button>
+		<p></p>
+	</div>
+</body>
+
+</html>
