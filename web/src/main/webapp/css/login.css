@@ -18,7 +18,7 @@ body::before {
 
 .login-form {
     position: relative;
-    z-index: 2;
+    z-index: 2;     
 }
 
 .butt {
@@ -29,6 +29,31 @@ body::before {
     height: 28px;
     background-color: transparent;
     color: white;
+    cursor: pointer;
+    transition-duration: 0.6s;
+}
+
+.butt:hover{
+    box-shadow:80px 0 0 0 white inset;
+    color: black;
+}
+
+.butt1 {
+    transition-duration: 0.6s;
+}
+
+.butt1:hover{
+    box-shadow:80px 0 0 0 white inset;
+    color: black;
+}
+
+.butt2 {
+    transition-duration: 0.6s;
+}
+
+.butt2:hover{
+    box-shadow:100px 0 0 0 white inset;
+    color: black;
 }
 
 .center {
