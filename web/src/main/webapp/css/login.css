@@ -23,18 +23,19 @@ body::before {
 
 .butt {
     margin-left: 1%;
-    border: none;
+    border: 1px solid white;
     border-radius: 7px;
     width: 70px;
-    height: 25px;
-    background-color:darkgray;
+    height: 28px;
+    background-color: transparent;
+    color: white;
 }
 
 .center {
     text-align: center;
 }
 
-form {
+.form {
     border: 2px solid lightgray;
     padding-bottom: 35px;
     padding-left: 15px;

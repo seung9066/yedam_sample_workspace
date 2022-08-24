@@ -18,11 +18,12 @@
                 <span class="slider round" onclick="menu()"></span>
             </label>
         </div>
+        <hr style="margin-top: 2%;">
         <div id="c" style="display: none;">
-            <hr style="margin-top: 2%;">
             <button onclick="location.href='../index.html'" class="butt">메인</button>
             <button onclick="location.href='../html/first.html'" class="butt">첫번째</button>
             <button onclick="location.href='../html/second.html'" class="butt">두번째</button>
+            <button onclick="location.href='../css/08/box.html'" class="butt">애완견</button>
             <button onclick="location.href='login.html'" class="butt">회원가입</button>
             <hr>
             <button onclick="location.href='../html/text_1.html'" class="butt">태그1</button>
@@ -31,32 +32,32 @@
             <button onclick="location.href='../html/text_result.html'" class="butt">텍스트1</button>
             <button onclick="location.href='../html/table.html'" class="butt">테이블1</button>
             <button onclick="location.href='../profile/myprofile.html'" class="butt">자소서</button>
+            <hr>
         </div>
-        <hr>
         <h1 style="margin-bottom: 30px;"></h1>
-        <form action="">
+        <div class="form">
             <h2 class="center" style="color: white">회원가입</h2>
             <fieldset id="a">
                 <legend>로그인 정보</legend>
                 <ul>
                     <li>
-                        <input id="id" name="id" type="text" class="text-field" placeholder="아이디" required
+                        <input id="id" type="text" class="text-field" placeholder="아이디"
                             style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
                         <button id="idcheck"
                             style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px;">중복확인</button>
                     </li>
                     <li>
-                        <input id="pw" name="pw" type="password" class="text-field" placeholder="비밀번호" required> </li>
+                        <input id="pw" type="password" class="text-field" placeholder="비밀번호"> </li>
                     <li style="margin-bottom: 30px">
                         <input id="pw1" type="password" class="text-field" placeholder="비밀번호 확인"
-                            onkeypress="enter_key()" required>
+                            onkeypress="enter_key()">
                     </li>
                     <li>
                         <span style="color: white; margin-left: 12px;">관리</span>
-                        <input type="radio" name="role" id="admin" value="1"
+                        <input type="radio" id="admin" value="1"
                             style="margin-left: 30px; accent-color: wheat;"><label
                             style="color: white; margin-left: 15px;">관리자</label>
-                        <input type="radio" name="role" id="user" value="0" checked
+                        <input type="radio" id="user" value="0" checked
                             style="margin-left: -80px; accent-color: wheat;"><label
                             style="color: white; margin-left: 15px;">사용자</label>
                     </li>
@@ -71,10 +72,10 @@
                 <legend>개인 정보</legend>
                 <ul>
                     <li>
-                        <input id="name" type="text" name="name" class="text-field" placeholder="이름" required>
+                        <input id="name" type="text" class="text-field" placeholder="이름">
                     </li>
                     <li>
-                        <input id="mail" type="mail" name="mail" class="text-field" placeholder="메일주소" required
+                        <input id="mail" type="mail" class="text-field" placeholder="메일주소"
                             style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
                         <button
                             style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px;">중복확인</button>
@@ -87,27 +88,27 @@
                             <option value="016">016</option>
                         </select>
                         <span style="color: white; font-size: 30px;"><b>-</b></span>
-                        <input id="phone2" type="text" name="phone" class="text-field1" required>
+                        <input id="phone2" type="text" name="phone" class="text-field1">
                         <span style="color: white; font-size: 30px;"><b>-</b></span>
-                        <input id="phone3" type="text" name="phone" class="text-field1" required>
+                        <input id="phone3" type="text" name="phone" class="text-field1">
                     </li>
                     <li>
-                        <input id="site" type="text" name="site" class="text-field" placeholder="블로그 / 홈페이지">
+                        <input id="site" type="text" class="text-field" placeholder="블로그 / 홈페이지">
                     </li>
                     <li style="margin-bottom: 30px">
                         <label for="bd"
                             style="color: white; text-align: center; border-bottom: 2px solid lightgray; padding: 20px 10px 10px; width: 70px;">생년월일</label>
                         <input id="bd" type="date" name="bd" class="text-field"
-                            style="color: white; width: 200px; text-align: left; margin-left: 10px;" required>
+                            style="color: white; width: 200px; text-align: left; margin-left: 10px;">
                     </li>
                 </ul>
             </fieldset>
             <br>
             <div class="center">
-                <input type="button" value="가입하기"
-                    style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; color:dimgray; font-size: 15px;">
+                <button onclick="account()"
+                    style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; color:dimgray; font-size: 15px;">가입하기</button>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 
