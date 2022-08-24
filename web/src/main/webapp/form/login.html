@@ -6,151 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-
-    <style>
-        body {
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            background: gray;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, .6);
-        }
-
-        .login-form {
-            position: relative;
-            z-index: 2;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        form {
-            border: 2px solid lightgray;
-            padding-bottom: 35px;
-            padding-left: 15px;
-            padding-right: 10px;
-            width: 500px;
-            margin: auto;
-            border-radius: 15px;
-        }
-
-        fieldset {
-            width: 450px;
-            padding-left: 4%;
-            border: solid wheat;
-            border-radius: 15px;
-        }
-
-        ul {
-            list-style: none;
-            text-align: center;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        label {
-            display: inline-block;
-            width: 150px;
-            text-align: left;
-        }
-
-        input {
-            height: 20px;
-        }
-
-        .text-field {
-            width: 300px;
-            padding: 20px 10px 10px;
-            margin-right: 40px;
-            background-color: transparent;
-            border: none;
-            border-bottom: 2px solid lightgray;
-            font-size: 16px;
-            text-align: center;
-            color: white;
-        }
-
-        .text-field1 {
-            width: 300px;
-            padding: 20px 10px 10px;
-            margin-right: 5px;
-            margin-left: 5px;
-            background-color: transparent;
-            border: none;
-            border-bottom: 2px solid lightgray;
-            font-size: 16px;
-            text-align: center;
-            color: white;
-        }
-
-        option {
-            background: rgba(0, 0, 0, .9);
-            color: white;
-            text-align: center;
-        }
-
-        legend {
-            color: white;
-            font-size: 20px;
-        }
-
-        ::placeholder {
-            color: white;
-        }
-
-        #phone1,
-        #phone2,
-        #phone3 {
-            width: 100px;
-        }
-
-        
-    </style>
-    <script>
-        function check() {
-            if (pw != pw1) {
-                alert("비밀번호가 일치하지 않습니다!")
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../javascript/login.js"></script>
 </head>
 
 <body>
     <div class="login-form">
+        <div style="text-align: right;">
+            <label class="switch" >
+                <input type="checkbox">
+                <span class="slider round" onclick="menu()"></span>
+            </label>
+        </div>
+        <div id="c" style="display: none;">
+            <hr style="margin-top: 2%;">
+            <button onclick="location.href='../index.html'" class="butt">메인</button>
+            <button onclick="location.href='../html/first.html'" class="butt">첫번째</button>
+            <button onclick="location.href='../html/second.html'" class="butt">두번째</button>
+            <button onclick="location.href='login.html'" class="butt">회원가입</button>
+            <hr>
+            <button onclick="location.href='../html/text_1.html'" class="butt">태그1</button>
+            <button onclick="location.href='../html/text_2.html'" class="butt">태그2</button>
+            <button onclick="location.href='../html/list_1.html'" class="butt">목록1</button>
+            <button onclick="location.href='../html/text_result.html'" class="butt">텍스트1</button>
+            <button onclick="location.href='../html/table.html'" class="butt">테이블1</button>
+            <button onclick="location.href='../profile/myprofile.html'" class="butt">자소서</button>
+        </div>
+        <hr>
         <h1 style="margin-bottom: 30px;"></h1>
         <form action="">
             <h2 class="center" style="color: white">회원가입</h2>
-            <fieldset>
+            <fieldset id="a">
                 <legend>로그인 정보</legend>
                 <ul>
                     <li>
-                        <input id="id" type="text" name="id" class="text-field" placeholder="아이디" required
+                        <input id="id" name="id" type="text" class="text-field" placeholder="아이디" required
                             style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
-                        <button
+                        <button id="idcheck"
                             style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px;">중복확인</button>
                     </li>
                     <li>
-                        <input id="pw" type="password" name="pw" class="text-field" placeholder="비밀번호" required> </li>
+                        <input id="pw" name="pw" type="password" class="text-field" placeholder="비밀번호" required> </li>
                     <li style="margin-bottom: 30px">
-                        <input id="pw1" type="password" name="pw1" class="text-field" placeholder="비밀번호 확인" required>
+                        <input id="pw1" type="password" class="text-field" placeholder="비밀번호 확인"
+                            onkeypress="enter_key()" required>
+                    </li>
+                    <li>
+                        <span style="color: white; margin-left: 12px;">관리</span>
+                        <input type="radio" name="role" id="admin" value="1"
+                            style="margin-left: 30px; accent-color: wheat;"><label
+                            style="color: white; margin-left: 15px;">관리자</label>
+                        <input type="radio" name="role" id="user" value="0" checked
+                            style="margin-left: -80px; accent-color: wheat;"><label
+                            style="color: white; margin-left: 15px;">사용자</label>
+                    </li>
+                    <li>
+                        <button id="next" onclick="check()"
+                            style="position: right; background-color: transparent; color: white; border: 1px solid white; border-radius: 10px; height: 40px; width: 100px; margin-left: -35px; margin-top: 20px;">다음</button>
                     </li>
                 </ul>
             </fieldset>
             <br>
-            <fieldset>
+            <fieldset id="b" style="display: none;">
                 <legend>개인 정보</legend>
                 <ul>
                     <li>
@@ -180,21 +97,14 @@
                     <li style="margin-bottom: 30px">
                         <label for="bd"
                             style="color: white; text-align: center; border-bottom: 2px solid lightgray; padding: 20px 10px 10px; width: 70px;">생년월일</label>
-                        <input id="bd" type="date" name="bd" class="text-field" style="color: white; width: 200px; text-align: left; margin-left: 10px;"
-                            required>
-                    </li>
-                    <li>
-                        <span style="color: white; margin-left: 12px;">홍보메일</span>
-                        <input type="radio" name="news" id="" checked style="margin-left: 30px;"><label
-                            style="color: white; margin-left: 15px;">수신</label>
-                        <input type="radio" name="news" id="" style="margin-left: -80px;"><label
-                            style="color: white; margin-left: 15px;">거부</label>
+                        <input id="bd" type="date" name="bd" class="text-field"
+                            style="color: white; width: 200px; text-align: left; margin-left: 10px;" required>
                     </li>
                 </ul>
             </fieldset>
             <br>
             <div class="center">
-                <input type="submit" value="가입하기" onclick="check()"
+                <input type="button" value="가입하기"
                     style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; color:dimgray; font-size: 15px;">
             </div>
         </form>

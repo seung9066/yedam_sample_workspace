@@ -32,10 +32,9 @@ th {
 
 <script>
 	function account() {
-		let id = $('#account-id').val();
-		let pw = $('#account-pw').val();
-		let name = $('#account-name').val();
-
+		var id = document.getElementById("account-id").value;
+		var pw = document.getElementById("account-pw").value;
+		var name = document.getElementById("account-name").value;
         location.href="../AddBankMemberServlet?id="+id+"&pw="+pw+"&name="+name+"&role=0";
 	}
 </script>
