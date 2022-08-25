@@ -1,0 +1,272 @@
+table {
+    font-size: 20px;
+    width: 100%;
+    border-top: 2px solid white;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.size1 {
+    width: 150px;
+}
+tr {
+    font-size: 15px;
+}
+
+th {
+    background-color:dimgrey;
+}
+
+th, td {
+    border-top: 1px dotted lightgray;
+    border-left: 1px dotted lightgray;
+    border-right: 1px dotted lightgray;
+    border-bottom: 1px dotted lightgray;
+    height: 50px;
+}
+
+span.r {
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    padding: 0 6px 2px 4px;
+}
+
+span.b {
+    background-color: blue;
+    border-radius: 50%;
+    color: white;
+    padding: 2px 6px 1px 6px;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: gray;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    /* height: 1120px; */
+}
+
+.floating {
+    font-size: 25px;
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    z-index: 3;
+}
+
+a:hover {
+    box-shadow: 65px 0 0 0 white inset;
+    color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0 10px 6px 10px;
+    transition-duration: 0.6s;
+}
+
+.login-form {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.butt {
+    margin-left: 1%;
+    border: 1px solid white;
+    border-radius: 7px;
+    width: 70px;
+    height: 28px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.6s;
+}
+
+.butt:hover {
+    box-shadow: 80px 0 0 0 white inset;
+    color: black;
+}
+
+.butt1 {
+    transition-duration: 0.6s;
+    color: white;
+}
+
+.butt1:hover {
+    box-shadow: 80px 0 0 0 white inset;
+    color: black;
+}
+
+.butt2 {
+    transition-duration: 0.6s;
+    color: white;
+}
+
+.butt2:hover {
+    box-shadow: 100px 0 0 0 white inset;
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.form {
+    border: 2px solid lightgray;
+    padding-bottom: 35px;
+    padding-left: 15px;
+    padding-right: 10px;
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+}
+
+fieldset {
+    width: 450px;
+    padding-left: 4%;
+    border: solid wheat;
+    border-radius: 15px;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+
+input {
+    height: 20px;
+}
+
+.text-field {
+    width: 300px;
+    padding: 20px 10px 10px;
+    margin-right: 40px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+.text-field1 {
+    width: 300px;
+    padding: 20px 10px 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+option {
+    background: rgba(0, 0, 0, .9);
+    color: white;
+    text-align: center;
+}
+
+legend {
+    color: white;
+    font-size: 20px;
+}
+
+::placeholder {
+    color: white;
+}
+
+#phone1,
+#phone2,
+#phone3 {
+    width: 75px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

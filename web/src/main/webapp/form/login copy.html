@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지</title>
+    <link rel="stylesheet" href="../css/login page.css">
+    <script src="../javascript/login.js"></script>
+</head>
+
+<body>
+    <section id="pageup"></section>
+    <div class="floating" id="top"><a href="#pageup">top</a></div>
+    <div class="login-form" style="color: white;">
+        <div>
+            <h2 id="top1" style="float: left; margin-bottom: -10px;">시도별 일일 접종 현황</h2>
+            <div style="text-align: right;">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round" onclick="menu()"></span>
+                </label>
+            </div>
+            <hr style="margin-top: 2%;">
+        </div>
+            <div id="c" style="display: none;">
+                <button onclick="location.href='../index.html'" class="butt">메인</button>
+                <button onclick="location.href='../html/first.html'" class="butt">첫번째</button>
+                <button onclick="location.href='../html/second.html'" class="butt">두번째</button>
+                <button onclick="location.href='../css/08/box.html'" class="butt">애완견</button>
+                <button onclick="location.href='login.html'" class="butt">로그인</button>
+                <hr>
+                <button onclick="location.href='../html/text_1.html'" class="butt">태그1</button>
+                <button onclick="location.href='../html/text_2.html'" class="butt">태그2</button>
+                <button onclick="location.href='../html/list_1.html'" class="butt">목록1</button>
+                <button onclick="location.href='../html/text_result.html'" class="butt">텍스트1</button>
+                <button onclick="location.href='../html/table.html'" class="butt">테이블1</button>
+                <button onclick="location.href='../profile/myprofile.html'" class="butt">자소서</button>
+                <hr>
+            </div>
+            <h1 style="margin-bottom: 30px;"></h1>
+            <div style="width: 95%;">
+            <h3>접종실적 총괄<span style="font-size: 15px;"> (08.25.00시 기준)</span></h3>
+            <br>
+            <table>
+                <tr>
+                    <th class="size1">구분</th>
+                    <th>1차 접종</th>
+                    <th>2차 접종</th>
+                    <th>3차 접종</th>
+                    <th>4차 접종</th>
+                </tr>
+                <tr>
+                    <th class="size1">당일누적 <span class="r">A</span><span> + </span><span class="b">B</span></th>
+                    <td>45,101,931</td>
+                    <td>44,664,114</td>
+                    <td>33,539,624</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th class="size1">당일실적 <span class="r">A</span></th>
+                    <td>380</td>
+                    <td>336</td>
+                    <td>2,305</td>
+                    <td>32,088</td>
+                </tr>
+                <tr>
+                    <th class="size1">전일 누적 <span class="b">B</span></th>
+                    <td>45,101,551</td>
+                    <td>44,663,778</td>
+                    <td>33,537,319</td>
+                    <td>6,968,118</td>
+                </tr>
+            </table>
+            <br>
+            <h3>시도별 접종 현황</h3>
+            <br>
+            <table>
+                <tr>
+                    <th rowspan="2">구분</th>
+                    <th colspan="2">1차 접종</th>
+                    <th colspan="2">2차 접종</th>
+                    <th colspan="2">3차 접종</th>
+                    <th colspan="2">4차 접종</th>
+                </tr>
+                <tr>
+                    <th>당일실적</th>
+                    <th>당일누계</th>
+                    <th>당일실적</th>
+                    <th>당일누계</th>
+                    <th>당일실적</th>
+                    <th>당일누계</th>
+                    <th>당일실적</th>
+                    <th>당일누계</th>
+                </tr>
+                <tr>
+                    <th>합계</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>서울</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>대구</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>부산</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>인천</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>광주</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+                <tr>
+                    <th>대전</th>
+                    <td>380</td>
+                    <td>45,101,931</td>
+                    <td>336</td>
+                    <td>44,664,114</td>
+                    <td>2,305</td>
+                    <td>33,539,624</td>
+                    <td>32,088</td>
+                    <td>7,000,206</td>
+                </tr>
+            </table>
+            <p style="font-size: 13px; margin-left: 20px;"><span style="color: pink;">※</span> 상기 통계자료는 예방접종등록에 따라 변동
+                가능한 잠정 통계임</p>
+                <br><br>
+        </div>
+    </div>
+</body>
+
+</html>

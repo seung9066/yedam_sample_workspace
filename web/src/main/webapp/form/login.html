@@ -24,7 +24,7 @@
             <button onclick="location.href='../html/first.html'" class="butt">첫번째</button>
             <button onclick="location.href='../html/second.html'" class="butt">두번째</button>
             <button onclick="location.href='../css/08/box.html'" class="butt">애완견</button>
-            <button onclick="location.href='login.html'" class="butt">회원가입</button>
+            <button onclick="location.href='login.html'" class="butt">로그인</button>
             <hr>
             <button onclick="location.href='../html/text_1.html'" class="butt">태그1</button>
             <button onclick="location.href='../html/text_2.html'" class="butt">태그2</button>
@@ -35,29 +35,50 @@
             <hr>
         </div>
         <h1 style="margin-bottom: 30px;"></h1>
-        <div class="form">
+        <div class="form" id="e">
+            <h2 class="center" style="color: white">코로나 접종화면 로그인</h2>
+            <fieldset>
+                <legend>로그인</legend>
+                <ul>
+                    <li>
+                        <input id="logid" type="text" class="text-field" placeholder="아이디" onkeypress="enter_key1('logpw')">
+                    </li>
+                    <li>
+                        <input id="logpw" type="password" class="text-field" placeholder="비밀번호" onkeypress="enter_key('login')">
+                    </li>
+                </ul>
+                <br>
+            </fieldset>
+            <div class="center">
+                <button onclick="login()" id="login"
+                    style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; margin-top: 30px; color:dimgray; font-size: 15px; cursor: pointer;">로그인</button>
+                <button onclick="account_page()"
+                    style="width: 400px; height: 40px; border-radius: 20px; border: none; background-color:wheat; margin-bottom: -20px; margin-top: 30px; color:dimgray; font-size: 15px; cursor: pointer;">회원가입</button>
+            </div>
+        </div>
+        <div class="form" id="d" style="display: none;">
             <h2 class="center" style="color: white">회원가입</h2>
             <fieldset id="a">
                 <legend>로그인 정보</legend>
                 <ul>
                     <li>
-                        <input id="id" type="text" class="text-field" placeholder="아이디"
+                        <input id="id" type="text" class="text-field" placeholder="아이디" onkeypress="enter_key('idcheck', 'pw')"
                             style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
-                        <button id="idcheck" class="butt1"
+                        <button id="idcheck" class="butt1" onclick="checkid()"
                             style="position: right; background-color: transparent; border: 1px solid white; border-radius: 10px; height: 40px; cursor: pointer;">중복확인</button>
                     </li>
                     <li>
-                        <input id="pw" type="password" class="text-field" placeholder="비밀번호"> </li>
+                        <input id="pw" type="password" class="text-field" placeholder="비밀번호" onkeypress="enter_key1('pw1')"> </li>
                     <li style="margin-bottom: 30px">
                         <input id="pw1" type="password" class="text-field" placeholder="비밀번호 확인"
-                            onkeypress="enter_key()">
+                            onkeypress="enter_key('next')">
                     </li>
                     <li>
                         <span style="color: white; margin-left: 12px;">관리</span>
-                        <input type="radio" id="admin" value="1"
+                        <input type="radio" id="admin" value="1" name="role"
                             style="margin-left: 30px; accent-color: wheat;"><label
                             style="color: white; margin-left: 15px;">관리자</label>
-                        <input type="radio" id="user" value="0" checked
+                        <input type="radio" id="user" value="0" checked name="role"
                             style="margin-left: -80px; accent-color: wheat;"><label
                             style="color: white; margin-left: 15px;">사용자</label>
                     </li>
@@ -72,12 +93,12 @@
                 <legend>개인 정보</legend>
                 <ul>
                     <li>
-                        <input id="name" type="text" class="text-field" placeholder="이름">
+                        <input id="name" type="text" class="text-field" placeholder="이름" onkeypress="enter_key1('mail')">
                     </li>
                     <li>
-                        <input id="mail" type="mail" class="text-field" placeholder="메일주소"
+                        <input id="mail" type="mail" class="text-field" placeholder="메일주소"  onkeypress="enter_key('mail_check', 'phone1')"
                             style="position: left; margin-right: -3px; margin-left: -38px; width: 240px;">
-                        <button class="butt1"
+                        <button class="butt1" id="mail_check" onclick="checkid()"
                             style="position: right; background-color: transparent; border: 1px solid white; border-radius: 10px; height: 40px; cursor: pointer;">중복확인</button>
                     </li>
                     <li>
@@ -88,12 +109,12 @@
                             <option value="016">016</option>
                         </select>
                         <span style="color: white; font-size: 30px;"><b>-</b></span>
-                        <input id="phone2" type="text" name="phone" class="text-field1">
+                        <input id="phone2" type="text" name="phone" class="text-field1" onkeypress="enter_key1('phone3')">
                         <span style="color: white; font-size: 30px;"><b>-</b></span>
-                        <input id="phone3" type="text" name="phone" class="text-field1">
+                        <input id="phone3" type="text" name="phone" class="text-field1"  onkeypress="enter_key1('site')">
                     </li>
                     <li>
-                        <input id="site" type="text" class="text-field" placeholder="블로그 / 홈페이지">
+                        <input id="site" type="text" class="text-field" placeholder="블로그 / 홈페이지" onkeypress="enter_key1('bd')">
                     </li>
                     <li style="margin-bottom: 30px">
                         <label for="bd"
