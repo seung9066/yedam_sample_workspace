@@ -87,3 +87,22 @@ function mySum(n1, n2) {
 mySum(1, 2);
 
 ['hello', 'world'].forEach((val, idx) => console.log(val, idx));
+
+console.log('///// outerinner /////')
+var a = 1;
+var b = 5;
+
+function outerFunc() {
+    function innerFunc() {
+        a = b;
+    }
+    console.log(a);
+    a = 2;
+    b = 4;
+    innerFunc();
+    console.log(a);
+    var b = 2;
+}
+
+outerFunc();
+console.log(b); // function 안에 것은 지역변수라서 값을 가져나오지 못함 -> 전역변수 값 출력
