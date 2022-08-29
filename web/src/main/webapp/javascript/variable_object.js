@@ -71,11 +71,16 @@ function variable_object() {
         for (let prop in val) {
             str += `<td>${val[prop]}</td>`     
         }
-        str += '<td><button>확인</button></td>';
+        str += '<td><button onclick="alert(event)">확인</button></td>';
         str += '</tr>';
     }
     str += '</table>';
     document.write(str);
     document.write('</div>')
+
     document.write('-------------------variable_object.js에서 가져온 글들-------------------')
 };
+
+function alert(e) {
+    console.log(e.target.parentElement.parentElement.style.backgroundColor = 'yellow');
+}

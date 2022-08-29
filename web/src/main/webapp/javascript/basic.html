@@ -15,42 +15,49 @@
     <script src="calender.js"></script>
     <script src="variable.js"></script>
     <script src="variable_object.js"></script>
+    <script src="function_param.js"></script>
     <style>
         th {
             background-color: lightgray;
         }
+
     </style>
 </head>
 
 <body>
-    <hr>
-    <button onclick="basic()">basic</button>
-    <button onclick="table_func()">table_func</button>
-    <button onclick="condition()">condtion</button>
-    <button onclick="foreach()">foreach</button>
-    <button onclick="calender()">calender</button>
-    <button onclick="variable_object()">variable_object</button>
-    <hr>
-    <h3>hello worlddd</h3>
-    <p>-------------------multi.js에 연결-------------------</p>
-    <p>구구단</p>
-    <input type="text" id="gugu" style="height: 20px; width: 70px;"><button onclick="gugu1()"
-        style="height: 25px; margin-left: 10px;">곱하기</button>
-    <p>-------------------multi.js에 연결-------------------</p>
-    나이 <input type="number" name="num1" id="num1" value="30">
-    <script>
-        let vall = document.querySelector('input[type="number"]').value;
-        document.write(typeof vall, vall); // 숫자 타입으로 했지만 가져오면 string
-    </script>
-    <br>나이 <input type="number" name="num2" id="num2" value="50">
-    <script>
-        let vall1 = document.querySelector('#num2').value;
-        document.write(typeof vall1, vall1);
-        document.write('<br>parseInt 처리 X : ' + (vall + vall1));
-        document.write('<br>parseInt 처리 O : ' + (parseInt(vall) + parseInt(
-        vall1))); // string으로 가져오기에 parseInt를 통해 int로 바꿔줘야함
-    </script>
-    <p></p>
+    <div id="divvv">
+        <hr>
+        <button onclick="basic()" class="button">basic</button>
+        <button onclick="table_func()" class="button">table_func</button>
+        <button onclick="condition()" class="button">condtion</button>
+        <button onclick="foreach()" class="button">foreach</button>
+        <button onclick="calender()" class="button">calender</button>
+        <button onclick="variable_object()" class="button">variable_object</button>
+        <button onclick="function_param()" class="button">function_param</button>
+        <hr>
+    </div>
+    <div id="divv">
+        <h3>hello worlddd</h3>
+        <p>-------------------multi.js에 연결-------------------</p>
+        <p>구구단</p>
+        <input type="text" id="gugu" style="height: 20px; width: 70px;"><button onclick="gugu1()"
+            style="height: 25px; margin-left: 10px;">곱하기</button>
+        <p>-------------------multi.js에 연결-------------------</p>
+        나이 <input type="number" name="num1" id="num1" value="30">
+        <script>
+            let vall = document.querySelector('input[type="number"]').value;
+            document.write(typeof vall, vall); // 숫자 타입으로 했지만 가져오면 string
+        </script>
+        <br>나이 <input type="number" name="num2" id="num2" value="50">
+        <script>
+            let vall1 = document.querySelector('#num2').value;
+            document.write(typeof vall1, vall1);
+            document.write('<br>parseInt 처리 X : ' + (vall + vall1));
+            document.write('<br>parseInt 처리 O : ' + (parseInt(vall) + parseInt(
+                vall1))); // string으로 가져오기에 parseInt를 통해 int로 바꿔줘야함
+        </script>
+        <p></p>
+    </div>
 
     <br>
     <br>
