@@ -95,3 +95,24 @@ function showEven(val) {
         console.log('짝수 : ' + val);
     }
 };
+
+console.log('///// 형변환 /////')
+console.log('3' + 4); // 34
+console.log(-'3' + 4); // 1
+console.log((3).toString() + 4); // 34
+console.log(-(3).toString() + 4); // 1
+
+console.log('///// abs, sign /////')
+console.log(Math.abs(-20)); // abs = 절대값 return. 음수 넣어도 양수로 나옴
+console.log(Math.sign(30)); // sign = -1, 0, 1 로만 나타냄
+
+console.log('///// map /////');
+const arr2 = [-3, 2, -45, 0, 4, 7];
+const arr3 = arr2.map(function(val) { // 배열의 갯수만큼 콜백함수 실행 -> 새로운 배열 반환
+    return Math.sign(val);
+});
+console.log(arr3);
+
+console.log('///// NaN, Infinity /////');
+console.log(3 / 'five');
+console.log(-1 / 0);
