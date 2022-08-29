@@ -47,7 +47,7 @@ document.write('<p><span><</span>foreach 같은 출력 다른 문법<span>></spa
 memberss.forEach(callBackFnc);
 
 function callBackFnc(a, b, c) {
-    document.write('<span>value : </span>');
+    document.write('<br><span>value : </span>');
     document.write(a);
     document.write('<br><span>index : </span>');
     document.write(b);

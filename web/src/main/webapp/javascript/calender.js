@@ -94,7 +94,7 @@ for (let f = 0; f < empty1; f++) {
 for (let day = 1; day <= last1; day++) {
     if ((empty1 + day) % 7 == 1) {
         cal1 += `<td style="color: red;">${day}</td>`;
-    } else if ((empty1 + day) % 7 == 0){
+    } else if ((empty1 + day) % 7 == 0) {
         cal1 += `<td style="color: blue;">${day}</td>`;
     } else {
         cal1 += `<td>${day}</td>`;
