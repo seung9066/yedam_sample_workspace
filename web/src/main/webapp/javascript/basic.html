@@ -17,16 +17,26 @@
     <script src="variable_object.js"></script>
     <script src="function_param.js"></script>
     <script src="for_test.js"></script>
+    <script src="object.js"></script>
+    <script src="object1.js"></script>
+    <script src="object_fnc.js"></script>
+    <script src="object2.js"></script>
+    <script src="object_closure.js"></script>
+    <script src="object_clone.js"></script>
     <style>
         th {
             background-color: lightgray;
         }
-
+        
         .button {
             height: 35px;
             margin: 5px;
         }
-    </style>
+        
+        p {
+            text-align: center;
+        }
+        </style>
 </head>
 
 <body>
@@ -48,7 +58,7 @@
         <div style="border: 1px solid black; padding: 10px">
             <p>구구단</p>
             <input type="text" id="gugu" style="height: 20px; width: 70px;"><button onclick="gugu1()"
-                style="height: 25px; margin-left: 10px;">곱하기</button>
+            style="height: 25px; margin-left: 10px;">곱하기</button>
         </div>
         <p>-------------------multi.js에 연결-------------------</p>
         <div style="border: 1px solid black; padding: 10px">
@@ -56,7 +66,7 @@
             <script>
                 let vall = document.querySelector('input[type="number"]').value;
                 document.write(typeof vall, vall); // 숫자 타입으로 했지만 가져오면 string
-            </script>
+                </script>
             <br>나이 <input type="number" name="num2" id="num2" value="50">
             <script>
                 let vall1 = document.querySelector('#num2').value;
@@ -64,8 +74,20 @@
                 document.write('<br>parseInt 처리 X : ' + (vall + vall1));
                 document.write('<br>parseInt 처리 O : ' + (parseInt(vall) + parseInt(
                     vall1))); // string으로 가져오기에 parseInt를 통해 int로 바꿔줘야함
-            </script>
+                    </script>
         </div>
+        <p>-------------------object_tab.js에 연결-------------------</p>
+        <div style="border: 1px solid black; padding: 10px">
+            <span>function object table</span>
+            <p></p>
+            <script src="object_tab.js"></script>
+        </div>
+        <p>-------------------object_tab.js에 연결-------------------</p>
+        <p>-------------------object_this.js에 연결-------------------</p>
+        <p id="obthis"></p>
+        <script src="object_this.js"></script>
+        <p>-------------------object_this.js에 연결-------------------</p>
+
         <br>
         <br>
         <p></p>
