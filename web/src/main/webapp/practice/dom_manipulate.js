@@ -31,7 +31,10 @@ frm.appendChild(input_pw);
 
 let logbutton = document.createElement('button');
 logbutton.innerText = '로그인';
-frm.appendChild(logbutton);
+
+let p = document.createElement('p');
+frm.appendChild(p);
+p.appendChild(logbutton);
 
 console.log(frm)
 
