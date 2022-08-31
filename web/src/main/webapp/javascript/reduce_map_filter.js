@@ -1,4 +1,5 @@
 const names = ['이현성', '이주훈', '황용주', '최승현'];
+document.write('<p>배열: ' + names + '</p>')
 
 document.write('<p>### reduce로 map 기능 구현 ###</p>')
 document.write('<p>let members = names.reduce((acc, val, idx) => {<br>&nbsp;let obj = {};<br>&nbsp;obj.name = val;<br>&nbsp;obj.sno = idx + 1;<br>&nbsp;acc.push(obj);<br>&nbsp;return acc;<br>}, []);</p>')
