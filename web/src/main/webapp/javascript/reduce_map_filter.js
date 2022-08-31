@@ -28,7 +28,7 @@ lees.forEach((val) => {
 })
 
 
-document.write('<br><br><p>### 방법2 function 간결화 ###</p>')
+document.write('<br><br><p>### 방법2 function 간결화 메소드 체인 ###</p>')
 document.write('<p>let reduceMapFnc = (acc, val, idx) => {<br>&nbsp;let obj = {};<br>&nbsp;obj.name = val;<br>&nbsp;obj.sno = idx + 1;<br>&nbsp;acc.push(obj);<br>&nbsp;return acc;<br>};</p>')
 let reduceMapFnc = (acc, val, idx) => {
     let obj = {}
