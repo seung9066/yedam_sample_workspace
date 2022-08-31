@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>dom.html</title>
+  <style>
+    .red {
+      color: #ff0000;
+    }
+
+    .blue {
+      color: #0000ff;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="location.href='../form/login.html'" class="button">로그인</button>
+  <button onclick="location.href='../javascript/basic.html'" class="button">basic</button>
+  <div>
+    <h1>Cities</h1>
+    <ul>
+      <li id="one" class="red">Seoul</li>
+      <li id="two" class="red">London</li>
+      <li id="three" class="red">Newyork</li>
+      <li id="four">Tokyo</li>
+    </ul>
+    <button onclick="delete1()">tokyo 삭제</button>
+    <ul>
+      <li>apple</li>
+      <li>banana</li>
+      <li>orange</li>
+    </ul>
+    <script>
+      let a = document.getElementById('one');
+      a.style.backgroundColor = 'yellow';
+      a.style.color = 'blue';
+      a.innerHTML = '서울';
+      console.log(a.getAttribute('class'));
+
+      let uls = document.getElementsByTagName('ul');
+      console.log(uls[0].style.listStyleType = 'circle');
+
+      // <li>NewDeli</li>
+      let newdeli = document.createElement('li');
+      newdeli.innerText = 'NewDeli';
+      uls[0].appendChild(newdeli);
+
+      
+      // 삭제
+      function delete1() {
+        document.getElementById('four').remove();
+      }
+      
+      // NewDeli red
+      let list = document.getElementsByTagName('li');
+      list[4].style.color = 'red';
+
+      for (let i = 0; i < list.length; i++) {
+        list[i].onclick = function() {
+          window.alert(this.innerHTML)
+        }
+      }
+
+      // class명으로 요소 선택
+      let red = document.getElementsByClassName('red');
+      for(let i = 0; i < red.length; i++) {
+        red[i].onmouseover = function() {
+          this.style.fontWeight = 'bold';
+          this.style.fontSize = '20px';
+        }
+        red[i].onmouseout = function() {
+          this.style.fontWeight = '100';
+          this.style.fontSize = '16px';
+        }
+      }
+    </script>
+  </div>
+</body>
+
+</html>
