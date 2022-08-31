@@ -16,8 +16,12 @@
 </head>
 
 <body>
-  <button onclick="location.href='../form/login.html'" class="button">로그인</button>
-  <button onclick="location.href='../javascript/basic.html'" class="button">basic</button>
+  <button onclick="location.href='../form/login.html'">로그인</button>
+  <button onclick="location.href='../javascript/basic.html'">basic</button>
+  <button onclick="location.href='dom_manipulate.html'">dom_manipulate</button>
+  <p>element생성 : createElement();</p>
+  <p>textNode생성 : createTextNode();</p>
+  <p>부모-자식 관계 형성 : appendChild();</p>
   <div>
     <h1>Cities</h1>
     <ul>
@@ -26,7 +30,7 @@
       <li id="three" class="red">Newyork</li>
       <li id="four">Tokyo</li>
     </ul>
-    <button onclick="delete1()">tokyo 삭제</button>
+    <button onclick="delete1()" id="delto">tokyo 삭제</button>
     <ul>
       <li>apple</li>
       <li>banana</li>
@@ -51,6 +55,7 @@
       // 삭제
       function delete1() {
         document.getElementById('four').remove();
+        document.getElementById('delto').remove();
       }
       
       // NewDeli red
