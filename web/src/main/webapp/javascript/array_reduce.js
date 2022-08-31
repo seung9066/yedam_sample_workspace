@@ -12,12 +12,12 @@ numbers.forEach(a => {
     }
 })
 
-document.write('<p># foreach() 배열 합 구하기</p>')
+document.write('<p>### foreach() 배열 합 구하기 ###</p>')
 document.write('배열: ' + numbers + '<br>');
 document.write('합: ' + sum + '<br>');
 document.write('짝수 합: ' + sum2 + ' | 홀수 합: ' + sum3);
 
-document.write('<p># .reduce() 배열 합 구하기')
+document.write('<p>### .reduce() 배열 합 구하기 ###</p>')
 document.write('<p>numbers.reduce(function (acc(초기값+누적), val, index, array){<br>&nbsp;return acc + val<br>}, 0(초기값))</p>')
 let result = numbers.reduce(function (a, b, c, d) { // 초기값, val, index, array
     console.log(a, b, c, d);
@@ -25,7 +25,7 @@ let result = numbers.reduce(function (a, b, c, d) { // 초기값, val, index, ar
 }, 0); // 0 = 초기값
 document.write('합: ' + result);
 
-document.write('<p># 각 배열값에 2 추가하기</p>')
+document.write('<p>### 각 배열값에 2 추가하기 ###</p>')
 document.write('<p>numbers.reduce((acc, val, idx, ary) => {<br>&nbsp;acc.push(val + 2);<br>&nbsp;return acc;<br>}, [])</p>')
 result = numbers.reduce((acc, val, idx, ary) => {
     acc.push(val + 2);
@@ -33,7 +33,7 @@ result = numbers.reduce((acc, val, idx, ary) => {
 }, [])
 document.write('배열: ' + result);
 
-document.write('<p># ul, li 넣기</p>')
+document.write('<p>### ul, li 넣기 ###</p>')
 document.write('<p> numbers.reduce((acc, val, idx, ary) => {<br>&nbsp;if (idx == 0) {<br>&nbsp;&nbsp;acc = <span><</span>ul<span>></span><br>&nbsp;}<br>&nbsp;acc += <span><</span>li<span>></span> + val + <span><</span>/li<span>></span>;<br>&nbsp;if (idx == nembers.length - 1) {<br>&nbsp;&nbsp; acc += <span><</span>/ul<span>></span>;<br>&nbsp;}<br>&nbsp;return acc;<br>}, "")')
 result = numbers.reduce((acc, val, idx, ary) => {
     if (idx == 0) {
@@ -47,12 +47,21 @@ result = numbers.reduce((acc, val, idx, ary) => {
 }, '')
 document.write('<br><br>결과: ' + result);
 
-document.write('<p># 배열 최대값</p>')
-let max = numbers[0];
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-        max = numbers[i];
+document.write('<p>### 배열 최대값 ###</p>')
+document.write('<p> let max1 = numbers.reduce((acc, val, idx, ary) => {<br>&nbsp;if (val > acc) {<br>&nbsp;&nbsp;acc = val;<br>&nbsp;}<br>&nbsp;return acc;<br>}, numbers[0]);')
+let max = numbers.reduce((acc, val, idx, ary) =>{
+    if (val > acc) {
+        acc = val;
     }
-}
-document.write('<p>배열: ' + numbers + '</p>')
-document.write('<p>' + max + '</p>')
+    return acc;
+}, numbers[0]);
+document.write('<p>배열: ' + numbers + '<br>')
+document.write('최대값(max): ' + max + '</p>')
+
+document.write('<p>### 배열 최소값 MAX_SAFE_INTEGER, 삼항연산자 ###</p>')
+document.write('<p> let min = numbers.reduce((acc, val, idx, ary) => {<br>&nbsp; return acc < val ? acc : val;<br>}, Number.MAX_SAFE_INTEGER);')
+let min = numbers.reduce((acc, val, idx, ary) =>{
+    return acc < val ? acc : val;
+}, Number.MAX_SAFE_INTEGER);
+document.write('<p>배열: ' + numbers + '<br>')
+document.write('최소값(min): ' + min + '</p>')
