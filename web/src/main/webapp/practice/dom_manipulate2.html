@@ -7,24 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="location.href='dom.html'">돌아가기</button>
+    <button>돌아가기</button>
     <h3>회원등록화면</h3>
         <label for="mid">아이디</label>
-        <input type="text" name="mid" id="mid">
+        <input type="text" name="mid" id="mid"><br>
         <label for="mname">이름</label>
-        <input type="text" name="mname" id="mname">
+        <input type="text" name="mname" id="mname"><br>
         <label for="mtel">연락처</label>
-        <input type="phone" name="mtel" id="mtel">
-        <button onclick="liston()">회원등록</button>
-    <div id="show">
-        <table border="1" id="list">
-            <tr>
-                <th>아이디</th>
-                <th>이름</th>
-                <th>연락처</th>
-            </tr>
+        <input type="phone" name="mtel" id="mtel"><br>
+        <button id="on">회원등록</button>
+        <hr>
+        <div id="show">
+            <table border="1" id="list">
+                <tr>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>연락처</th>
+                </tr>
+                <script src="dom_mainpulate2.js"></script>
         </table>
     </div>
-    <script src="dom_mainpulate2.js"></script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+let back = document.querySelector('button');
+back.setAttribute('onclick', 'location.href="dom.html"');
+
+let btn = document.querySelector('#on');
+btn.setAttribute('onclick', 'liston()');
 
 function liston() {
     let tr = document.createElement('tr');
