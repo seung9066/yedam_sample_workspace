@@ -1,5 +1,8 @@
 package jdbc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MemberManage extends DAO {
 
 	private static MemberManage mm = new MemberManage();
@@ -57,5 +60,50 @@ public class MemberManage extends DAO {
 		}
 		return result;
 	}
-
+	
+	// 전체 멤버 반환
+	public List<Member> getMembers() {
+		List<Member> list = new ArrayList<>();
+		try {
+			conn();
+			String sql = "select * from bankmember";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Member mem = new Member();
+				mem.setMemberId(rs.getString("member_id"));
+				mem.setMemberPw(rs.getString("member_pw"));
+				mem.setMemberName(rs.getString("member_name"));
+				mem.setAccountId(rs.getString("account_id"));
+				mem.setRole(rs.getString("role"));
+				list.add(mem);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		
+		return list;
+	}
+	
+	// 아이디를 기준으로 삭제처리 후 정상처리 되면 true return
+	public boolean delMember(String id) {
+		try {
+			conn();
+			String sql = "delete from bankmember where member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			int result = pstmt.executeUpdate();
+			if (result > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		} finally {
+			disconn();
+		}
+		return false; // 정상처리 안된 경우
+	}
+	
 }

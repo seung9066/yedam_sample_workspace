@@ -17,8 +17,9 @@
 			<thead>
 				<tr>
 					<th>아이디</th>
+					<th>비밀번호</th>
 					<th>이름</th>
-					<th>이메일</th>
+					<th>접근권한</th>
 				</tr>
 			</thead>
 			<tbody id="list"></tbody>
@@ -28,7 +29,7 @@
 	<script>
 		// 서버상에 있는 html, jsp, 서블릿, text
 		let xhtp = new XMLHttpRequest();
-		xhtp.open('get', 'MOCK_DATA.json');
+		xhtp.open('get', '../memberList');
 		xhtp.send(); // 서버요청
 		// 요청 결과를 받아오면
 		xhtp.onload = function() {
@@ -41,18 +42,44 @@
 				let tr = document.createElement('tr');
 				
 				let td = document.createElement('td');
-				let txt = document.createTextNode(data.id);
+				let txt = document.createTextNode(data.memberId);
 				td.appendChild(txt);
 				
 				let td2 = document.createElement('td');
-				let txt2 = document.createTextNode(data.first_name);
+				let txt2 = document.createTextNode(data.memberPw);
 				td2.appendChild(txt2);
 				
+				let td2_1 = document.createElement('td');
+				let btn = document.createElement('button');
+				// 삭제 이벤트
+				btn.addEventListener('click',function(){
+              let delAjax = new XMLHttpRequest();
+              delAjax.open('post','../memberList');
+              delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+              delAjax.send('del_id='+this.parentElement.parentElement.firstElementChild.textContent);
+              delAjax.onload = function(e){
+                 let result = delAjax.responseText;
+                 console.log(result);
+                 if(result == 'success'){
+                    btn.parentElement.parentElement.remove();  
+                 }else{
+                   alert('처리 중 에러 발생');
+                 }
+              }
+           });
+				let txt2_1 = document.createTextNode('삭제');
+				btn.appendChild(txt2_1);
+				td2_1.appendChild(btn);
+				
 				let td3 = document.createElement('td');
-				let txt3 = document.createTextNode(data.email);
+				let txt3 = document.createTextNode(data.memberName);
 				td3.appendChild(txt3);
 				
-				tr.append(td, td2, td3);
+				let td5 = document.createElement('td');
+				let txt5 = document.createTextNode(data.memberRole);
+				td5.appendChild(txt5);
+				
+				tr.append(td, td2, td3, td5, td2_1);
 				list.append(tr);
 			})
 			
