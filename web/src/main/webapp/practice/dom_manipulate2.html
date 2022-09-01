@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .focus {
+            background-color: yellow;
+        }
+    </style>
 </head>
+
 <body>
-    <button>돌아가기</button>
+    <button onclick="location.href='dom.html'" class="button">돌아가기</button>
     <h3>회원등록화면</h3>
-        <label for="mid">아이디</label>
-        <input type="text" name="mid" id="mid"><br>
-        <label for="mname">이름</label>
-        <input type="text" name="mname" id="mname"><br>
-        <label for="mtel">연락처</label>
-        <input type="phone" name="mtel" id="mtel"><br>
-        <button id="on">회원등록</button>
-        <button id="on1">회원등록2</button>
-        <hr>
-        <div id="show">
-            <table border="1" id="list">
+    <label for="mid">회원아이디</label>
+    <input type="text" name="mid" id="mid"><br>
+    <label for="mname">회원이름</label>
+    <input type="text" name="mname" id="mname"><br>
+    <label for="mphone">회원연락처</label>
+    <input type="text" name="mphone" id="mphone"><br>
+    <button id="on">회원등록</button>
+    <button id="find">회원찾기 & 변경</button>
+    <hr>
+    <div id="show">
+        <table border="1">
+            <thead>
                 <tr>
                     <th>아이디</th>
                     <th>이름</th>
                     <th>연락처</th>
+                    <th>관리</th>
+                    <th>
+                        <input id="allcheck" type="checkbox">
+                    </th>
                 </tr>
-                <script src="dom_mainpulate2.js"></script>
+            </thead>
+            <tbody id="list">
+            </tbody>
         </table>
     </div>
+    <script src="dom_mainpulate2.js"></script>
 </body>
+
 </html>
