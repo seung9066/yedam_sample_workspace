@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="location.href='../form/login.html'" class="butt">로그인</button>
+    <button onclick="location.href='../javascript/basic.html'" class="butt">basic</button>
+    <button onclick="location.href='../practice/dom.html'" class="butt">dom</button>
+
+    <div id="show"></div>
+    
+    <script>
+        // 서버상에 있는 html, jsp, 서블릿, text
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get', '../index.html');
+        xhtp.send(); // 서버요청
+        // 요청 결과를 받아오면
+        xhtp.onload = function() {console.log(xhtp.response)};
+    </script>
+
+</body>
+</html>
