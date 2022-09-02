@@ -2,60 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data_go</title>
-    <style>
-        table {
-            width: 70%;
-            float: left;
-           
-        }
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>data_go</title>
+<style>
+table {
+	width: 70%;
+	float: left;
+}
 
-        div#detailInfo {
-            width: 30%;
-            float: left;
-            border: 1px solid black;
-            height: 300px;
-        }
-    </style>
+div#detailInfo {
+	position: fixed;
+	right: 0;
+	top: 200px;
+	width: 29%;
+	float: right;
+	border: 1px solid black;
+	height: 150px;
+}
+</style>
 </head>
 
 <body>
-    <h3>예방접종센터 조회</h3>
-    <label for="center">조회대상 입력 : <input type="text" name="center" id="center"></label>
-    <button id="searchBtn">조회</button>
-    <button id="searchAll">전체조회</button>
-    <br><br>
-    <label for="sido">시도리스트<select id="sido">
-            <option>선택</option>
-        </select></label>
-    <p></p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>시설아이디</th>
-                <th>센터명</th>
-                <th>시도</th>
-                <th>시군구</th>
-                <th>센터주소</th>
-                <th>센터번호</th>
-            </tr>
-        </thead>
-        <tbody id="list">
+	<h3>예방접종센터 조회</h3>
+	<label for="center">조회대상 입력 : <input type="text" name="center"
+		id="center"></label>
+	<button id="searchBtn">조회</button>
+	<button id="searchAll">전체조회</button>
+	<br>
+	<br>
+	<label for="sido">시도리스트<select id="sido">
+			<option>선택</option>
+	</select></label>
+	<p></p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>시설아이디</th>
+				<th>센터명</th>
+				<th>시도</th>
+				<th>시군구</th>
+				<th>센터주소</th>
+				<th>센터번호</th>
+			</tr>
+		</thead>
+		<tbody id="list">
 
-        </tbody>
-    </table>
+		</tbody>
+	</table>
 
-    <div id="detailInfo">
-        <ul>
-            <li>org:<span>국립중앙의료원</span></li>
-            <li>lat:<span>12.34567</span></li>
-            <li>lng:<span>123.2324</span></li>
-        </ul>
-    </div>
-    <script>
+	<div id="detailInfo">
+		<ul>
+			<li>org: <span></span></li>
+			<li>lat: <span></span></li>
+			<li>lng: <span></span></li>
+		</ul>
+	</div>
+	<script>
         // 조회클릭
         document.getElementById('searchBtn').addEventListener('click', searchCenterFnc);
 
@@ -90,7 +94,6 @@
             data.forEach(center => {
                 // 전체 데이터
                 tbody.append(makeTr(center));
-                console.log(center);
                 // 시도데이터 구분
                 if (sidoData.indexOf(center.sido) == -1) {
                     sidoData.push(center.sido);
@@ -126,18 +129,34 @@
 
         function makeTr(center) {
             let tr = document.createElement('tr');
-
+			
+            // 마우스오버
             tr.addEventListener('mouseover', function () {
-                let trChild = this.children;
-                let org = trChild[1].textContent;
-                let lat = trChild[5].textContent;
-                let lng = trChild[4].textContent;
-
-                let detailInfo = document.querySelectorAll('#detailInfo>ul>li');
-
-                detailInfo[0].textContent = org;
-                detailInfo[1].textContent = lat;
-                detailInfo[2].textContent = lng;
+            let orgs = ['org'];
+	        orgs.forEach(org => {
+	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
+	            	let txt = document.createTextNode(center[org]);
+	            	detailInfo[0].append(txt);
+	            	console.log(txt);
+	        })
+	        let lats = ['lat'];
+	        lats.forEach(lat => {
+	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
+	            	let txt = document.createTextNode(center[lat]);
+	            	detailInfo[1].append(txt);
+	        })
+	        let lngs = ['lng'];
+	        lngs.forEach(lng => {
+	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
+	            	let txt = document.createTextNode(center[lng]);
+	            	detailInfo[2].append(txt);
+	        })
+    
+            })
+            
+            // 마우스아웃
+            tr.addEventListener('mouseout', function () {
+            	document.querySelectorAll('#detailInfo>ul>li>span').forEach(span => span.innerText = '');
             })
             
             // 보고싶은 항목
