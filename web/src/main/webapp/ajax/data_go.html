@@ -91,7 +91,7 @@ div#detailInfo {
             // 시도리스트
             let sidoData = [];
 
-            data.forEach(center => {
+            gdata.forEach(center => {
                 // 전체 데이터
                 tbody.append(makeTr(center));
                 // 시도데이터 구분
@@ -115,13 +115,10 @@ div#detailInfo {
         function pageLoadCallBack1() {
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
 
-            let result = JSON.parse(xhtp.responseText);
-
             let tbody = document.getElementById('list');
 
-            let data = result.data;
             gdata = data;
-            data.forEach(center => {
+            gdata.forEach(center => {
                 tbody.append(makeTr(center));
             })
 
@@ -136,6 +133,9 @@ div#detailInfo {
 	        orgs.forEach(org => {
 	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
 	            	let txt = document.createTextNode(center[org]);
+	            	if ((center[org]) == '') {
+	            		txt = '없음';
+	            	}
 	            	detailInfo[0].append(txt);
 	            	console.log(txt);
 	        })
