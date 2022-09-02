@@ -61,20 +61,6 @@
             
         }
         
-        function makeTr(center) {
-            let tr = document.createElement('tr');
-            
-            // 보고싶은 항목
-            let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
-            infos.forEach(info => {
-                let td = document.createElement('td');
-                let txt = document.createTextNode(center[info]);
-                td.append(txt);
-                tr.append(td);
-            })
-            return tr;
-        }
-
         function pageLoadCallBack1() {
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
             
@@ -88,6 +74,20 @@
                 tbody.append(makeTr(center));
             })
             
+        }
+
+        function makeTr(center) {
+            let tr = document.createElement('tr');
+            
+            // 보고싶은 항목
+            let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
+            infos.forEach(info => {
+                let td = document.createElement('td');
+                let txt = document.createTextNode(center[info]);
+                td.append(txt);
+                tr.append(td);
+            })
+            return tr;
         }
         
         // 조회클릭 함수
