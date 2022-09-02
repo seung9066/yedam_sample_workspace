@@ -129,29 +129,12 @@ div#detailInfo {
 			
             // 마우스오버
             tr.addEventListener('mouseover', function () {
-            let orgs = ['org'];
-	        orgs.forEach(org => {
+            	let props = ['org', 'lat', 'lng'];
+            	
+            	props.forEach((prop, idx) => {
 	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
-	            	let txt = document.createTextNode(center[org]);
-	            	if ((center[org]) == '') {
-	            		txt = '없음';
-	            	}
-	            	detailInfo[0].append(txt);
-	            	console.log(txt);
-	        })
-	        let lats = ['lat'];
-	        lats.forEach(lat => {
-	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
-	            	let txt = document.createTextNode(center[lat]);
-	            	detailInfo[1].append(txt);
-	        })
-	        let lngs = ['lng'];
-	        lngs.forEach(lng => {
-	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
-	            	let txt = document.createTextNode(center[lng]);
-	            	detailInfo[2].append(txt);
-	        })
-    
+	            	detailInfo[idx].textContent = center[prop] != '' ? center[prop] : '없음';
+            	});
             })
             
             // 마우스아웃
@@ -176,17 +159,22 @@ div#detailInfo {
             let sido;
             if (e.target.nodeName == 'BUTTON') {
                 sido = document.getElementById('center').value;
+                console.log(sido);
             } else if (e.target.nodeName == 'SELECT') {
                 sido = e.target.value;
             }
             let tbody = document.getElementById('list');
 
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
-
             gdata.forEach(center => {
+            	if (sido == '선택') {
+            		pageLoadCallBack1()
+            	} else {
                 if (center.sido.startsWith(sido)) {
-                    tbody.append(makeTr(center));
+                	tbody.append(makeTr(center));
+                	console.log(sido)
                 }
+            	}
             });
         }
     </script>
