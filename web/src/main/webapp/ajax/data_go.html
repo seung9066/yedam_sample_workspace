@@ -63,9 +63,6 @@ div#detailInfo {
         // 조회클릭
         document.getElementById('searchBtn').addEventListener('click', searchCenterFnc);
 
-        // 화면초기화
-        let gdata;
-
         // 전체조회
         document.getElementById('searchAll').addEventListener('click', pageLoadCallBack1);
 
@@ -115,8 +112,11 @@ div#detailInfo {
         function pageLoadCallBack1() {
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
 
+            let result = JSON.parse(xhtp.responseText);
+
             let tbody = document.getElementById('list');
 
+            let data = result.data;
             gdata = data;
             gdata.forEach(center => {
                 tbody.append(makeTr(center));
