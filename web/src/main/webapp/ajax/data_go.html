@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data_go</title>
+    <style>
+        table {
+            width: 70%;
+            float: left;
+           
+        }
+
+        div#detailInfo {
+            width: 30%;
+            float: left;
+            border: 1px solid black;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +48,13 @@
         </tbody>
     </table>
 
+    <div id="detailInfo">
+        <ul>
+            <li>org:<span>국립중앙의료원</span></li>
+            <li>lat:<span>12.34567</span></li>
+            <li>lng:<span>123.2324</span></li>
+        </ul>
+    </div>
     <script>
         // 조회클릭
         document.getElementById('searchBtn').addEventListener('click', searchCenterFnc);
@@ -44,6 +65,11 @@
         // 전체조회
         document.getElementById('searchAll').addEventListener('click', pageLoadCallBack1);
 
+        // 시도리스트 조회
+        document.getElementById('sido').addEventListener('change', searchCenterFnc);
+
+        // detailInfo
+        // document.getElementsByTagName('tr').addEventListener('mouseover', detail);
 
         // ?뒤가 parameter
         let req_url =
@@ -67,7 +93,7 @@
             data.forEach(center => {
                 // 전체 데이터
                 tbody.append(makeTr(center));
-
+                console.log(center);
                 // 시도데이터 구분
                 if (sidoData.indexOf(center.sido) == -1) {
                     sidoData.push(center.sido);
@@ -76,10 +102,11 @@
 
             let sel = document.getElementById('sido');
 
-            // select태그 option
+            // select태그 > option
             sidoData.forEach(sido => {
                 let opt = document.createElement('option');
                 opt.textContent = sido;
+                opt.value = sido;
                 sel.append(opt);
             });
 
@@ -115,8 +142,13 @@
         }
 
         // 조회클릭 함수
-        function searchCenterFnc() {
-            let sido = document.getElementById('center').value;
+        function searchCenterFnc(e) {
+            let sido;
+            if (e.target.nodeName == 'BUTTON') {
+                sido = document.getElementById('center').value;
+            } else if (e.target.nodeName == 'SELECT') {
+                sido = e.target.value;
+            }
             let tbody = document.getElementById('list');
 
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
@@ -126,6 +158,21 @@
                     tbody.append(makeTr(center));
                 }
             });
+        }
+
+        // 마우스 호버
+        function detail() {
+            let td = target.value;
+            let dinfo = document.getElementById('detailInfo');
+            let ul = document.createElement('ul');
+            let infos = ['facilityName', 'lat', 'lng'];
+            infos.forEach = (info => {
+                let li = document.createElement('li');
+                let txt = document.createTextNode(gdata[info]);
+                li.append(txt);
+                ul.append(li);
+            })
+            dinfo.append(ul);
         }
     </script>
 </body>
