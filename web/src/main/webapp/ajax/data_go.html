@@ -68,9 +68,6 @@
         // 시도리스트 조회
         document.getElementById('sido').addEventListener('change', searchCenterFnc);
 
-        // detailInfo
-        // document.getElementsByTagName('tr').addEventListener('mouseover', detail);
-
         // ?뒤가 parameter
         let req_url =
             `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=100&returnType=JSON&serviceKey=O%2FLhKCKKGGOnbYMXBN06pZvZamSvvneQMNhYlbTlyqTOgLGwiPC2u8ISOie%2FnQYBPF4OSxidGRMYW5SPg9Gq8w%3D%3D`;
@@ -138,6 +135,19 @@
                 td.append(txt);
                 tr.append(td);
             })
+            
+            tr.addEventListener('mouseover', function () {
+                let trChild = this.children;
+                let org = trChild[1].textContent;
+                let lat = trChild[5].textContent;
+                let lng = trChild[4].textContent;
+
+                let detailInfo = document.querySelectorAll('#detailInfo>ul>li');
+
+                detailInfo[0].textContent = org;
+                detailInfo[1].textContent = lat;
+                detailInfo[2].textContent = lng;
+            })
             return tr;
         }
 
@@ -158,21 +168,6 @@
                     tbody.append(makeTr(center));
                 }
             });
-        }
-
-        // 마우스 호버
-        function detail() {
-            let td = target.value;
-            let dinfo = document.getElementById('detailInfo');
-            let ul = document.createElement('ul');
-            let infos = ['facilityName', 'lat', 'lng'];
-            infos.forEach = (info => {
-                let li = document.createElement('li');
-                let txt = document.createTextNode(gdata[info]);
-                li.append(txt);
-                ul.append(li);
-            })
-            dinfo.append(ul);
         }
     </script>
 </body>
