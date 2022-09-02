@@ -127,15 +127,6 @@
         function makeTr(center) {
             let tr = document.createElement('tr');
 
-            // 보고싶은 항목
-            let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
-            infos.forEach(info => {
-                let td = document.createElement('td');
-                let txt = document.createTextNode(center[info]);
-                td.append(txt);
-                tr.append(td);
-            })
-            
             tr.addEventListener('mouseover', function () {
                 let trChild = this.children;
                 let org = trChild[1].textContent;
@@ -148,6 +139,16 @@
                 detailInfo[1].textContent = lat;
                 detailInfo[2].textContent = lng;
             })
+            
+            // 보고싶은 항목
+            let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
+            infos.forEach(info => {
+                let td = document.createElement('td');
+                let txt = document.createTextNode(center[info]);
+                td.append(txt);
+                tr.append(td);
+            })
+            
             return tr;
         }
 
