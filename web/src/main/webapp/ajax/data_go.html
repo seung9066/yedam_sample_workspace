@@ -13,6 +13,10 @@
     <label for="center">조회대상 입력 : <input type="text" name="center" id="center"></label>
     <button id="searchBtn">조회</button>
     <button id="searchAll">전체조회</button>
+    <br><br>
+    <label for="sido">시도리스트<select id="sido">
+            <option>선택</option>
+        </select></label>
     <p></p>
     <table border="1">
         <thead>
@@ -40,45 +44,65 @@
         // 전체조회
         document.getElementById('searchAll').addEventListener('click', pageLoadCallBack1);
 
+
         // ?뒤가 parameter
         let req_url =
-        `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=100&returnType=JSON&serviceKey=O%2FLhKCKKGGOnbYMXBN06pZvZamSvvneQMNhYlbTlyqTOgLGwiPC2u8ISOie%2FnQYBPF4OSxidGRMYW5SPg9Gq8w%3D%3D`;
+            `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=100&returnType=JSON&serviceKey=O%2FLhKCKKGGOnbYMXBN06pZvZamSvvneQMNhYlbTlyqTOgLGwiPC2u8ISOie%2FnQYBPF4OSxidGRMYW5SPg9Gq8w%3D%3D`;
         let xhtp = new XMLHttpRequest();
         xhtp.open('get', req_url);
         xhtp.send();
         xhtp.onload = pageLoadCallBack;
-        
+
         function pageLoadCallBack() {
             let result = JSON.parse(xhtp.responseText);
-            
+
             let tbody = document.getElementById('list');
-            
+
             let data = result.data;
             gdata = data;
+
+            // 시도리스트
+            let sidoData = [];
+
             data.forEach(center => {
+                // 전체 데이터
                 tbody.append(makeTr(center));
-            })
-            
+
+                // 시도데이터 구분
+                if (sidoData.indexOf(center.sido) == -1) {
+                    sidoData.push(center.sido);
+                }
+            });
+
+            let sel = document.getElementById('sido');
+
+            // select태그 option
+            sidoData.forEach(sido => {
+                let opt = document.createElement('option');
+                opt.textContent = sido;
+                sel.append(opt);
+            });
+
         }
-        
+
         function pageLoadCallBack1() {
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
-            
+
             let result = JSON.parse(xhtp.responseText);
-            
+
             let tbody = document.getElementById('list');
-            
+
             let data = result.data;
             gdata = data;
             data.forEach(center => {
                 tbody.append(makeTr(center));
             })
-            
+
         }
 
         function makeTr(center) {
             let tr = document.createElement('tr');
-            
+
             // 보고싶은 항목
             let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
             infos.forEach(info => {
@@ -89,7 +113,7 @@
             })
             return tr;
         }
-        
+
         // 조회클릭 함수
         function searchCenterFnc() {
             let sido = document.getElementById('center').value;
@@ -103,7 +127,7 @@
                 }
             });
         }
-        </script>
+    </script>
 </body>
 
 </html>
