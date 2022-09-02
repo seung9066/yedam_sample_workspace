@@ -43,7 +43,7 @@ public class MemberListServlet extends HttpServlet {
 //			json += "{\"memberId\": " + list.get(i).getMemberId() + ", \"memberPw\": " + list.get(i).getMemberPw()
 //					+ ", \"memberName\": " + list.get(i).getMemberName() + ", \"memberAccount\": "
 //					+ list.get(i).getAccountId() + ", \"memberRole\": " + list.get(i).getRole() + "}";
-			json += "{\"memberId\": \"" + list.get(i).getMemberId() + "\", \"memberPw\": "+ list.get(i).getMemberPw()+", \"memberName\":\""+list.get(i).getMemberName()+"\", \"memberRole\": "+list.get(i).getRole()+
+			json += "{\"memberId\": \"" + list.get(i).getMemberId() + "\", \"memberPw\": \""+ list.get(i).getMemberPw()+"\", \"memberName\":\""+list.get(i).getMemberName()+"\", \"memberRole\": "+list.get(i).getRole()+
 	                  "}";
 			if (i != list.size()-1) {
 				json += ", ";
@@ -60,6 +60,8 @@ public class MemberListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/json;charset=utf-8");
 		
 		String id = request.getParameter("del_id");
 		

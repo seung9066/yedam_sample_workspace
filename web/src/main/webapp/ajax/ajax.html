@@ -1,63 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
+<style>
+label {
+	display: inline-block;
+	width: 150px;
+}
 
+input {
+	text-align: center;
+}
+
+#role {
+	text-align: center;
+}
+</style>
 </head>
+
 <body>
 	<button onclick="location.href='../form/login.html'" class="butt">로그인</button>
 	<button onclick="location.href='../javascript/basic.html'" class="butt">basic</button>
 	<button onclick="location.href='../practice/dom.html'" class="butt">dom</button>
 
-	<div id="show">
-		<table border=1>
-			<thead>
-				<tr>
-					<th>아이디</th>
-					<th>이름</th>
-					<th>이메일</th>
-				</tr>
-			</thead>
-			<tbody id="list"></tbody>
-		</table>
-	</div>
+	<h3>회원입력</h3>
+	<label for="mem_id">아이디</label>
+	<input type="text" id="mem_id">
+	<br>
+	<label for="mem_pw">비밀번호</label>
+	<input type="text" id="mem_pw">
+	<br>
+	<label for="mem_name">이름</label>
+	<input type="text" id="mem_name">
+	<br>
+	<button id="addBtn">회원등록</button>
+	<!-- <button id="show">수정</button> -->
+	<p></p>
+	<hr>
+	<p></p>
+	<p></p>
+	<hr>
+	<p></p>
+	<table border="1" ; style="text-align: center;">
+		<thead>
+			<tr>
+				<th>아이디</th>
+				<th>비밀번호</th>
+				<th>이름</th>
+				<th>권한</th>
+				<th>삭제</th>
+				<th>수정</th>
+			</tr>
+		</thead>
+		<tbody id="list"></tbody>
+	</table>
+
+	<table id="template" style="display: none;">
+		<tbody>
+			<tr>
+				<td id="id">user1</td>
+				<td><input type="text" id="name" value="name1"></td>
+				<td><input type="text" id="passwd" value="pass1"></td>
+				<td><select id="role" value="role1">
+						<option selected>-- 권한 --</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+				</select></td>
+				<td><button disabled>삭제</button></td>
+				<td><button onclick="modifyMember(event)">변경</button></td>
+			</tr>
+		</tbody>
+	</table>
+
 
 	<script>
+		// 등록
+		let addBtn = document.getElementById('addBtn');
+		addBtn.addEventListener('click', addMemberFnc)
+
+		// 등록 콜백함수
+		function addMemberFnc() {
+			let id = document.getElementById('mem_id').value;
+			let pw = document.getElementById('mem_pw').value;
+			let name = document.getElementById('mem_name').value;
+			let param = 'mid=' + id + '&mpw=' + pw + '&mname=' + name;
+
+			let addAjax = new XMLHttpRequest();
+			addAjax.open('post', '../addMemberServlet');
+			addAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			addAjax.send(param);
+			addAjax.onload = addMemberCallback;
+		};
+
+		// 등록 ajax 콜백함수
+		function addMemberCallback() {
+			let result = JSON.parse(this.responseText);
+			console.log(this.responseText);
+			if (result.retCode == 'success') {
+				let list = document.getElementById('list');
+				list.append(makeTr(result));
+			} else {
+				alert('에러 발생')
+			}
+		}
+
 		// 서버상에 있는 html, jsp, 서블릿, text
 		let xhtp = new XMLHttpRequest();
-		xhtp.open('get', 'MOCK_DATA.json');
+		xhtp.open('get', '../memberList');
 		xhtp.send(); // 서버요청
 		// 요청 결과를 받아오면
-		xhtp.onload = function() {
+		xhtp.onload = function () {
 			let data = JSON.parse(xhtp.response);
 			console.log(data)
-			
+
 			let list = document.getElementById('list');
 			// 서버의 json 파일 -> JSON.parse() -> 페이지 출력
-			data.forEach(data => {			
-				let tr = document.createElement('tr');
-				
-				let td = document.createElement('td');
-				let txt = document.createTextNode(data.id);
-				td.appendChild(txt);
-				
-				let td2 = document.createElement('td');
-				let txt2 = document.createTextNode(data.first_name);
-				td2.appendChild(txt2);
-				
-				let td3 = document.createElement('td');
-				let txt3 = document.createTextNode(data.email);
-				td3.appendChild(txt3);
-				
-				tr.append(td, td2, td3);
+			data.forEach(data => {
+				let tr = makeTr(data);
 				list.append(tr);
 			})
-			
 		};
+
+		function makeTr(data) {
+			let tr = document.createElement('tr');
+
+			let td = document.createElement('td');
+			let txt = document.createTextNode(data.memberId);
+			td.appendChild(txt);
+
+			let td2 = document.createElement('td');
+			let txt2 = document.createTextNode(data.memberPw);
+			td2.appendChild(txt2);
+
+			let td2_1 = document.createElement('td');
+			let btn = document.createElement('button');
+			// 삭제 이벤트
+			btn.addEventListener('click', function () {
+				let delAjax = new XMLHttpRequest();
+				delAjax.open('post', '../memberList');
+				delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				delAjax.send('del_id=' + this.parentElement.parentElement.firstElementChild
+					.textContent);
+				delAjax.onload = function (e) {
+					let result = delAjax.responseText;
+					console.log(result);
+					if (result == 'success') {
+						btn.parentElement.parentElement.remove();
+					} else {
+						alert('에러 발생');
+					}
+				}
+			});
+			let txt2_1 = document.createTextNode('삭제');
+			btn.appendChild(txt2_1);
+			td2_1.appendChild(btn);
+
+			let td3 = document.createElement('td');
+			let txt3 = document.createTextNode(data.memberName);
+			td3.appendChild(txt3);
+
+			let td5 = document.createElement('td');
+			let txt5 = document.createTextNode(data.memberRole);
+			td5.appendChild(txt5);
+
+			let td3_1 = document.createElement('td');
+			let btn3_1 = document.createElement('button');
+			let txt3_1 = document.createTextNode('수정');
+			// 수정 이벤트
+			btn3_1.addEventListener('click', function () {
+				let originTr = btn3_1.parentElement.parentElement;
+				let originChild = originTr.children;
+				
+				let replaceTr = document.querySelector('#template>tbody>tr').cloneNode(true);
+				let replaceChild = replaceTr.children;
+				
+				// 아이디 부분.
+				replaceChild[0].textContent = originChild[0].textContent;
+				// 이름 부분.
+				replaceChild[1].firstElementChild.value = originChild[1].textContent;
+				// 비밀번호 부분.
+				replaceChild[2].firstElementChild.value = originChild[2].textContent;
+				// role 부분
+				replaceChild[3].firstElementChild.value = originChild[3].textContent;
+				
+				// replaceTr.firstElementChild.nextSibling.firstElementChild.value =
+				// 	originTr.firstElementChild.nextSibling.textContent;
+				// replaceTr.firstElementChild.nextSibling.nextSibling.firstElementChild.value =
+				// 	originTr.firstElementChild.nextSibling.nextSibling.textContent;
+				// replaceTr.firstElementChild.nextSibling.nextSibling.nextSibling.firstElementChild.value =
+				// 	originTr.firstElementChild.nextSibling.nextSibling.nextSibling.textContent;
+				
+				// id = find_아이디값
+				replaceTr.setAttribute('id', 'find_' + originChild[0].textContent);
+				
+				console.log(replaceTr);
+				let parent = document.getElementById('list');
+				parent.replaceChild(replaceTr, originTr);
+			});
+			btn3_1.append(txt3_1);
+			td3_1.append(btn3_1);
+
+
+			tr.append(td, td2, td3, td5, td2_1, td3_1);
+
+			return tr;
+		}
+
+		// 수정처리 함수
+		function modifyMember(e) {
+			// 이벤트 타겟(클릭한 버튼)의 부모요소
+			let tr = e.target.parentElement.parentElement;
+			let child = tr.children; // [td(id), td(pw), td(name), td(role), td(삭제), td(변경)]
+			let id = child[0].textContent;
+			let pw = child[1].firstElementChild.value;
+			let name = child[2].firstElementChild.value;
+			let role = child[3].firstElementChild.value;
+			
+			if (role == 1 || role == 0) {
+			console.log(id, pw, name, role);
+
+			let param = 'mid=' + id + '&mpw=' + pw + '&mname=' + name + '&mrole=' + role;
+
+			let upAjx = new XMLHttpRequest();
+			upAjx.open('post', '../updateMemberServlet');
+			upAjx.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			upAjx.send(param);
+			upAjx.onload = updateMemberCallBack;
+			} else {
+				alert('권한은 0 또는 1로 지정하시오')
+			}
+		}
+
+		// 수정처리 콜백함수
+		function updateMemberCallBack() {
+			let result = JSON.parse(this.responseText);
+			console.log(this.responseText);
+			if (result.retCode == 'success') {
+				let newTr = makeTr(result);
+				let oldTr = document.getElementById('find_' + result.memberId);
+				
+				document.getElementById('list').replaceChild(newTr, oldTr);
+			} else if (result.retCode == 'fail') {
+				alert('에러 발생')
+			}
+		}
 	</script>
 
 </body>
+
 </html>
