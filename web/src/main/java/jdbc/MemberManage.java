@@ -14,7 +14,7 @@ public class MemberManage extends DAO {
 	public static MemberManage getInstance() {
 		return mm;
 	}
-	
+
 	// 풀캘린더 관련(from)
 	public List<FullCalendar> scheduleList() {
 		List<FullCalendar> list = new ArrayList<>();
@@ -37,7 +37,7 @@ public class MemberManage extends DAO {
 		}
 		return list;
 	}
-	
+
 	// 풀캘린더 관련 한건 입력
 	public boolean insertCalendar(FullCalendar full) {
 		try {
@@ -59,6 +59,28 @@ public class MemberManage extends DAO {
 		return false;
 	}
 
+	
+	// 풀캘린더 삭제
+	public boolean deleteCalendar(FullCalendar full) {
+		try {
+			conn();
+			String sql = "delete from my_calendar where title = ? and start_date = ? and end_date = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, full.getTitle());
+			pstmt.setString(2, full.getStartDate());
+			pstmt.setString(3, full.getEndDate());
+			int result = pstmt.executeUpdate();
+			if (result > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		} finally {
+			disconn();
+		}
+		return false;
+	}
+	
 	// 로그인
 	public Member loginInfo(String id) {
 		Member member = null;
@@ -104,7 +126,7 @@ public class MemberManage extends DAO {
 		}
 		return result;
 	}
-	
+
 	// 전체 멤버 반환
 	public List<Member> getMembers() {
 		List<Member> list = new ArrayList<>();
@@ -113,7 +135,7 @@ public class MemberManage extends DAO {
 			String sql = "select * from bankmember";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				Member mem = new Member();
 				mem.setMemberId(rs.getString("member_id"));
 				mem.setMemberPw(rs.getString("member_pw"));
@@ -127,10 +149,10 @@ public class MemberManage extends DAO {
 		} finally {
 			disconn();
 		}
-		
+
 		return list;
 	}
-	
+
 	// 아이디를 기준으로 삭제처리 후 정상처리 되면 true return
 	public boolean delMember(String id) {
 		try {
@@ -149,7 +171,7 @@ public class MemberManage extends DAO {
 		}
 		return false; // 정상처리 안된 경우
 	}
-	
+
 	// 수정
 	public boolean updateMember(Member member) {
 		int result = 0;
@@ -172,5 +194,5 @@ public class MemberManage extends DAO {
 		}
 		return false;
 	}
-	
+
 }

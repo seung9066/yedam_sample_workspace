@@ -17,21 +17,21 @@ import com.google.gson.JsonObject;
 @WebServlet("/myCalendar")
 public class MyCalendarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- 
-    public MyCalendarServlet() {
-        super();
-     
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public MyCalendarServlet() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		response.setContentType("text/json;charset=utf-8");
-		
+
 		MemberManage dao = MemberManage.getInstance();
-		
+
 		List<FullCalendar> list = dao.scheduleList();
-		
+
 		JsonArray ary = new JsonArray();
 		for (FullCalendar cal : list) {
 			JsonObject obj = new JsonObject();
@@ -40,30 +40,46 @@ public class MyCalendarServlet extends HttpServlet {
 			obj.addProperty("end", cal.getEndDate());
 			ary.add(obj);
 		}
-		
+
 		Gson gson = new GsonBuilder().create(); // instance 생성
 		String json = gson.toJson(ary); // toJson메소드(cal)
 		response.getWriter().print(json); // 출력스트림으로 출력
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/json;charset=utf-8");
-		
-		FullCalendar full = new FullCalendar();
-		
-		full.setTitle(request.getParameter("title"));
-		full.setStartDate(request.getParameter("start"));
-		full.setEndDate(request.getParameter("end"));
-		
-		MemberManage dao = MemberManage.getInstance();
-		
-		if(dao.insertCalendar(full)) {
-			response.getWriter().print("success");
-		} else {
-			response.getWriter().print("fail");
-		};
-	}
 
+		String job = request.getParameter("job");
+		if (job.equals("insert")) {
+			FullCalendar full = new FullCalendar();
+
+			full.setTitle(request.getParameter("title"));
+			full.setStartDate(request.getParameter("start"));
+			full.setEndDate(request.getParameter("end"));
+
+			MemberManage dao = MemberManage.getInstance();
+
+			if (dao.insertCalendar(full)) {
+				response.getWriter().print("success");
+			} else {
+				response.getWriter().print("fail");
+			}
+		} else if (job.equals("delete")) {
+			FullCalendar full = new FullCalendar();
+
+			full.setTitle(request.getParameter("title"));
+			full.setStartDate(request.getParameter("start"));
+			full.setEndDate(request.getParameter("end"));
+			
+			MemberManage dao = MemberManage.getInstance();
+			
+			if (dao.deleteCalendar(full)) {
+				response.getWriter().print("success");
+			} else {
+				response.getWriter().print("fail");
+			}
+		}
+	}
 }
