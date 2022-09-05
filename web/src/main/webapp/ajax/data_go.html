@@ -2,64 +2,70 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>data_go</title>
-<style>
-table {
-	width: 70%;
-	float: left;
-}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>data_go</title>
+    <style>
+        table {
+            width: 70%;
+            float: left;
+        }
 
-div#detailInfo {
-	position: fixed;
-	right: 10px;
-	top: 150px;
-	width: 29%;
-	float: right;
-	border: 1px solid black;
-	height: 150px;
-}
-</style>
+        div#detailInfo {
+            position: fixed;
+            right: 10px;
+            top: 150px;
+            width: 29%;
+            float: right;
+            border: 1px solid black;
+            height: 150px;
+        }
+
+        div#piechart_3d {
+            clear: both;
+        }
+    </style>
+
 </head>
 
 <body>
-	<h3>예방접종센터 조회</h3>
-	<label for="center">조회대상 입력 : <input type="text" name="center"
-		id="center"></label>
-	<button id="searchBtn">조회</button>
-	<button id="searchAll">전체조회</button>
-	<br>
-	<br>
-	<label for="sido">시도리스트<select id="sido">
-			<option>선택</option>
-	</select></label>
-	<p></p>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>시설아이디</th>
-				<th>센터명</th>
-				<th>시도</th>
-				<th>시군구</th>
-				<th>센터주소</th>
-				<th>센터번호</th>
-			</tr>
-		</thead>
-		<tbody id="list">
+    <h3>예방접종센터 조회</h3>
+    <label for="center">조회대상 입력 : <input type="text" name="center" id="center"></label>
+    <button id="searchBtn">조회</button>
+    <button id="searchAll">전체조회</button>
+    <br>
+    <br>
+    <label for="sido">시도리스트<select id="sido">
+            <option>선택</option>
+        </select></label>
+    <p></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>시설아이디</th>
+                <th>센터명</th>
+                <th>시도</th>
+                <th>시군구</th>
+                <th>센터주소</th>
+                <th>센터번호</th>
+            </tr>
+        </thead>
+        <tbody id="list">
 
-		</tbody>
-	</table>
+        </tbody>
+    </table>
 
-	<div id="detailInfo">
-		<ul>
-			<li>org: <span></span></li>
-			<li>lat: <span></span></li>
-			<li>lng: <span></span></li>
-		</ul>
-	</div>
-	<script>
+    <div id="detailInfo">
+        <ul>
+            <li>org: <span></span></li>
+            <li>lat: <span></span></li>
+            <li>lng: <span></span></li>
+        </ul>
+    </div>
+    <div id="piechart_3d" style="width: 900px; height: 700px;"></div>
+    <script>
         // 조회클릭
         document.getElementById('searchBtn').addEventListener('click', searchCenterFnc);
 
@@ -71,7 +77,7 @@ div#detailInfo {
 
         // ?뒤가 parameter
         let req_url =
-            `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=100&returnType=JSON&serviceKey=O%2FLhKCKKGGOnbYMXBN06pZvZamSvvneQMNhYlbTlyqTOgLGwiPC2u8ISOie%2FnQYBPF4OSxidGRMYW5SPg9Gq8w%3D%3D`;
+            `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=200&returnType=JSON&serviceKey=O%2FLhKCKKGGOnbYMXBN06pZvZamSvvneQMNhYlbTlyqTOgLGwiPC2u8ISOie%2FnQYBPF4OSxidGRMYW5SPg9Gq8w%3D%3D`;
         let xhtp = new XMLHttpRequest();
         xhtp.open('get', req_url);
         xhtp.send();
@@ -87,18 +93,52 @@ div#detailInfo {
 
             // 시도리스트
             let sidoData = [];
+            let chartData = [];
 
-            gdata.forEach(center => {
-                // 전체 데이터
-                tbody.append(makeTr(center));
+            gdata.forEach((center, idx) => {
+                // 전체 데이터 중 30개만 출력
+                if (idx < 30) {
+                    tbody.append(makeTr(center));
+                }
                 // 시도데이터 구분
                 if (sidoData.indexOf(center.sido) == -1) {
                     sidoData.push(center.sido);
                 }
+
+                // 차트에 들어갈 데이터 구분
+                // 시도(서울특별시, 대전광역시) chartData.push(['서울특별시', 1])
+                let dChart = chartData.find(chart => chart[0] == center.sido);
+                if (dChart) { // 값이 있으면
+                    dChart[1]++;
+                } else {
+                    chartData.push([center.sido, 1]);
+                }
             });
-
+            
+            console.log(chartData);
+            makeChart();
+            
+            function makeChart() {
+                google.charts.load("current", {
+                    packages: ["corechart"]
+                });
+                google.charts.setOnLoadCallback(drawChart);
+                
+                function drawChart() {
+                    chartData.unshift(['시도', 'count']);
+                    var data = google.visualization.arrayToDataTable(chartData);
+                    var options = {
+                        title: '코로나19 센터 시도별 현황',
+                        is3D: true,
+                    };
+                    
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                    chart.draw(data, options);
+                }
+            }
+            
             let sel = document.getElementById('sido');
-
+            
             // select태그 > option
             sidoData.forEach(sido => {
                 let opt = document.createElement('option');
@@ -107,7 +147,7 @@ div#detailInfo {
                 sel.append(opt);
             });
 
-        }
+        };
 
         function pageLoadCallBack1() {
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
@@ -126,22 +166,22 @@ div#detailInfo {
 
         function makeTr(center) {
             let tr = document.createElement('tr');
-			
+
             // 마우스오버
             tr.addEventListener('mouseover', function () {
-            	let props = ['org', 'lat', 'lng'];
-            	
-            	props.forEach((prop, idx) => {
-	            	let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
-	            	detailInfo[idx].textContent = center[prop] != '' ? center[prop] : '없음';
-            	});
+                let props = ['org', 'lat', 'lng'];
+
+                props.forEach((prop, idx) => {
+                    let detailInfo = document.querySelectorAll('#detailInfo>ul>li>span');
+                    detailInfo[idx].textContent = center[prop] != '' ? center[prop] : '없음';
+                });
             })
-            
+
             // 마우스아웃
             tr.addEventListener('mouseout', function () {
-            	document.querySelectorAll('#detailInfo>ul>li>span').forEach(span => span.innerText = '');
+                document.querySelectorAll('#detailInfo>ul>li>span').forEach(span => span.innerText = '');
             })
-            
+
             // 보고싶은 항목
             let infos = ['id', 'centerName', 'sido', 'sigungu', 'address', 'phoneNumber'];
             infos.forEach(info => {
@@ -150,7 +190,7 @@ div#detailInfo {
                 td.append(txt);
                 tr.append(td);
             })
-            
+
             return tr;
         }
 
@@ -167,14 +207,14 @@ div#detailInfo {
 
             document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
             gdata.forEach(center => {
-            	if (sido == '선택') {
-            		pageLoadCallBack1()
-            	} else {
-                if (center.sido.startsWith(sido)) {
-                	tbody.append(makeTr(center));
-                	console.log(sido)
+                if (sido == '선택') {
+                    pageLoadCallBack1()
+                } else {
+                    if (center.sido.startsWith(sido)) {
+                        tbody.append(makeTr(center));
+                        console.log(sido)
+                    }
                 }
-            	}
             });
         }
     </script>
