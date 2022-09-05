@@ -14,6 +14,13 @@ public class MemberManage extends DAO {
 	public static MemberManage getInstance() {
 		return mm;
 	}
+	
+	// 풀캘린더 관련(from)
+	public FullCalendar {
+		
+	}
+	
+	// 풀캘린더 관련(to)
 
 	// 로그인
 	public Member loginInfo(String id) {
