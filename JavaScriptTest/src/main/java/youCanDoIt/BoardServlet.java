@@ -82,7 +82,7 @@ public class BoardServlet extends HttpServlet {
 
 			BoardDAO dao = BoardDAO.getInstance();
 			
-			int bno = Integer.parseInt(request.getParameter("del_id"));
+			int bno = Integer.parseInt(request.getParameter("bno"));
 			
 			if (dao.deleteBoard(bno)) {
 				response.getWriter().print("success");

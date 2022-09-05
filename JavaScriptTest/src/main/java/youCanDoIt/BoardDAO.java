@@ -61,7 +61,7 @@ public class BoardDAO extends DAO {
 	public Board insertBoard(Board board) {
 		int result = 0;
 		String sql1 = "select seq_board.nextval, to_char(sysdate, 'YYYY-MM-DD') from dual";
-		int val =0;
+		int val = 0;
 		String da = "";
 		try {
 			conn();
@@ -72,7 +72,7 @@ public class BoardDAO extends DAO {
 				da = rs.getString(2);
 			}
 			
-			String sql = "insert into tbl_board values(?,?,?,?, ?)";
+			String sql = "insert into tbl_board values(?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, val);
 			pstmt.setString(2, board.getTitle());

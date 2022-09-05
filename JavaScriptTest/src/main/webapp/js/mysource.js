@@ -1,7 +1,20 @@
 // mysource.js
 // 등록
-let addBtn = document.getElementById('addBtn');
-addBtn.addEventListener('click', addBoardFcn);
+document.addEventListener('DOMContentLoaded', function() {
+
+	let addBtn = document.getElementById('addBtn');
+	addBtn.addEventListener('click', addBoardFcn);
+
+	let checkall = document.querySelector('#allcheck');
+	checkall.addEventListener('change', allChecked);
+
+	let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+	chks.forEach(check => {
+		check.addEventListener('change', disChecked)
+	})
+
+});
+
 
 function addBoardFcn() {
 	let title = document.getElementById('title').value;
@@ -49,6 +62,28 @@ function makeTr(data) {
 	let check = document.createElement('input');
 	check.setAttribute('type', 'checkbox');
 	td.appendChild(check);
+	check.onclick = function(event) {
+		if (event.target.checked) {
+			let bno = this.parentElement.parentElement.firstElementChild.nextElementSibling.textContent
+			let delBtn = document.getElementById('delBtn');
+			delBtn.addEventListener('click', delbutton);
+			function delbutton() {
+				let param = 'bno=' + bno + '&select=delete';
+				let delAjax = new XMLHttpRequest();
+				delAjax.open('post', './board');
+				delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				delAjax.send(param);
+				delAjax.onload = function(e) {
+					let result = delAjax.responseText;
+					if (result == 'success') {
+						but.parentElement.parentElement.remove();
+					} else {
+						alert('에러 발생');
+					}
+				}
+			}
+		}
+	}
 
 	let td0 = document.createElement('td');
 	let txt0 = document.createTextNode(data.bno);
@@ -73,14 +108,14 @@ function makeTr(data) {
 	let td5 = document.createElement('td');
 	let but = document.createElement('button');
 	but.addEventListener('click', function() {
-		let param = 'del_id=' + this.parentElement.parentElement.firstElementChild + '&select=delete';
+		let param = 'bno=' + this.parentElement.parentElement.firstElementChild.nextElementSibling.textContent + '&select=delete';
+		console.log(param);
 		let delAjax = new XMLHttpRequest();
 		delAjax.open('post', './board');
 		delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		delAjax.send(param);
 		delAjax.onload = function(e) {
 			let result = delAjax.responseText;
-			console.log(result);
 			if (result == 'success') {
 				but.parentElement.parentElement.remove();
 			} else {
@@ -94,4 +129,18 @@ function makeTr(data) {
 
 	tr.append(td, td0, td1, td2, td3, td4, td5);
 	return tr;
+}
+
+function allChecked() {
+	let chks = document.querySelectorAll('tbody input[type="checkbox"]');
+	chks.forEach(check => {
+		check.checked = this.checked
+	})
+}
+
+function disChecked() {
+	let checkProp = document.querySelectorAll('tbody input[type="checkbox"]');
+	// [...chechProp] checkProp값을 배열로 담겠다.
+	// 배열의 값이 모두(every()) true면 true.
+	document.getElementById('allcheck').checked = [...checkProp].every(item => item.checked);
 }
