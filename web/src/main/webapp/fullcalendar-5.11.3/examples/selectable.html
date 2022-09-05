@@ -71,12 +71,7 @@
                 .then(result => result.text())
                 .then(result => {
                   if (result == 'success') {
-                    arg.event.remove({
-                        title: arg.event.title,
-                        start: arg.event.start,
-                        end: arg.event.end,
-                        allDay: arg.event.allDay
-                      })
+                    arg.event.remove()
                     }
                     else {
                       alert('에러')
