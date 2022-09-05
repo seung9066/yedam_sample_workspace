@@ -16,11 +16,48 @@ public class MemberManage extends DAO {
 	}
 	
 	// 풀캘린더 관련(from)
-	public FullCalendar {
-		
+	public List<FullCalendar> scheduleList() {
+		List<FullCalendar> list = new ArrayList<>();
+		try {
+			conn();
+			String sql = "select * from my_calendar";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				FullCalendar cal = new FullCalendar();
+				cal.setTitle(rs.getString("title"));
+				cal.setStartDate(rs.getString("start_date"));
+				cal.setEndDate(rs.getString("end_date"));
+				list.add(cal);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return list;
 	}
 	
-	// 풀캘린더 관련(to)
+	// 풀캘린더 관련 한건 입력
+	public boolean insertCalendar(FullCalendar full) {
+		try {
+			conn();
+			String sql = "insert into my_calendar values(?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, full.getTitle());
+			pstmt.setString(2, full.getStartDate());
+			pstmt.setString(3, full.getEndDate());
+			int result = pstmt.executeUpdate();
+			if (result > 0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return false;
+	}
 
 	// 로그인
 	public Member loginInfo(String id) {
