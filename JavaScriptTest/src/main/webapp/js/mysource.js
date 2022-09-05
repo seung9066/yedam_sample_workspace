@@ -76,7 +76,7 @@ function makeTr(data) {
         let delAjax = new XMLHttpRequest();
 				delAjax.open('post', './board');
 				delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-				delAjax.send('del_id=' + this.parentElement.parentElement.firstElementChild + '&select=delete'
+				delAjax.send('del_id=' + this.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild + '&select=delete'
 					.textContent);
 				delAjax.onload = function (e) {
 					let result = delAjax.responseText;
