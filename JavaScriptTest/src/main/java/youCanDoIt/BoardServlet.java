@@ -79,13 +79,12 @@ public class BoardServlet extends HttpServlet {
 				response.getWriter().print(json);
 			}
 		} else if (select.equals("delete")) {
-			Board bo = new Board();
-
-			bo.setBno(Integer.parseInt(request.getParameter("bno")));
 
 			BoardDAO dao = BoardDAO.getInstance();
 			
-			if (dao.deleteBoard(bo.getBno())) {
+			int bno = Integer.parseInt(request.getParameter("del_id"));
+			
+			if (dao.deleteBoard(bno)) {
 				response.getWriter().print("success");
 			} else {
 				response.getWriter().print("fail");

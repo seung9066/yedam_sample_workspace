@@ -43,7 +43,7 @@ public class BoardDAO extends DAO {
 	public boolean deleteBoard(int bno) {
 		try {
 			conn();
-			String sql = "delete from tbl_board where bno = ?";
+			String sql = "delete tbl_board where bno = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bno);
 			int result = pstmt.executeUpdate();
