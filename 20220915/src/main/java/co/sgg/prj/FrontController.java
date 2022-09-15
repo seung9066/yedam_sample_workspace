@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.sgg.prj.command.MemberInsert;
 import co.sgg.prj.common.Command;
+import co.sgg.prj.member.command.MemberIdCheck;
 import co.sgg.prj.member.command.MemberJoinForm;
 import co.sgg.prj.member.command.MemberSelect;
 import co.sgg.prj.member.command.MemberSelectList;
@@ -37,7 +38,7 @@ public class FrontController extends HttpServlet {
        map.put("/memberSelect.do", new MemberSelect());
        map.put("/memberJoinForm.do", new MemberJoinForm()); // 멤버 입력 화면
        map.put("/memberInsert.do", new MemberInsert()); // 멤버 입력 처리
-       
+       map.put("/ajaxMemberIdCheck.do", new MemberIdCheck());
     }
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,10 +48,10 @@ public class FrontController extends HttpServlet {
        String contextPath = request.getContextPath(); // ContextPath 구함
        String page = uri.substring(contextPath.length()); //처리할 요청명 구함
        System.out.println(request.getRequestURI());
-       System.out.println(uri);
-       System.out.println(contextPath);
-       System.out.println(page);
-       System.out.println(request.getRemoteUser());
+//       System.out.println(uri);
+//       System.out.println(contextPath);
+//       System.out.println(page);
+//       System.out.println(request.getRemoteUser());
        
        
        Command command = map.get(page); // 처리할 Command를 찾음
