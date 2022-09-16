@@ -84,12 +84,14 @@ th {
 			const xhttp = new XMLHttpRequest();
 			xhttp.onload = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					if (this.request == "1") {
+					if (this.responseText == "1") {
+						alert('사용 가능')
 						document.getElementById('btn').value = 'Yes';
 						document.getElementById('memberPassword').focus();
 					} else {
 						alert('사용할 수 없는 아이디');
 						document.getElementById('memberId').value = "";
+						document.getElementById('memberId').focus();
 					}
 				}
 			}
