@@ -3,7 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>co.sgg.prj</groupId>
-	<artifactId>20220915</artifactId>
+	<artifactId>MybatisExam</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>19.8.0.0</version>
+			<version>21.7.0.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -38,11 +38,23 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.10</version>
+		</dependency>
+
 
 	</dependencies>
 
 	<!--컴파일 또는 배포 옵션을 정의 하는 곳-->
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
