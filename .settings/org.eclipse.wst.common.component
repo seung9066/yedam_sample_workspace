@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="yedam_sample_workspace">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/20220915/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/JavaScriptTest/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/MybatisExam/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web/src/main/java"/>
+        <property name="context-root" value="yedam_sample_workspace"/>
+        <property name="java-output-path" value="/yedam_sample_workspace/bin"/>
+    </wb-module>
+</project-modules>
